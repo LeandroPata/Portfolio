@@ -1,13 +1,13 @@
 ---
-import Icon from '../components/Icon.astro';
-import ThemeToggle from '../components/ThemeToggle.astro';
-import type { iconPaths } from '../components/IconPaths';
+import Icon from './Icon.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import type { iconPaths } from './IconPaths';
 
 // Main menu items
 const textLinks: { label: string; href: string }[] = [
 	{ label: 'Home', href: '/' },
 	{ label: 'Work', href: '/work/' },
-	{ label: 'About', href: '/about' },
+	{ label: 'About', href: '/about/' },
 ];
 
 // Icon links to social media
@@ -63,8 +63,8 @@ const isCurrentPage = (href: string) => {
 			</template>
 		</menu-button>
 	</div>
-	<noscript
-		><ul class='nav-items'>
+	<noscript>
+		<ul class='nav-items'>
 			{
 				textLinks.map(({ label, href }) => (
 					<li>
@@ -130,6 +130,7 @@ const isCurrentPage = (href: string) => {
 					))
 				}
 			</div>
+
 			<div class='theme-toggle'>
 				<ThemeToggle />
 			</div>
@@ -151,7 +152,7 @@ const isCurrentPage = (href: string) => {
 			menu.hidden = true;
 
 			// Add "menu-content" class in JS to avoid covering content in non-JS browsers
-			menu.classList.add('menu-conten');
+			menu.classList.add('menu-content');
 
 			// Set whether the menu is currently expanded or collapsed
 			const setExpanded = (expand: boolean) => {
@@ -215,7 +216,7 @@ const isCurrentPage = (href: string) => {
 
 	.menu-button[aria-expanded='true'] {
 		color: var(--gray-0);
-		background-color: linear-gradient(180deg, var(--gray-600), transparent),
+		background: linear-gradient(180deg, var(--gray-600), transparent),
 			radial-gradient(var(--gray-900), var(--gray-800) 150%);
 	}
 
@@ -251,6 +252,12 @@ const isCurrentPage = (href: string) => {
 		border-bottom: 1px solid var(--gray-800);
 	}
 
+	.link {
+		display: inline-block;
+		color: var(--gray-300);
+		text-decoration: none;
+	}
+
 	.link[aria-current] {
 		color: var(--gray-0);
 	}
@@ -272,7 +279,7 @@ const isCurrentPage = (href: string) => {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.625rem;
-		font-size: var(var(--icon-size));
+		font-size: var(--icon-size);
 	}
 
 	.social {
@@ -338,7 +345,9 @@ const isCurrentPage = (href: string) => {
 		.link {
 			padding: 0.5rem 1rem;
 			border-radius: 999rem;
-			z-index: -1;
+			transition:
+				color var(--theme-transition),
+				background-color var(--theme-transition);
 		}
 
 		.link:hover,
@@ -375,9 +384,9 @@ const isCurrentPage = (href: string) => {
 		}
 	}
 
-	@media (forced-colors: :active) {
+	@media (forced-colors: active) {
 		.link[aria-current='page'] {
-			color: SelectItem;
+			color: SelectedItem;
 		}
 	}
 </style>

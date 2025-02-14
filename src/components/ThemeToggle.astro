@@ -54,6 +54,14 @@ import Icon from './Icon.astro';
 	@media (prefers-reduced-motion: no-preference) {
 		.icon,
 		.icon.light::before {
+			transition:
+				transform var(--theme-transition),
+				color var(--theme-transition);
+		}
+	}
+
+	@media (forced-colors: active) {
+		.icon.light::before {
 			background-color: SelectedItem;
 		}
 	}
