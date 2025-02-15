@@ -29,7 +29,7 @@ const projects = (await getCollection('work'))
 				<Hero
 					title='Test Title'
 					tagline='Test tagline'
-					align='start'
+					align='center'
 				>
 					<div class='roles'>
 						<Pill>
@@ -52,13 +52,6 @@ const projects = (await getCollection('work'))
 						</Pill>
 					</div>
 				</Hero>
-
-				<img
-					src='/assets/portrait.jpg'
-					alt='Jeanine White smiling in a red plaid shirt and tortoise shell glasses'
-					width='480'
-					height='620'
-				/>
 			</header>
 
 			<Skills />
@@ -122,16 +115,11 @@ const projects = (await getCollection('work'))
 				</div>
 			</section>
 		</main>
-
-		<ContactCTA />
 	</div>
 </Layout>
 
 <style>
 	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 		gap: 2rem;
 	}
 
@@ -149,8 +137,6 @@ const projects = (await getCollection('work'))
 
 	@media (min-width: 50em) {
 		.hero {
-			display: grid;
-			grid-template-columns: 6fr 4fr;
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
 		}
@@ -161,11 +147,11 @@ const projects = (await getCollection('work'))
 			gap: 0.5rem;
 		}
 
-		.hero img {
+		/* .hero img {
 			aspect-ratio: 3 / 4;
 			border-radius: 4.5rem;
 			object-fit: cover;
-		}
+		} */
 	}
 
 	.section {
