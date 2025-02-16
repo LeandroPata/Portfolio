@@ -2,6 +2,7 @@
 import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import type { iconPaths } from './IconPaths';
+import { SOCIAL_LINKS } from '../utils/constants';
 
 // Main menu items
 const textLinks: { label: string; href: string }[] = [
@@ -18,12 +19,12 @@ const iconLinks: {
 }[] = [
 	{
 		label: 'LinkedIn',
-		href: 'https://www.linkedin.com/in/leandromfpata',
+		href: SOCIAL_LINKS.LINKEDIN,
 		icon: 'linkedin-logo',
 	},
 	{
 		label: 'GitHub',
-		href: 'https://github.com/LeandroPata',
+		href: SOCIAL_LINKS.GITHUB,
 		icon: 'github-logo',
 	},
 ];
