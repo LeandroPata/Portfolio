@@ -13,7 +13,6 @@ import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 
 // Page section components
-import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 
 // Content Fetching: List four most recent work projects
@@ -90,7 +89,7 @@ const projects = (await getCollection('work'))
 				</div>
 			</section>
 
-			<section class='section with-background bg-variant'>
+			<section class='section with-background'>
 				<header class='section-header stack gap-2 lg:gap-4'>
 					<h3>Mentions</h3>
 					<p>Test</p>
@@ -146,12 +145,6 @@ const projects = (await getCollection('work'))
 			display: flex;
 			gap: 0.5rem;
 		}
-
-		/* .hero img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
-			object-fit: cover;
-		} */
 	}
 
 	.section {
@@ -164,8 +157,6 @@ const projects = (await getCollection('work'))
 	}
 
 	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-2);
-
 		content: '';
 		position: absolute;
 		pointer-events: none;
@@ -181,10 +172,6 @@ const projects = (await getCollection('work'))
 		background-blend-mode: overlay, normal, normal, normal;
 		mix-blend-mode: var(--bg-blend-mode);
 		z-index: -1;
-	}
-
-	.with-background.bg-variant::before {
-		--hero-bg: var(--bg-image-subtle-1);
 	}
 
 	.section-header {
