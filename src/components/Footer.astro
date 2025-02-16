@@ -1,30 +1,24 @@
 ---
 import Icon from './Icon.astro';
+import { SOCIAL_LINKS } from '../utils/constants';
+
 const currentYear = new Date().getFullYear();
 ---
 
 <footer>
-	<div class='group'>
-		<p>
-			Designed & Developed with <a href='https://astro.build/'>Astro</a>
-			<Icon
-				icon='rocket-launch'
-				size='1.2em'
-			/>
-		</p>
-		<p>&copy; {currentYear} Leandro Pata</p>
-	</div>
+	<p>
+		Designed & Developed with <a href='https://astro.build/'>Astro</a> by Leandro
+		Pata
+	</p>
+	<p>&copy; {currentYear} Leandro Pata</p>
 	<p class='socials'>
-		<a href='https://twitter.com/me'> Twitter</a>
-		<a href='https://github.com/me'> GitHub</a>
-		<a href='https://codepen.io/me'> CodePen</a>
+		<a href={SOCIAL_LINKS.GITHUB}> GitHub</a>
+		<a href={SOCIAL_LINKS.LINKEDIN}> LinkedIn</a>
 	</p>
 </footer>
 
 <style>
 	footer {
-		display: flex;
-		flex-direction: column;
 		gap: 3rem;
 		margin-top: auto;
 		padding: 3rem 2rem 3rem;
@@ -45,12 +39,6 @@ const currentYear = new Date().getFullYear();
 		text-decoration-color: currentColor;
 	}
 
-	.group {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
 	.socials {
 		display: flex;
 		justify-content: center;
@@ -60,15 +48,12 @@ const currentYear = new Date().getFullYear();
 
 	@media (min-width: 50em) {
 		footer {
-			flex-direction: row;
-			justify-content: space-between;
+			display: grid;
+			grid-template-columns: 1fr auto 1fr;
+			align-items: center;
 			padding: 2.5rem 5rem;
-		}
-
-		.group {
-			flex-direction: row;
+			text-align: unset;
 			gap: 1rem;
-			flex-wrap: wrap;
 		}
 
 		.socials {
