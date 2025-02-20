@@ -41,7 +41,7 @@ const { Content } = await render(entry);
 						Work
 					</a>
 					<Hero
-						title={entry.data.title}
+						title={entry.data.title.split('|')[0].trim()}
 						align='start'
 					>
 						<div class='details'>
@@ -52,7 +52,10 @@ const { Content } = await render(entry);
 					</Hero>
 				</div>
 			</header>
-			<main class='wrapper'>
+			<main
+				class='wrapper'
+				transition:animate='slide'
+			>
 				<div class='stack gap-10 content'>
 					{
 						entry.data.img && (
@@ -101,7 +104,7 @@ const { Content } = await render(entry);
 	}
 
 	.content {
-		max-width: 65ch;
+		max-width: 100ch;
 		margin-inline: auto;
 	}
 
@@ -118,6 +121,9 @@ const { Content } = await render(entry);
 	}
 
 	.content :global(img) {
+		align-self: center;
+		max-width: 65ch;
+		max-height: 100ch;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
@@ -137,5 +143,12 @@ const { Content } = await render(entry);
 	.back-link,
 	.content :global(a) {
 		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
 	}
 </style>
