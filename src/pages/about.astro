@@ -9,17 +9,14 @@ import Hero from '../components/Hero.astro';
 	description='About Leandro Pata'
 >
 	<div class='stack gap-20'>
-		<main class='wrapper about'>
+		<main
+			class='wrapper about'
+			transition:animate='fade'
+		>
 			<Hero
 				title='About'
 				tagline='Thanks for stopping by.'
-			>
-				<!-- <img
-					width='1553'
-					height='873'
-					src='/assets/at-work.jpg'
-				/> -->
-			</Hero>
+			/>
 
 			<section>
 				<h2 class='section-title'>Background</h2>

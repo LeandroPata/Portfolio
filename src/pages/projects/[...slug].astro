@@ -9,25 +9,25 @@ import Pill from '../../components/Pill.astro';
 import { render } from 'astro:content';
 
 interface Props {
-	entry: CollectionEntry<'work'>;
+	project: CollectionEntry<'projects'>;
 }
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 export async function getStaticPaths() {
-	const work = await getCollection('work');
-	return work.map((entry) => ({
-		params: { slug: entry.id },
-		props: { entry },
+	const projects = await getCollection('projects');
+	return projects.map((project) => ({
+		params: { slug: project.id },
+		props: { project },
 	}));
 }
 
-const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { project } = Astro.props;
+const { Content } = await render(project);
 ---
 
 <Layout
-	title={entry.data.title}
-	description={entry.data.description}
+	title={project.data.title}
+	description={project.data.description}
 >
 	<div class='stack gap-20'>
 		<div class='stack gap-15'>
@@ -35,18 +35,18 @@ const { Content } = await render(entry);
 				<div class='wrapper stack gap-2'>
 					<a
 						class='back-link'
-						href='/work/'
+						href='/projects/'
 					>
 						<Icon icon='arrow-left' />
-						Work
+						Projects
 					</a>
 					<Hero
-						title={entry.data.title.split('|')[0].trim()}
+						title={project.data.title.split('|')[0].trim()}
 						align='start'
 					>
 						<div class='details'>
 							<div class='tags'>
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+								{project.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
 						</div>
 					</Hero>
@@ -58,10 +58,10 @@ const { Content } = await render(entry);
 			>
 				<div class='stack gap-10 content'>
 					{
-						entry.data.img && (
+						project.data.img && (
 							<img
-								src={entry.data.img}
-								alt={entry.data.img_alt || ''}
+								src={project.data.img}
+								alt={project.data.img_alt || ''}
 							/>
 						)
 					}
