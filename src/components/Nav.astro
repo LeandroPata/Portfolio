@@ -1,14 +1,20 @@
 ---
-import Icon from './Icon.astro';
-import ThemeToggle from './ThemeToggle.astro';
-import type { iconPaths } from './IconPaths';
-import { SOCIAL_LINKS } from '../utils/constants';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+import Icon from '@/src/components/Icon.astro';
+import ThemeToggle from '@/src/components/ThemeToggle.astro';
+import type { iconPaths } from '@/src/components/IconPaths';
+import { SOCIAL_LINKS } from '@/src/utils/constants';
 
 // Main menu items
+const homeURL = getRelativeLocaleUrl('en', '/');
+const projectsURL = getRelativeLocaleUrl('en', '/projects');
+const aboutURL = getRelativeLocaleUrl('en', '/about');
+
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Projects', href: '/projects/' },
-	{ label: 'About', href: '/about/' },
+	{ label: 'Home', href: homeURL },
+	{ label: 'Projects', href: projectsURL },
+	{ label: 'About', href: aboutURL },
 ];
 
 // Icon links to social media
@@ -18,14 +24,14 @@ const iconLinks: {
 	icon: keyof typeof iconPaths;
 }[] = [
 	{
-		label: 'LinkedIn',
-		href: SOCIAL_LINKS.LINKEDIN,
-		icon: 'linkedin-logo',
-	},
-	{
 		label: 'GitHub',
 		href: SOCIAL_LINKS.GITHUB,
 		icon: 'github-logo',
+	},
+	{
+		label: 'LinkedIn',
+		href: SOCIAL_LINKS.LINKEDIN,
+		icon: 'linkedin-logo',
 	},
 ];
 

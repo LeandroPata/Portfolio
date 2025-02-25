@@ -1,6 +1,6 @@
 ---
 // Header
-import '../styles/global.css';
+import '@/src/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 
 interface Props {
@@ -78,6 +78,20 @@ const {
 		}
 	}
 
+	const getLanguagePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('language'))
+			return localStorage.getItem('language');
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ?
+				'dark'
+			:	'light';
+	};
+
+	function applyLanguage() {
+		localStorage.setItem('locale', Astro.currentLocale);
+		console.log(Astro.currentLocale);
+	}
+
 	document.addEventListener('astro:after-swap', applyTheme);
 	applyTheme();
+	applyLanguage();
 </script>

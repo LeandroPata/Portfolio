@@ -1,11 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/src/layouts/Layout.astro';
 
-import ProjectPreview from '../components/ProjectPreview.astro';
-import Hero from '../components/Hero.astro';
-import Grid from '../components/Grid.astro';
+import ProjectPreview from '@/src/components/ProjectPreview.astro';
+import Hero from '@/src/components/Hero.astro';
+import Grid from '@/src/components/Grid.astro';
 
 const projects = (await getCollection('projects')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()

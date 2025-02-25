@@ -2,18 +2,18 @@
 import { getCollection } from 'astro:content';
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/src/layouts/Layout.astro';
 
 // Component Imports
-import CallToAction from '../components/CallToAction.astro';
-import Grid from '../components/Grid.astro';
-import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import ProjectPreview from '../components/ProjectPreview.astro';
+import CallToAction from '@/src/components/CallToAction.astro';
+import Grid from '@/src/components/Grid.astro';
+import Hero from '@/src/components/Hero.astro';
+import Icon from '@/src/components/Icon.astro';
+import Pill from '@/src/components/Pill.astro';
+import ProjectPreview from '@/src/components/ProjectPreview.astro';
 
 // Page section components
-import Skills from '../components/Skills.astro';
+import Skills from '@/src/components/Skills.astro';
 
 // Content Fetching: List four most recent projects
 const projects = (await getCollection('projects'))
@@ -36,18 +36,6 @@ const projects = (await getCollection('projects'))
 								icon='code'
 								size='1.33em'
 							/>Developer
-						</Pill>
-						<Pill>
-							<Icon
-								icon='microphone-stage'
-								size='1.33em'
-							/>Speaker
-						</Pill>
-						<Pill>
-							<Icon
-								icon='pencil-line'
-								size='1.33em'
-							/>Writer
 						</Pill>
 					</div>
 				</Hero>
