@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '@/src/layouts/Layout.astro';
+
+import ProjectPreview from '@/src/components/ProjectPreview.astro';
+import Hero from '@/src/components/Hero.astro';
+import Grid from '@/src/components/Grid.astro';
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<Layout
+	title='My Projects | Leandro Pata'
+	description="Learn about Leandro Pata's projects'"
+>
+	<div class='stack gap-20'>
+		<main
+			class='wrapper stack gap-8'
+			transition:animate='fade'
+		>
+			<Hero
+				title='My Projects'
+				tagline='See all my projects to get an idea of my past experience'
+				align='center'
+			/>
+			<Grid variant='offset'>
+				{
+					projects.map((project) => (
+						<li>
+							<ProjectPreview project={project} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+	</div>
+</Layout>

@@ -14,9 +14,14 @@ import Nav from '@/src/components/Nav.astro';
 
 // Footer
 import Footer from '@/src/components/Footer.astro';
+
+// Locale
+import { getLangFromUrl } from '@/src/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<html lang='en'>
+<html lang={lang}>
 	<head>
 		<Header
 			title={title}

@@ -1,6 +1,4 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-
 import Icon from '@/src/components/Icon.astro';
 import ThemeToggle from '@/src/components/ThemeToggle.astro';
 import type { iconPaths } from '@/src/components/IconPaths';
@@ -11,10 +9,17 @@ const homeURL = getRelativeLocaleUrl('en', '/');
 const projectsURL = getRelativeLocaleUrl('en', '/projects');
 const aboutURL = getRelativeLocaleUrl('en', '/about');
 
+// Locale
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: homeURL },
-	{ label: 'Projects', href: projectsURL },
-	{ label: 'About', href: aboutURL },
+	{ label: t('nav.home'), href: homeURL },
+	{ label: t('nav.projects'), href: projectsURL },
+	{ label: t('nav.about'), href: aboutURL },
 ];
 
 // Icon links to social media

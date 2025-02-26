@@ -11,7 +11,7 @@ tags:
   - Expo
 ---
 
-# Member Management App Project
+<h1 style='text-align: center;'>Member Management App Project</h1>
 
 This is a personal project created to improve member management.
 

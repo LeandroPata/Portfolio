@@ -11,7 +11,7 @@ tags:
   - Expo
 ---
 
-# Order Management App Project
+<h1 style='text-align: center;'>Order Management App Project</h1>
 
 This is a personal project created to improve order management.
 
