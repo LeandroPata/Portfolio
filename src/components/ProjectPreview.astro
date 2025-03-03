@@ -1,16 +1,35 @@
 ---
-import type { CollectionEntry, ContentCollectionKey } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+let projectCollection = 'projectsEn';
+switch (lang) {
+	case 'en':
+		projectCollection = 'projectsEn';
+		break;
+	case 'pt':
+		projectCollection = 'projectsPt';
+		break;
+}
 
 interface Props {
-	project: CollectionEntry<'projects'>;
+	project: CollectionEntry<'projectsEn'>;
 }
 
 const { data, id } = Astro.props.project;
+
+let projectUrl = id.split('/').pop();
+if (projectUrl?.endsWith('.md')) projectUrl = projectUrl.replaceAll('.md', '');
+//console.log(id);
+//console.log(projectUrl);
 ---
 
 <a
 	class='card'
-	href={`/projects/${id}`}
+	href={translatePath(`/projects/${projectUrl}`, lang)}
 >
 	<span class='title'>{data.title.split('|')[0].trim()}</span>
 	<img

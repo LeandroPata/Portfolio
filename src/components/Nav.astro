@@ -4,17 +4,26 @@ import ThemeToggle from '@/src/components/ThemeToggle.astro';
 import type { iconPaths } from '@/src/components/IconPaths';
 import { SOCIAL_LINKS } from '@/src/utils/constants';
 
-// Main menu items
-const homeURL = getRelativeLocaleUrl('en', '/');
-const projectsURL = getRelativeLocaleUrl('en', '/projects');
-const aboutURL = getRelativeLocaleUrl('en', '/about');
-
 // Locale
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
+import {
+	getLangFromUrl,
+	useTranslations,
+	useTranslatedPath,
+} from '@/src/i18n/utils';
+import LanguageSelector from '@/src/components/LanguageSelector.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+// Main menu items
+const homeURL = translatePath('/', lang);
+const projectsURL = translatePath('/projects', lang);
+const aboutURL = translatePath('/about', lang);
+//console.log(lang);
+//console.log(homeURL);
+//console.log(projectsURL);
+//console.log(aboutURL);
 
 const textLinks: { label: string; href: string }[] = [
 	{ label: t('nav.home'), href: homeURL },
@@ -143,6 +152,9 @@ const isCurrentPage = (href: string) => {
 						</a>
 					))
 				}
+			</div>
+			<div>
+				<LanguageSelector />
 			</div>
 
 			<div class='theme-toggle'>

@@ -13,4 +13,8 @@ export default defineConfig({
 		},
 	},
 	integrations: [react()],
+	i18n: {
+		locales: ['en', 'pt'],
+		defaultLocale: 'en',
+	},
 });

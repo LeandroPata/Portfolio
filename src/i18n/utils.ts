@@ -11,3 +11,10 @@ export function useTranslations(lang: keyof typeof ui) {
 		return ui[lang][key] || ui[defaultLang][key];
 	};
 }
+
+export function useTranslatedPath(lang: keyof typeof ui) {
+	return function translatePath(path: string, l: string = lang) {
+		//console.log(`/${l}${path}`);
+		return `/${l}${path}`;
+	};
+}
