@@ -1,5 +1,7 @@
 ---
 title: Member Management App | Leandro Pata
+slug: memberManagementApp
+locale: en
 publishDate: 2024-10-22 00:00:00
 img: /assets/stock-1.jpg
 img_alt: Member Management App Main Menu
