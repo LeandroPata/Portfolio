@@ -1,0 +1,52 @@
+---
+import { languages } from '@/src/i18n/ui';
+import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
+
+const locale = getLangFromUrl(Astro.url);
+//const currentUrl = Astro.url;
+const translatePath = useTranslatedPath(locale);
+---
+
+<language-select>
+	<select
+		name='language-select'
+		id='language-select'
+	>
+		{
+			Object.entries(languages).map(([lang, label]) =>
+				locale === lang ?
+					<option
+						value={translatePath('/', lang)}
+						selected
+					>
+						{label}
+					</option>
+				:	<option value={translatePath('/', lang)}>{label}</option>
+			)
+		}
+	</select>
+</language-select>
+
+<script>
+	import { navigate } from 'astro:transitions/client';
+
+	class LanguageSelect extends HTMLElement {
+		constructor() {
+			super();
+
+			const select = this.querySelector('select')!;
+
+			// Toggle the theme when a user clicks the button
+			select.addEventListener('change', this.setLanguage);
+		}
+
+		// Set the theme to dark/light mode
+		setLanguage(event) {
+			const selectedLanguage = event.target.value;
+			if (selectedLanguage) {
+				navigate(selectedLanguage);
+			}
+		}
+	}
+	customElements.define('language-select', LanguageSelect);
+</script>
