@@ -2,11 +2,11 @@
 import type { CollectionEntry } from 'astro:content';
 import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
 
-const lang = getLangFromUrl(Astro.url);
-const translatePath = useTranslatedPath(lang);
+const locale = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(locale);
 
 let projectCollection = 'projectsEn';
-switch (lang) {
+switch (locale) {
 	case 'en':
 		projectCollection = 'projectsEn';
 		break;
@@ -29,7 +29,7 @@ if (projectUrl?.endsWith('.md')) projectUrl = projectUrl.replaceAll('.md', '');
 
 <a
 	class='card'
-	href={translatePath(`/projects/${projectUrl}`, lang)}
+	href={translatePath(`/projects/${projectUrl}`, locale)}
 >
 	<span class='title'>{data.title.split('|')[0].trim()}</span>
 	<img

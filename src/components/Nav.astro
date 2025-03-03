@@ -10,17 +10,17 @@ import {
 	useTranslations,
 	useTranslatedPath,
 } from '@/src/i18n/utils';
-import LanguageSelector from '@/src/components/LanguageSelector.astro';
+import LanguageSelect from '@/src/components/LanguageSelect.astro';
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+const translatePath = useTranslatedPath(locale);
 
 // Main menu items
-const homeURL = translatePath('/', lang);
-const projectsURL = translatePath('/projects', lang);
-const aboutURL = translatePath('/about', lang);
-//console.log(lang);
+const homeURL = translatePath('/', locale);
+const projectsURL = translatePath('/projects', locale);
+const aboutURL = translatePath('/about', locale);
+//console.log(locale);
 //console.log(homeURL);
 //console.log(projectsURL);
 //console.log(aboutURL);
@@ -154,7 +154,7 @@ const isCurrentPage = (href: string) => {
 				}
 			</div>
 			<div>
-				<LanguageSelector />
+				<LanguageSelect />
 			</div>
 
 			<div class='theme-toggle'>

@@ -18,10 +18,10 @@ import Footer from '@/src/components/Footer.astro';
 // Locale
 import { getLangFromUrl } from '@/src/i18n/utils';
 
-const lang = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url);
 ---
 
-<html lang={lang}>
+<html lang={locale}>
 	<head>
 		<Header
 			title={title}

@@ -9,9 +9,9 @@ import { loadCollection } from '@/src/utils/loadData';
 // Locale
 import { getLangFromUrl } from '@/src/i18n/utils';
 
-const lang = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url);
 
-const projects = await loadCollection(lang);
+const projects = await loadCollection(locale);
 ---
 
 <Layout
