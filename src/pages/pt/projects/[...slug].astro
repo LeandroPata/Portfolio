@@ -1,33 +1,33 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-
 import Layout from '@/src/layouts/Layout.astro';
 
 import Hero from '@/src/components/Hero.astro';
 import Icon from '@/src/components/Icon.astro';
 import Pill from '@/src/components/Pill.astro';
+import { loadCollection } from '@/src/utils/loadData';
 import { render } from 'astro:content';
-
-interface Props {
-	project: CollectionEntry<'projects'>;
-}
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 export async function getStaticPaths() {
-	const projects = await getCollection('projects');
-	return projects.map((project) => ({
-		params: { slug: project.id },
-		props: { project },
-	}));
+	const pages = await loadCollection('pt');
+
+	const paths = pages.map((page) => {
+		return {
+			params: { slug: page.id || undefined },
+			props: page,
+		};
+	});
+	return paths;
 }
 
-const { project } = Astro.props;
-const { Content } = await render(project);
+//const { slug } = Astro.params;
+const page = Astro.props;
+const { Content } = await render(page);
 ---
 
 <Layout
-	title={project.data.title}
-	description={project.data.description}
+	title={page.data.title}
+	description={page.data.description}
 >
 	<div class='stack gap-20'>
 		<div class='stack gap-15'>
@@ -41,12 +41,12 @@ const { Content } = await render(project);
 						Projects
 					</a>
 					<Hero
-						title={project.data.title.split('|')[0].trim()}
+						title={page.data.title.split('|')[0].trim()}
 						align='start'
 					>
 						<div class='details'>
 							<div class='tags'>
-								{project.data.tags.map((t) => <Pill>{t}</Pill>)}
+								{page.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
 						</div>
 					</Hero>
@@ -58,10 +58,10 @@ const { Content } = await render(project);
 			>
 				<div class='stack gap-10 content'>
 					{
-						project.data.img && (
+						page.data.img && (
 							<img
-								src={project.data.img}
-								alt={project.data.img_alt || ''}
+								src={page.data.img}
+								alt={page.data.img_alt || ''}
 							/>
 						)
 					}
@@ -76,7 +76,7 @@ const { Content } = await render(project);
 
 <style>
 	header {
-		padding-bottom: 2.5rem;
+		padding-bottom: 2.5rem;projects
 		border-bottom: 1px solid var(--gray-800);
 	}
 

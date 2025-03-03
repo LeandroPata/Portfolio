@@ -1,25 +1,34 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-
 import Layout from '@/src/layouts/Layout.astro';
 
 import Hero from '@/src/components/Hero.astro';
 import Icon from '@/src/components/Icon.astro';
 import Pill from '@/src/components/Pill.astro';
+import { loadCollection } from '@/src/utils/loadData';
+import { render } from 'astro:content';
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 export async function getStaticPaths() {
-	const pages = await getCollection('projects');
+	const pages = await loadCollection('en');
+	//console.log(pages);
 
-	return pages.map((page) => ({
-		params: { lang, slug: page.id || undefined },
-		props: { page },
-	}));
+	const paths = pages.map((page) => {
+		console.log(page);
+		return {
+			params: { slug: page.id || undefined },
+			props: page,
+		};
+	});
+	//console.log(paths);
+	return paths;
 }
 
-const { lang, slug } = Astro.params;
+console.log('Test');
+const { slug } = Astro.params;
+console.log(Astro.props);
 const page = Astro.props;
-const { Content } = await page.render();
+console.log(page);
+const { Content } = await render(page);
 ---
 
 <Layout
@@ -43,7 +52,7 @@ const { Content } = await page.render();
 					>
 						<div class='details'>
 							<div class='tags'>
-								{page.data.tags.map((t) => <Pill>{t}</Pill>)}
+								{page.data.tags.map((tag) => <Pill>{tag}</Pill>)}
 							</div>
 						</div>
 					</Hero>
