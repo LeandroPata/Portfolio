@@ -2,6 +2,8 @@
 import { languages } from '@/src/i18n/ui';
 import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
 
+import getFlagEmoji from '@/src/utils/getLanguageFlag';
+
 const locale = getLangFromUrl(Astro.url);
 //const currentUrl = Astro.url;
 const translatePath = useTranslatedPath(locale);
@@ -19,13 +21,24 @@ const translatePath = useTranslatedPath(locale);
 						value={translatePath('/', lang)}
 						selected
 					>
-						{label}
+						{getFlagEmoji(lang) + ' ' + label}
 					</option>
-				:	<option value={translatePath('/', lang)}>{label}</option>
+				:	<option value={translatePath('/', lang)}>
+						{getFlagEmoji(lang) + ' ' + label}
+					</option>
 			)
 		}
 	</select>
 </language-select>
+
+<style>
+	select {
+		background-color: transparent;
+		border: none;
+		color: var(--gray-100);
+		font-size: var(--text-base);
+	}
+</style>
 
 <script>
 	import { navigate } from 'astro:transitions/client';
