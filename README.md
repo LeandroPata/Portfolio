@@ -1,48 +1,26 @@
-# Astro Starter Kit: Basics
+# Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is my personal portfolio project.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+It was developed with the intent to showcase my work and skills and concentrate all my work in one place, while being more user-friendly than just my github profile and repositories. Also used decided to use <a href="https://astro.build/" target=_blank>Astro</a> for the first time in order to turn this project into a learning experience (as well as other reasons listed below)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Features
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- Profile and skills showcase
+- Projects showcase pages
+- Light/Dark Theme
+- Translation to different languages
 
-## 🚀 Project Structure
+## Tech used
 
-Inside of your Astro project, you'll see the following folders and files:
+This project was developed with <a href="https://astro.build/" target=_blank>Astro</a>, using a mix of HTML, Typescript, CSS and some Javascript.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+After considering a few options to build and develop this project, <a href="https://astro.build/" target=_blank>Astro</a> was ultimately chosen due to a few reasons:
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- First of all, a <a href="https://react.dev/" target=_blank>React</a> based framework was decided, as opposed to something like <a href="https://angular.dev/" target=_blank>Angular</a> or <a href="https://vuejs.org/" target=_blank>Vue.js</a>, due to my familiarity to <a href="https://react.dev/" target=_blank>React</a> and the current wide use of <a href="https://react.dev/" target=_blank>React</a> based frameworks;
+- Due to the simple nature of the project, it being only showcasing my projects and some of my information, pretty much entirely out of text and images (static content), a more complex framework, like <a href="https://nextjs.org/" target=_blank>Next.js</a> or <a href="https://remix.run/" target=_blank>Remix</a>, would be overkill and unnecessary, and were therefore discarded as optimal choices;
+- Next, the best choices for static content rendering were <a href="https://astro.build/" target=_blank>Astro</a> and <a href="https://www.gatsbyjs.com/" target=_blank>Gastby</a>, <a href="https://astro.build/" target=_blank>Astro</a> being ultimately chosen, due to being more performant;
 
-## 🧞 Commands
+## Developed by
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Leandro Pata](https://github.com/LeandroPata)
