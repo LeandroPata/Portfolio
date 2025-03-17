@@ -49,8 +49,11 @@ const iconLinks: {
 const isCurrentPage = (href: string) => {
 	let pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
 	if (pathname.at(0) !== '/') pathname = `/${pathname}`;
-	if (pathname.at(-1) !== '/') pathname += '/';
-	return pathname === href || (href !== '/' && pathname.startsWith(href));
+
+	return (
+		pathname === href ||
+		(href !== '/' && href !== `/${locale}/` && pathname.startsWith(href))
+	);
 };
 ---
 
