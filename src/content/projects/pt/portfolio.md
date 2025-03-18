@@ -28,10 +28,10 @@ It was developed with the intent to showcase my work and skills and concentrate 
 - Translation to different languages
 
 <p align='middle'>
-  <img align='top' src='/src/assets/projects/memberManagementApp/mainMenu.png' alt = 'MainMenu' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/addMember.png' alt = 'AddMemberMenu' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/searchMember.png' alt = 'SearchMemberMenu' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/profile.png' alt = 'Profile' width=190>
+  <img align='top' src='/src/assets/projects/portfolio/homePageDark.png' alt = 'HomePageDark' width=190>
+  <img align='top' src='/src/assets/projects/portfolio/homePageLight.png' alt = 'HomePageLight' width=190>
+  <img align='top' src='/src/assets/projects/portfolio/projectsPage.png' alt = 'ProjectsPage' width=190>
+  <img align='top' src='/src/assets/projects/portfolio/aboutPage.png' alt = 'AboutPage' width=190>
 </p>
 
 ## Tech used
