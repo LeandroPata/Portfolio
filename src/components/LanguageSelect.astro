@@ -49,11 +49,11 @@ const translatePath = useTranslatedPath(locale);
 
 			const select = this.querySelector('select')!;
 
-			// Toggle the theme when a user clicks the button
+			// Change language when a new value is selected
 			select.addEventListener('change', this.setLanguage);
 		}
 
-		// Set the theme to dark/light mode
+		// Set the language to current value
 		setLanguage(event) {
 			const selectedLanguage = event.target.value;
 			if (selectedLanguage) {

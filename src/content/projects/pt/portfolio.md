@@ -1,13 +1,12 @@
 ---
-title: PortfolioPt | Leandro Pata
+title: Portfolio | Leandro Pata
 slug: portfolio
 locale: pt
 publishDate: 2025-02-11 00:00:00
 img: /assets/stock-4.jpg
 img_alt: Portfolio Main Page
 description: |
-  We developed brand positioning and design assets for the launch
-  of a new colored water product.
+  Portfolio pessoal concebido para demonstrar os meus projetos e competências
 tags:
   - Dev
   - Web
@@ -16,16 +15,17 @@ tags:
 
 <h1 style='text-align: center;'>Portfolio</h1>
 
-This is my personal portfolio project.
+Projeto de portfolio pessoal.
 
-It was developed with the intent to showcase my work and skills and concentrate all my work in one place, while being more user-friendly than just my github profile and repositories. Also used decided to use <a href="https://astro.build/" target=_blank>Astro</a> for the first time in order to turn this project into a learning experience (as well as other reasons listed below)
+Foi desenvolvido com o objetivo de demonstrar os meus projetos e competências e aglomerar todo o meu trabalho num único sítio, enquanto é também mais fácil de utilizar e visualizar que o meu <a href='https://github.com/LeandroPata' target=_blank>perfil de Github</a> e os seus repositórios.
+Decidi também usar <a href="https://astro.build/" target=_blank>Astro</a> pela primeira vez para tornar este projeto numa oportunidade de aprendizagem (assim como outras razões listadas abaixo).
 
-## Features
+## Funcionalidades
 
-- Profile and skills showcase
-- Projects showcase pages
-- Light/Dark Theme
-- Translation to different languages
+- Demonstração do meu perfil e competências;
+- Páginas de demonstração dos meus projetos;
+- Tradução para várias línguas;
+- Modo claro/escuro;
 
 <p align='middle'>
   <img align='top' src='/src/assets/projects/portfolio/homePageDark.png' alt = 'HomePageDark' width=190>
@@ -34,16 +34,16 @@ It was developed with the intent to showcase my work and skills and concentrate 
   <img align='top' src='/src/assets/projects/portfolio/aboutPage.png' alt = 'AboutPage' width=190>
 </p>
 
-## Tech used
+## Tech utilizada
 
-This project was developed with <a href="https://astro.build/" target=_blank>Astro</a>, using a mix of HTML, Typescript, CSS and some Javascript.
+Este projeto foi desenvolvido com <a href="https://astro.build/" target=_blank>Astro</a>, usando HTML, Typescript, CSS e Javascript.
 
-After considering a few options to build and develop this project, <a href="https://astro.build/" target=_blank>Astro</a> was ultimately chosen due to a few reasons:
+Após considerar várias opções para construir e desenvolver este projeto, <a href="https://astro.build/" target=_blank>Astro</a> foi ultimamente escolhido devido a algumas razões:
 
-- First of all, a <a href="https://react.dev/" target=_blank>React</a> based framework was decided, as opposed to something like <a href="https://angular.dev/" target=_blank>Angular</a> or <a href="https://vuejs.org/" target=_blank>Vue.js</a>, due to my familiarity to <a href="https://react.dev/" target=_blank>React</a> and the current wide use of <a href="https://react.dev/" target=_blank>React</a> based frameworks;
-- Due to the simple nature of the project, it being only showcasing my projects and some of my information, pretty much entirely out of text and images (static content), a more complex framework, like <a href="https://nextjs.org/" target=_blank>Next.js</a> or <a href="https://remix.run/" target=_blank>Remix</a>, would be overkill and unnecessary, and were therefore discarded as optimal choices;
-- Next, the best choices for static content rendering were <a href="https://astro.build/" target=_blank>Astro</a> and <a href="https://www.gatsbyjs.com/" target=_blank>Gastby</a>, <a href="https://astro.build/" target=_blank>Astro</a> being ultimately chosen, due to being more performant;
+- Primeiramente, uma framework baseada em <a href="https://react.dev/" target=_blank>React</a> foi decidida, em vez de algo como <a href="https://angular.dev/" target=_blank>Angular</a> ou <a href="https://vuejs.org/" target=_blank>Vue.js</a>, devido à minha familiaridade com <a href="https://react.dev/" target=_blank>React</a> e a sua ampla utilização atual no ramo;
+- Devido à natureza simples deste projeto, sendo que serve apenas para demonstrar os meus projetos e alguma da minha informação, praticamente composto inteiramente de texto e imagens (conteúdo estático), uma framework mais complexa, como <a href="https://nextjs.org/" target=_blank>Next.js</a> ou <a href="https://remix.run/" target=_blank>Remix</a> seria excessivo e desnecessário, e foram portanto descartadas como opções indicadas;
+- De seguida, as melhores opções para renderizar conteúdo estático na web seriam <a href="https://astro.build/" target=_blank>Astro</a> e <a href="https://www.gatsbyjs.com/" target=_blank>Gastby</a>, tendo sido o primeiro finalmente escolhido por ter melhor desempenho;
 
-## Developed by
+## Desenvolvido por
 
 - [Leandro Pata](/about/)
