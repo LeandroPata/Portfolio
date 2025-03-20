@@ -6,6 +6,13 @@ export function getLangFromUrl(url: URL) {
 	return defaultLang;
 }
 
+export function getBaseUrl(url: URL) {
+	const baseUrl = url.pathname.split('/');
+	baseUrl.splice(1, 1);
+	//console.log(`${url.pathname}:${baseUrl}:${baseUrl.join('/')}`);
+	return baseUrl.join('/');
+}
+
 export function useTranslations(lang: keyof typeof ui) {
 	return function t(key: keyof (typeof ui)[typeof defaultLang]) {
 		return ui[lang][key] || ui[defaultLang][key];

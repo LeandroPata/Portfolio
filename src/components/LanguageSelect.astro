@@ -1,11 +1,16 @@
 ---
 import { languages } from '@/src/i18n/ui';
-import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	getBaseUrl,
+} from '@/src/i18n/utils';
 
 import getFlagEmoji from '@/src/utils/getLanguageFlag';
 
 const locale = getLangFromUrl(Astro.url);
-//const currentUrl = Astro.url;
+const baseUrl = getBaseUrl(Astro.url);
+console.log(baseUrl);
 const translatePath = useTranslatedPath(locale);
 ---
 
@@ -18,12 +23,12 @@ const translatePath = useTranslatedPath(locale);
 			Object.entries(languages).map(([lang, label]) =>
 				locale === lang ?
 					<option
-						value={translatePath('/', lang)}
+						value={translatePath(baseUrl, lang)}
 						selected
 					>
 						{getFlagEmoji(lang) + ' ' + label}
 					</option>
-				:	<option value={translatePath('/', lang)}>
+				:	<option value={translatePath(baseUrl, lang)}>
 						{getFlagEmoji(lang) + ' ' + label}
 					</option>
 			)

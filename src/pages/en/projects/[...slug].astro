@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 	//console.log(pages);
 
 	const paths = pages.map((page) => {
-		console.log(page);
+		//console.log(page);
 		return {
 			params: { slug: page.id || undefined },
 			props: page,
@@ -23,11 +23,8 @@ export async function getStaticPaths() {
 	return paths;
 }
 
-console.log('Test');
 const { slug } = Astro.params;
-console.log(Astro.props);
 const page = Astro.props;
-console.log(page);
 const { Content } = await render(page);
 ---
 
