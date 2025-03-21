@@ -29,6 +29,7 @@ const projectsPtCollection = defineCollection({
 		tags: z.array(z.string()),
 		img: z.string(),
 		img_alt: z.string().optional(),
+		imgs: z.array(z.string()).optional(),
 	}),
 });
 

@@ -13,7 +13,6 @@ imgs:
     /src/assets/projects/orderManagementApp/showClientOrder.png,
     /src/assets/projects/orderManagementApp/showOrderDetails.png,
     /src/assets/projects/orderManagementApp/showProductOrder.png,
-    /src/assets/projects/orderManagementApp/showProductOrderLandscape.png,
     /src/assets/projects/orderManagementApp/showProductQuantity.png,
     /src/assets/projects/orderManagementApp/mainMenu.png,
     /src/assets/projects/orderManagementApp/addMenu.png,

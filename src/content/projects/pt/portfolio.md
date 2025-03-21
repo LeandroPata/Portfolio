@@ -5,6 +5,13 @@ locale: pt
 publishDate: 2025-02-11 00:00:00
 img: /assets/stock-4.jpg
 img_alt: Portfolio Main Page
+imgs:
+  [
+    /src/assets/projects/portfolio/homePageDark.png,
+    /src/assets/projects/portfolio/homePageLight.png,
+    /src/assets/projects/portfolio/projectsPage.png,
+    /src/assets/projects/portfolio/aboutPage.png,
+  ]
 description: |
   Portfolio pessoal concebido para demonstrar os meus projetos e competências
 tags:
@@ -27,12 +34,12 @@ Decidi também usar <a href="https://astro.build/" target=_blank>Astro</a> pela 
 - Tradução para várias línguas;
 - Modo claro/escuro;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/portfolio/homePageDark.png' alt = 'HomePageDark' width=190>
   <img align='top' src='/src/assets/projects/portfolio/homePageLight.png' alt = 'HomePageLight' width=190>
   <img align='top' src='/src/assets/projects/portfolio/projectsPage.png' alt = 'ProjectsPage' width=190>
   <img align='top' src='/src/assets/projects/portfolio/aboutPage.png' alt = 'AboutPage' width=190>
-</p>
+</p> -->
 
 ## Tech utilizada
 

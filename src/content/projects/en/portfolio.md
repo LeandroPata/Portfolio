@@ -5,6 +5,13 @@ locale: en
 publishDate: 2025-02-11 00:00:00
 img: /assets/stock-4.jpg
 img_alt: Portfolio Main Page
+imgs:
+  [
+    /src/assets/projects/portfolio/homePageDark.png,
+    /src/assets/projects/portfolio/homePageLight.png,
+    /src/assets/projects/portfolio/projectsPage.png,
+    /src/assets/projects/portfolio/aboutPage.png,
+  ]
 description: |
   Personal portfolio designed to showcase my projects and skills.
 tags:
@@ -26,12 +33,12 @@ It was developed with the intent to showcase my projects and skills and concentr
 - Light/Dark Theme;
 - Translation to different languages;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/portfolio/homePageDark.png' alt = 'HomePageDark' width=190>
   <img align='top' src='/src/assets/projects/portfolio/homePageLight.png' alt = 'HomePageLight' width=190>
   <img align='top' src='/src/assets/projects/portfolio/projectsPage.png' alt = 'ProjectsPage' width=190>
   <img align='top' src='/src/assets/projects/portfolio/aboutPage.png' alt = 'AboutPage' width=190>
-</p>
+</p> -->
 
 ## Tech used
 

@@ -5,6 +5,14 @@ locale: pt
 publishDate: 2024-10-22 00:00:00
 img: /assets/stock-1.jpg
 img_alt: Member Management App Main Menu
+imgs:
+  [
+    /src/assets/projects/memberManagementApp/mainMenu.png,
+    /src/assets/projects/memberManagementApp/addMember.png,
+    /src/assets/projects/memberManagementApp/searchMember.png,
+    /src/assets/projects/memberManagementApp/profile.png,
+    /src/assets/projects/memberManagementApp/importExport.png,
+  ]
 description: |
   Projeto desenvolvido para auxiliar a gestão de membros de uma organização ou clube.
 tags:
@@ -30,13 +38,13 @@ tornar toda esta informação disponível em qualquer lugar, armazenando-a numa 
 - Apagar membros;
 - Importar/Exportar informação de membros para/de ficheiros .csv de forma a facilitar a partilha e/ou edição;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/memberManagementApp/mainMenu.png' alt = 'MainMenu' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/addMember.png' alt = 'AddMemberMenu' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/searchMember.png' alt = 'SearchMemberMenu' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/profile.png' alt = 'Profile' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/importExport.png' alt = 'ImportExportMenu' width=190>
-</p>
+</p> -->
 
 ### Funcionalidades Gerais
 
@@ -46,10 +54,10 @@ tornar toda esta informação disponível em qualquer lugar, armazenando-a numa 
 - Modo claro/escuro;
 - Verificação de atualizações (como isto é um projeto pessoal, publicar nas App Stores não é viável, logo um sistema de atualizações diferente foi implementado, não possível para iOS);
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/memberManagementApp/drawerLight.png' alt = 'DrawerLightMode' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/drawerDark.png' alt = 'DrawerDarkMode' width=190>
-</p>
+</p> -->
 
 ## Notas Técnicas
 

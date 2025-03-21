@@ -23,10 +23,9 @@ export async function getStaticPaths() {
 	return paths;
 }
 
-const { slug } = Astro.params;
+//const { slug } = Astro.params;
 const page = Astro.props;
 const { Content } = await render(page);
-console.log(page.data.imgs);
 ---
 
 <Layout
@@ -56,11 +55,8 @@ console.log(page.data.imgs);
 					</Hero>
 				</div>
 			</header>
-			<main
-				class='wrapper'
-				transition:animate='slide'
-			>
-				<div class='stack gap-10 content cover'>
+			<main transition:animate='slide'>
+				<div class='stack gap-10 content cover wrapper'>
 					{
 						page.data.img && (
 							<img
@@ -70,24 +66,24 @@ console.log(page.data.imgs);
 						)
 					}
 				</div>
+				<div class='row gap-10 content'>
+					<div class='column images'>
+						{
+							page.data.imgs.map((img) => (
+								<div class='click-zoom'>
+									<label>
+										<input type='checkbox' />
+										<img src={img} />
+									</label>
+								</div>
+							))
+						}
+					</div>
+					<div class='column text content'>
+						<Content />
+					</div>
+				</div>
 			</main>
-			<div class='row gap-10 content'>
-				<div class='column text content'>
-					<Content />
-				</div>
-				<div class='column images'>
-					{
-						page.data.imgs.map((img) => (
-							<div class='click-zoom'>
-								<label>
-									<input type='checkbox' />
-									<img src={img} />
-								</label>
-							</div>
-						))
-					}
-				</div>
-			</div>
 		</div>
 	</div>
 </Layout>
@@ -150,17 +146,10 @@ console.log(page.data.imgs);
 
 	.images {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		flex-wrap: wrap;
 		align-items: center;
-	}
-
-	.text :global(img) {
-		align-self: center;
-		max-height: 50ch;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-sm);
-		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
+		justify-content: center;
 	}
 
 	.click-zoom input[type='checkbox'] {
@@ -168,7 +157,7 @@ console.log(page.data.imgs);
 	}
 
 	.click-zoom img {
-		margin: 100px;
+		margin: 1ch;
 		transition: transform 0.25s ease;
 		cursor: zoom-in;
 	}
@@ -180,7 +169,7 @@ console.log(page.data.imgs);
 
 	.images :global(img) {
 		align-self: center;
-		max-height: 50ch;
+		max-height: 30ch;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
@@ -211,16 +200,21 @@ console.log(page.data.imgs);
 
 	@media (min-width: 50em) {
 		.column {
-			float: left;
-			padding: 10px;
+			float: right;
+			padding: 1ch;
 		}
 
 		.text {
-			width: 70%;
+			width: 65%;
+		}
+
+		.images :global(img) {
+			max-height: 50ch;
+			max-width: 35ch;
 		}
 
 		.images {
-			width: 30%;
+			width: 35%;
 			display: flex;
 			flex-direction: column;
 		}
@@ -237,6 +231,9 @@ console.log(page.data.imgs);
 		.images {
 			display: grid;
 			grid-template-columns: auto auto;
+			column-gap: 0ch;
+			align-items: center;
+			justify-items: center;
 		}
 	}
 </style>

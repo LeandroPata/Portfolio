@@ -5,6 +5,22 @@ locale: pt
 publishDate: 2024-12-19 00:00:00
 img: /assets/stock-3.jpg
 img_alt: Order Management App Main Menu
+imgs:
+  [
+    /src/assets/projects/orderManagementApp/addClient.png,
+    /src/assets/projects/orderManagementApp/addProduct.png,
+    /src/assets/projects/orderManagementApp/addOrder.png,
+    /src/assets/projects/orderManagementApp/showClientOrder.png,
+    /src/assets/projects/orderManagementApp/showOrderDetails.png,
+    /src/assets/projects/orderManagementApp/showProductOrder.png,
+    /src/assets/projects/orderManagementApp/showProductQuantity.png,
+    /src/assets/projects/orderManagementApp/mainMenu.png,
+    /src/assets/projects/orderManagementApp/addMenu.png,
+    /src/assets/projects/orderManagementApp/showMenu.png,
+    /src/assets/projects/orderManagementApp/importExport.png,
+    /src/assets/projects/orderManagementApp/drawerLight.png,
+    /src/assets/projects/orderManagementApp/drawerDark.png,
+  ]
 description: |
   Projeto desenvolvido para auxiliar a gestão encomendas.
 tags:
@@ -25,41 +41,41 @@ Foi desenvolvido com o objetivo de permitir a consulta das encomendas atuais, qu
 
 - Adicionar Clientes, Produtos e Encomendas para uma base de dados;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/addClient.png' alt = 'AddClient' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/addProduct.png' alt = 'AddProduct' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/addOrder.png' alt = 'AddOrder' width=190>
-</p>
+</p> -->
 
 - Consultar encomendas de um cliente específico;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/showClientOrder.png' alt = 'ShowClientOrder' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/showOrderDetails.png' alt = 'ShowOrderDetails' width=190>
-</p>
+</p> -->
 
 - Consultar encomendas de um produto específico;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/showProductOrder.png' alt = 'ShowProductOrder' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/showProductOrderLandscape.png' alt = 'ShowProductOrderLandscape' height=350>
-</p>
+</p> -->
 
 - Consultar as quantidades de todos os produtos incluídos atualmente em encomendas;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/showProductQuantity.png' alt = 'ShowProductQuantity' width=190>
-</p>
+</p> -->
 
 - Atualizar o estado da encomenda(quando uma linha de uma DataTable é premida continuamente);
 - Importar/Exportar informação de membros para/de ficheiros .csv de forma a facilitar a partilha e/ou edição;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/mainMenu.png' alt = 'MainMenu' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/addMenu.png' alt = 'AddMenu' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/showMenu.png' alt = 'ShowMenu' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/importExport.png' alt = 'ImportExportMenu' width=190>
-</p>
+</p> -->
 
 ### Funcionalidades Gerais
 
@@ -69,10 +85,10 @@ Foi desenvolvido com o objetivo de permitir a consulta das encomendas atuais, qu
 - Modo claro/escuro;
 - Verificação de atualizações (como isto é um projeto pessoal, publicar nas App Stores não é viável, logo um sistema de atualizações diferente foi implementado, não possível para iOS);
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/drawerLight.png' alt = 'DrawerLight' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/drawerDark.png' alt = 'DrawerDark' width=190>
-</p>
+</p> -->
 
 ## Notas Técnicas
 
