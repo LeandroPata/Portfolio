@@ -5,6 +5,23 @@ locale: en
 publishDate: 2024-12-19 00:00:00
 img: /assets/stock-3.jpg
 img_alt: Order Management App Main Menu
+imgs:
+  [
+    /src/assets/projects/orderManagementApp/addClient.png,
+    /src/assets/projects/orderManagementApp/addProduct.png,
+    /src/assets/projects/orderManagementApp/addOrder.png,
+    /src/assets/projects/orderManagementApp/showClientOrder.png,
+    /src/assets/projects/orderManagementApp/showOrderDetails.png,
+    /src/assets/projects/orderManagementApp/showProductOrder.png,
+    /src/assets/projects/orderManagementApp/showProductOrderLandscape.png,
+    /src/assets/projects/orderManagementApp/showProductQuantity.png,
+    /src/assets/projects/orderManagementApp/mainMenu.png,
+    /src/assets/projects/orderManagementApp/addMenu.png,
+    /src/assets/projects/orderManagementApp/showMenu.png,
+    /src/assets/projects/orderManagementApp/importExport.png,
+    /src/assets/projects/orderManagementApp/drawerLight.png,
+    /src/assets/projects/orderManagementApp/drawerDark.png,
+  ]
 description: |
   Project developed to help manage orders.
 tags:
@@ -25,41 +42,41 @@ It was developed with the intent to accurately, quickly and easily check current
 
 - Add Clients, Products and Orders to a cloud database;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/addClient.png' alt = 'AddClient' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/addProduct.png' alt = 'AddProduct' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/addOrder.png' alt = 'AddOrder' width=190>
-</p>
+</p> -->
 
 - Show orders from a specific client;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/showClientOrder.png' alt = 'ShowClientOrder' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/showOrderDetails.png' alt = 'ShowOrderDetails' width=190>
-</p>
+</p> -->
 
 - Show orders of a specific product;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/showProductOrder.png' alt = 'ShowProductOrder' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/showProductOrderLandscape.png' alt = 'ShowProductOrderLandscape' height=350>
-</p>
+</p> -->
 
 - Show the quantities of all products currently ordered;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/showProductQuantity.png' alt = 'ShowProductQuantity' width=190>
-</p>
+</p> -->
 
 - Updating a order's status(long pressing on a DataTable's row);
 - Import/Export of clients, products and orders databases to/from .csv files in order to facilitate sharing and/or editing;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/mainMenu.png' alt = 'MainMenu' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/addMenu.png' alt = 'AddMenu' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/showMenu.png' alt = 'ShowMenu' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/importExport.png' alt = 'ImportExportMenu' width=190>
-</p>
+</p>-->
 
 ### General Features
 
@@ -69,10 +86,10 @@ It was developed with the intent to accurately, quickly and easily check current
 - Light/Dark Theme;
 - Checking for updates (as it is a personal project, publishing in App Stores isn't feasible, so a different update checking system was implemented, not possible for iOS);
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/orderManagementApp/drawerLight.png' alt = 'DrawerLight' width=190>
   <img align='top' src='/src/assets/projects/orderManagementApp/drawerDark.png' alt = 'DrawerDark' width=190>
-</p>
+</p> -->
 
 ## Technical Notes
 

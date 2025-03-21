@@ -5,6 +5,14 @@ locale: en
 publishDate: 2024-10-22 00:00:00
 img: /assets/stock-1.jpg
 img_alt: Member Management App Main Menu
+imgs:
+  [
+    /src/assets/projects/memberManagementApp/mainMenu.png,
+    /src/assets/projects/memberManagementApp/addMember.png,
+    /src/assets/projects/memberManagementApp/searchMember.png,
+    /src/assets/projects/memberManagementApp/profile.png,
+    /src/assets/projects/memberManagementApp/importExport.png,
+  ]
 description: |
   Project developed to help manage members of an organization or club.
 tags:
@@ -29,13 +37,13 @@ It was developed with the intent to quickly and easily create a member profile, 
 - Delete members;
 - Import/Export of members information to/from .csv files in order to facilitate sharing and/or editing;
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/memberManagementApp/mainMenu.png' alt = 'MainMenu' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/addMember.png' alt = 'AddMemberMenu' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/searchMember.png' alt = 'SearchMemberMenu' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/profile.png' alt = 'Profile' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/importExport.png' alt = 'ImportExportMenu' width=190>
-</p>
+</p> -->
 
 ### General Features
 
@@ -45,10 +53,10 @@ It was developed with the intent to quickly and easily create a member profile, 
 - Light/Dark Theme;
 - Checking for updates (as it is a personal project, publishing in App Stores isn't feasible, so a different update checking system was implemented, not possible for iOS);
 
-<p align='middle'>
+<!-- <p align='middle'>
   <img align='top' src='/src/assets/projects/memberManagementApp/drawerLight.png' alt = 'DrawerLightMode' width=190>
   <img align='top' src='/src/assets/projects/memberManagementApp/drawerDark.png' alt = 'DrawerDarkMode' width=190>
-</p>
+</p> -->
 
 ## Technical Notes
 
