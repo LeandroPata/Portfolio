@@ -5,7 +5,7 @@ interface Props {
 	align?: 'start' | 'center';
 }
 
-const { align = 'center', tagline, title } = Astro.props;
+const { title, tagline, align = 'center' } = Astro.props;
 ---
 
 <div class:list={['hero stack gap-4', align]}>

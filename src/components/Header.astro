@@ -2,6 +2,10 @@
 // Header
 import '@/src/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 interface Props {
 	title?: string | undefined;
@@ -9,8 +13,8 @@ interface Props {
 }
 
 const {
-	title = 'Leandro Pata | Portfolio',
-	description = 'Personal site of Leandro Pata',
+	title = `${t('header.title')} | Leandro Pata`,
+	description = t('header.description'),
 } = Astro.props;
 ---
 
@@ -78,20 +82,6 @@ const {
 		}
 	}
 
-	const getLanguagePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('language'))
-			return localStorage.getItem('language');
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ?
-				'dark'
-			:	'light';
-	};
-
-	function applyLanguage() {
-		localStorage.setItem('locale', Astro.currentLocale);
-		//console.log(Astro.currentLocale);
-	}
-
 	document.addEventListener('astro:after-swap', applyTheme);
 	applyTheme();
-	applyLanguage();
 </script>

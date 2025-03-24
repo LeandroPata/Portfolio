@@ -10,7 +10,7 @@ import getFlagEmoji from '@/src/utils/getLanguageFlag';
 
 const locale = getLangFromUrl(Astro.url);
 const baseUrl = getBaseUrl(Astro.url);
-console.log(baseUrl);
+//console.log(baseUrl);
 const translatePath = useTranslatedPath(locale);
 ---
 
@@ -48,21 +48,46 @@ const translatePath = useTranslatedPath(locale);
 <script>
 	import { navigate } from 'astro:transitions/client';
 
+	function saveLanguage(locale: string) {
+		console.log('saveLanguage: ' + locale);
+		localStorage.setItem('locale', locale);
+	}
+
+	const getLanguagePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('locale'))
+			return localStorage.getItem('locale');
+	};
+
 	class LanguageSelect extends HTMLElement {
 		constructor() {
 			super();
-
 			const select = this.querySelector('select')!;
+
+			/* const setLocale = (newLocale) => {
+				console.log('SavedLocale: ' + savedLocale);
+
+				if (newLocale) {
+					saveLanguage(newLocale);
+					navigate(newLocale);
+				}
+			}; */
 
 			// Change language when a new value is selected
 			select.addEventListener('change', this.setLanguage);
+
+			//setLocale(savedLocale);
 		}
 
 		// Set the language to current value
 		setLanguage(event) {
 			const selectedLanguage = event.target.value;
+			console.log('SelectedLanguage: ' + selectedLanguage);
 			if (selectedLanguage) {
-				navigate(selectedLanguage);
+				const currentLanguage = getLanguagePreference();
+				if (currentLanguage && selectedLanguage != currentLanguage) {
+					saveLanguage(selectedLanguage);
+					navigate(selectedLanguage);
+				}
 			}
 		}
 	}

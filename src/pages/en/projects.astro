@@ -7,16 +7,17 @@ import Grid from '@/src/components/Grid.astro';
 import { loadCollection } from '@/src/utils/loadData';
 
 // Locale
-import { getLangFromUrl } from '@/src/i18n/utils';
+import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 
 const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 const projects = await loadCollection(locale);
 ---
 
 <Layout
-	title='My Projects | Leandro Pata'
-	description="Learn about Leandro Pata's projects'"
+	title={t('projects.title') + ' | Leandro Pata'}
+	description={t('projects.description')}
 >
 	<div class='stack gap-20'>
 		<main
@@ -24,8 +25,8 @@ const projects = await loadCollection(locale);
 			transition:animate='fade'
 		>
 			<Hero
-				title='My Projects'
-				tagline='See all my projects to get an idea of my past experience'
+				title={t('projects.title')}
+				tagline={t('projects.tagline')}
 				align='center'
 			/>
 			<Grid variant='offset'>

@@ -1,17 +1,21 @@
 ---
-import Icon from '@/src/components/Icon.astro';
 import { SOCIAL_LINKS } from '@/src/utils/constants';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const currentYear = new Date().getFullYear();
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
 <footer>
 	<p>
-		Designed & Developed with <a
+		{t('footer.designed')}
+		<a
 			href='https://astro.build/'
 			target='_blank'
 			>Astro</a
-		> by Leandro Pata
+		>
+		{t('footer.by')}
 	</p>
 	<p>&copy; {currentYear} Leandro Pata</p>
 	<p class='socials'>

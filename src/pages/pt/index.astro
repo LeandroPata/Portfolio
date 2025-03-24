@@ -15,9 +15,10 @@ import { loadCollection } from '@/src/utils/loadData';
 import Skills from '@/src/components/Skills.astro';
 
 // Locale
-import { getLangFromUrl } from '@/src/i18n/utils';
+import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 
 const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 const projects = await loadCollection(locale);
 ---
@@ -27,8 +28,8 @@ const projects = await loadCollection(locale);
 		<div class='wrapper stack gap-8 lg:gap-20'>
 			<header class='hero'>
 				<Hero
-					title='Test Title'
-					tagline='Test tagline'
+					title={t('index.title')}
+					tagline={t('index.tagline')}
 					align='center'
 				>
 					<div class='roles'>
@@ -36,7 +37,7 @@ const projects = await loadCollection(locale);
 							<Icon
 								icon='code'
 								size='1.33em'
-							/>Developer
+							/>{t('index.tag1')}
 						</Pill>
 					</div>
 				</Hero>
@@ -51,7 +52,7 @@ const projects = await loadCollection(locale);
 		>
 			<section class='section with-background with-cta'>
 				<header class='section-header stack gap-2 lg:gap-4'>
-					<h3>Selected Projects</h3>
+					<h3>{t('index.selectedProjects')}</h3>
 				</header>
 
 				<div class='gallery'>
@@ -68,7 +69,7 @@ const projects = await loadCollection(locale);
 
 				<div class='cta'>
 					<CallToAction href='/projects/'>
-						View All
+						{t('index.viewAll')}
 						<Icon
 							icon='arrow-right'
 							size='1.2em'

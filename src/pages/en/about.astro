@@ -2,11 +2,15 @@
 import Layout from '@/src/layouts/Layout.astro';
 
 import Hero from '@/src/components/Hero.astro';
+import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
 <Layout
-	title='About | Leandro Pata'
-	description='About Leandro Pata'
+	title={t('about.title') + ' | Leandro Pata'}
+	description={t('about.description')}
 >
 	<div class='stack gap-20'>
 		<main
@@ -14,49 +18,30 @@ import Hero from '@/src/components/Hero.astro';
 			transition:animate='fade'
 		>
 			<Hero
-				title='About'
-				tagline='Thanks for stopping by.'
+				title={t('about.title')}
+				tagline={t('about.tagline')}
 			/>
 
 			<section>
-				<h2 class='section-title'>Background</h2>
+				<h2 class='section-title'>{t('about.section1')}</h2>
 				<div class='content'>
 					<p>
-						Lorem ipsum dolor sit amet, <a href='https://astro.build/'>Astro</a>
-						makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum
-						vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra
-						diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus
-						in ornare.
-					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget
-						gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat
-						pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh
-						venenatis cras sed felis eget velit. Id diam vel quam elementum
-						pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut
-						sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor
-						posuere ac ut consequat semper viverra. Viverra accumsan in nisl
-						nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
+						{t('about.content1')}
 					</p>
 				</div>
 			</section>
 
 			<section>
-				<h2 class='section-title'>Education</h2>
+				<h2 class='section-title'>{t('about.section2')}</h2>
 				<div class='content'>
-					<p>Corporis voluptates tenetur laudantium.</p>
+					<p>{t('about.content2')}</p>
 				</div>
 			</section>
 
 			<section>
-				<h2 class='section-title'>Skills</h2>
+				<h2 class='section-title'>{t('about.section3')}</h2>
 				<div class='content'>
-					<p>officia unde omnis</p>
+					<p>{t('about.content3')}</p>
 				</div>
 			</section>
 		</main>

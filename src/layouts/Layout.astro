@@ -2,13 +2,6 @@
 // Header
 import Header from '@/src/components/Header.astro';
 
-interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
-}
-
-const { title, description } = Astro.props;
-
 // Nav
 import Nav from '@/src/components/Nav.astro';
 
@@ -16,9 +9,17 @@ import Nav from '@/src/components/Nav.astro';
 import Footer from '@/src/components/Footer.astro';
 
 // Locale
-import { getLangFromUrl } from '@/src/i18n/utils';
+import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 
 const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+interface Props {
+	title?: string;
+	description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <html lang={locale}>
