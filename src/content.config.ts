@@ -8,6 +8,7 @@ const projectsEnCollection = defineCollection({
 		title: z.string(),
 		slug: z.string(),
 		locale: z.enum(['en', 'pt']),
+		github_url: z.string(),
 		description: z.string(),
 		publishDate: z.coerce.date(),
 		tags: z.array(z.string()),
@@ -18,12 +19,13 @@ const projectsEnCollection = defineCollection({
 });
 
 const projectsPtCollection = defineCollection({
-	// Load Markdown files in the src/content/en/projects directory
+	// Load Markdown files in the src/content/pt/projects directory
 	loader: glob({ pattern: '**/*.md', base: './src/content/projects/pt' }),
 	schema: z.object({
 		title: z.string(),
 		slug: z.string(),
 		locale: z.enum(['en', 'pt']),
+		github_url: z.string(),
 		description: z.string(),
 		publishDate: z.coerce.date(),
 		tags: z.array(z.string()),
