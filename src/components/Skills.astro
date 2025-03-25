@@ -7,7 +7,10 @@ const t = useTranslations(locale);
 ---
 
 <section class='box skills'>
-	<div class='stack gap-2 lg:gap-4'>
+	<div
+		class='stack gap-2 lg:gap-4'
+		style='align-items: center'
+	>
 		<Icon
 			icon='terminal-window'
 			color='var(--accent-regular)'
@@ -19,9 +22,12 @@ const t = useTranslations(locale);
 			{t('skills.text1')}
 		</p>
 	</div>
-	<div class='stack gap-2 lg:gap-4'>
+	<div
+		class='stack gap-2 lg:gap-4'
+		style='align-items: center'
+	>
 		<Icon
-			icon='trophy'
+			icon='puzzle-piece'
 			color='var(--accent-regular)'
 			size='2.5rem'
 			gradient
@@ -31,9 +37,12 @@ const t = useTranslations(locale);
 			{t('skills.text2')}
 		</p>
 	</div>
-	<div class='stack gap-2 lg:gap-4'>
+	<div
+		class='stack gap-2 lg:gap-4'
+		style='align-items: center'
+	>
 		<Icon
-			icon='strategy'
+			icon='shuffle'
 			color='var(--accent-regular)'
 			size='2.5rem'
 			gradient
@@ -60,6 +69,7 @@ const t = useTranslations(locale);
 
 	.skills h2 {
 		font-size: var(--text-lg);
+		text-align: center;
 	}
 
 	.skills p {

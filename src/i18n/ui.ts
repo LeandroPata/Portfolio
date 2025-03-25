@@ -11,14 +11,11 @@ export const ui = {
 		'nav.projects': 'Projects',
 		'nav.about': 'About',
 		'skills.title1': 'Full Stack',
-		'skills.title2': 'Industry Leader',
-		'skills.title3': 'Strategy-Minded',
-		'skills.text1':
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'skills.text2':
-			'Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor elit.',
-		'skills.text3':
-			'Urna porttitor rhoncus dolor purus non enim praesent ornare.',
+		'skills.title2': 'Problem Solving',
+		'skills.title3': 'Adaptability',
+		'skills.text1': '',
+		'skills.text2': '',
+		'skills.text3': '',
 		'header.title': 'Portfolio',
 		'header.description': 'Personal site of Leandro Pata',
 		'footer.designed': 'Designed and Developed with',
@@ -47,14 +44,11 @@ export const ui = {
 		'nav.projects': 'Projetos',
 		'nav.about': 'Sobre',
 		'skills.title1': 'Full Stack',
-		'skills.title2': 'Líder',
-		'skills.title3': 'Estratégia',
-		'skills.text1':
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
-		'skills.text2':
-			'Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor elit.',
-		'skills.text3':
-			'Urna porttitor rhoncus dolor purus non enim praesent ornare.',
+		'skills.title2': 'Resolução de Problemas',
+		'skills.title3': 'Adaptabilidade',
+		'skills.text1': '',
+		'skills.text2': '',
+		'skills.text3': '',
 		'header.title': 'Portfolio',
 		'header.description': 'Personal site of Leandro Pata',
 		'footer.designed': 'Concebido e desenvolvido com',
