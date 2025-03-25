@@ -2,8 +2,8 @@
 import Layout from '@/src/layouts/Layout.astro';
 
 import Hero from '@/src/components/Hero.astro';
-import Icon from '@/src/components/Icon.astro';
 import Pill from '@/src/components/Pill.astro';
+import ContactCTA from '@/src/components/ContactCTA.astro';
 import { loadCollection } from '@/src/utils/loadData';
 import { render } from 'astro:content';
 import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
@@ -88,6 +88,7 @@ const { Content } = await render(page);
 				</div>
 			</main>
 		</div>
+		<ContactCTA />
 	</div>
 </Layout>
 

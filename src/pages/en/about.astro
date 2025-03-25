@@ -3,6 +3,7 @@ import Layout from '@/src/layouts/Layout.astro';
 
 import Hero from '@/src/components/Hero.astro';
 import Pill from '@/src/components/Pill.astro';
+import ContactCTA from '@/src/components/ContactCTA.astro';
 import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 
 const locale = getLangFromUrl(Astro.url);
@@ -55,6 +56,7 @@ const t = useTranslations(locale);
 				</div>
 			</section>
 		</main>
+		<ContactCTA />
 	</div>
 </Layout>
 

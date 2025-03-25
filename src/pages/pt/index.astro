@@ -8,6 +8,7 @@ import Grid from '@/src/components/Grid.astro';
 import Hero from '@/src/components/Hero.astro';
 import Icon from '@/src/components/Icon.astro';
 import Pill from '@/src/components/Pill.astro';
+import ContactCTA from '@/src/components/ContactCTA.astro';
 import ProjectPreview from '@/src/components/ProjectPreview.astro';
 import { loadCollection } from '@/src/utils/loadData';
 
@@ -108,6 +109,7 @@ const projects = await loadCollection(locale);
 				</div>
 			</section> -->
 		</main>
+		<ContactCTA />
 	</div>
 </Layout>
 

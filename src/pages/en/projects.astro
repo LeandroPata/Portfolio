@@ -1,9 +1,10 @@
 ---
 import Layout from '@/src/layouts/Layout.astro';
 
-import ProjectPreview from '@/src/components/ProjectPreview.astro';
 import Hero from '@/src/components/Hero.astro';
 import Grid from '@/src/components/Grid.astro';
+import ContactCTA from '@/src/components/ContactCTA.astro';
+import ProjectPreview from '@/src/components/ProjectPreview.astro';
 import { loadCollection } from '@/src/utils/loadData';
 
 // Locale
@@ -39,5 +40,6 @@ const projects = await loadCollection(locale);
 				}
 			</Grid>
 		</main>
+		<ContactCTA />
 	</div>
 </Layout>
