@@ -2,10 +2,13 @@
 import Layout from '@/src/layouts/Layout.astro';
 
 import Hero from '@/src/components/Hero.astro';
+import Pill from '@/src/components/Pill.astro';
 import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
+//console.log(typeof t('about.content2'));
+//console.log(typeof t('about.content3'));
 ---
 
 <Layout
@@ -23,25 +26,32 @@ const t = useTranslations(locale);
 			/>
 
 			<section>
-				<h2 class='section-title'>{t('about.section1')}</h2>
+				<h2 class='section-title'>{t('about.backgroundTitle')}</h2>
 				<div class='content'>
 					<p>
-						{t('about.content1')}
+						{t('about.backgroundContent')}
 					</p>
 				</div>
 			</section>
 
 			<section>
-				<h2 class='section-title'>{t('about.section2')}</h2>
+				<h2 class='section-title'>{t('about.educationTitle')}</h2>
 				<div class='content'>
-					<p>{t('about.content2')}</p>
+					<p>{t('about.educationContent')}</p>
 				</div>
 			</section>
 
 			<section>
-				<h2 class='section-title'>{t('about.section3')}</h2>
+				<h2 class='section-title'>{t('about.workTitle')}</h2>
 				<div class='content'>
-					<p>{t('about.content3')}</p>
+					<p>{t('about.workContent')}</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class='section-title'>{t('about.skillsTitle')}</h2>
+				<div class='content skills'>
+					{t('about.skillsContent').map((skill) => <Pill>{skill}</Pill>)}
 				</div>
 			</section>
 		</main>
@@ -72,6 +82,12 @@ const t = useTranslations(locale);
 		grid-column-start: 1;
 		font-size: var(--text-xl);
 		color: var(--gray-0);
+	}
+
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
 	}
 
 	.content {
