@@ -15,9 +15,14 @@ import { loadCollection } from '@/src/utils/loadData';
 import Skills from '@/src/components/Skills.astro';
 
 // Locale
-import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	useTranslations,
+} from '@/src/i18n/utils';
 
 const locale = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(locale);
 const t = useTranslations(locale);
 
 const projects = await loadCollection(locale);
@@ -68,7 +73,7 @@ const projects = await loadCollection(locale);
 				</div>
 
 				<div class='cta'>
-					<CallToAction href='/projects/'>
+					<CallToAction href={translatePath('/projects/', locale)}>
 						{t('index.viewAll')}
 						<Icon
 							icon='arrow-right'
