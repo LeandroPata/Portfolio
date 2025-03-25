@@ -6,6 +6,10 @@ import Icon from '@/src/components/Icon.astro';
 import Pill from '@/src/components/Pill.astro';
 import { loadCollection } from '@/src/utils/loadData';
 import { render } from 'astro:content';
+import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
+
+const locale = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(locale);
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 export async function getStaticPaths() {
@@ -36,13 +40,6 @@ const { Content } = await render(page);
 		<div class='stack gap-15'>
 			<header>
 				<div class='wrapper stack gap-2'>
-					<a
-						class='back-link'
-						href='/projects/'
-					>
-						<Icon icon='arrow-left' />
-						Projects
-					</a>
 					<Hero
 						title={page.data.title.split('|')[0].trim()}
 						align='start'
@@ -98,10 +95,6 @@ const { Content } = await render(page);
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);
-	}
-
-	.back-link {
-		display: none;
 	}
 
 	.details {
@@ -201,7 +194,6 @@ const { Content } = await render(page);
 		color: var(--gray-0);
 	}
 
-	.back-link,
 	.content :global(a) {
 		text-decoration: 1px solid underline transparent;
 		text-underline-offset: 0.25em;
