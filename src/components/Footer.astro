@@ -1,5 +1,5 @@
 ---
-import { SOCIAL_LINKS } from '@/src/utils/constants';
+import { LINKS } from '@/src/utils/constants';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const currentYear = new Date().getFullYear();
@@ -20,13 +20,13 @@ const t = useTranslations(locale);
 	<p>&copy; {currentYear} Leandro Pata</p>
 	<p class='socials'>
 		<a
-			href={SOCIAL_LINKS.GITHUB}
+			href={LINKS.GITHUB}
 			target='_blank'
 		>
 			GitHub</a
 		>
 		<a
-			href={SOCIAL_LINKS.LINKEDIN}
+			href={LINKS.LINKEDIN}
 			target='_blank'
 		>
 			LinkedIn</a
