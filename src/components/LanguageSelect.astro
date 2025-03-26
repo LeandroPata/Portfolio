@@ -49,13 +49,15 @@ const translatePath = useTranslatedPath(locale);
 	import { navigate } from 'astro:transitions/client';
 
 	function saveLanguage(locale: string) {
-		console.log('saveLanguage: ' + locale);
+		//console.log('saveLanguage: ' + locale);
 		localStorage.setItem('locale', locale);
 	}
 
 	const getLanguagePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('locale'))
 			return localStorage.getItem('locale');
+		saveLanguage('/en/');
+		return '/en/';
 	};
 
 	class LanguageSelect extends HTMLElement {
