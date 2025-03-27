@@ -8,11 +8,17 @@ img: /assets/stock-1.jpg
 img_alt: Member Management App Main Menu
 imgs:
   [
-    /src/assets/projects/memberManagementApp/mainMenu.png,
-    /src/assets/projects/memberManagementApp/addMember.png,
-    /src/assets/projects/memberManagementApp/searchMember.png,
-    /src/assets/projects/memberManagementApp/profile.png,
-    /src/assets/projects/memberManagementApp/importExport.png,
+    ['/src/assets/projects/memberManagementApp/mainMenu.png', 'Main Menu'],
+    ['/src/assets/projects/memberManagementApp/addMember.png', 'Add Member'],
+    [
+      '/src/assets/projects/memberManagementApp/searchMember.png',
+      'Search Member',
+    ],
+    ['/src/assets/projects/memberManagementApp/profile.png', 'Profile'],
+    [
+      '/src/assets/projects/memberManagementApp/importExport.png',
+      'Import/Export',
+    ],
   ]
 description: |
   Project developed to help manage members of an organization or club.

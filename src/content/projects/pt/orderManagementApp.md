@@ -8,19 +8,49 @@ img: /assets/stock-3.jpg
 img_alt: Order Management App Main Menu
 imgs:
   [
-    /src/assets/projects/orderManagementApp/addClient.png,
-    /src/assets/projects/orderManagementApp/addProduct.png,
-    /src/assets/projects/orderManagementApp/addOrder.png,
-    /src/assets/projects/orderManagementApp/showClientOrder.png,
-    /src/assets/projects/orderManagementApp/showOrderDetails.png,
-    /src/assets/projects/orderManagementApp/showProductOrder.png,
-    /src/assets/projects/orderManagementApp/showProductQuantity.png,
-    /src/assets/projects/orderManagementApp/mainMenu.png,
-    /src/assets/projects/orderManagementApp/addMenu.png,
-    /src/assets/projects/orderManagementApp/showMenu.png,
-    /src/assets/projects/orderManagementApp/importExport.png,
-    /src/assets/projects/orderManagementApp/drawerLight.png,
-    /src/assets/projects/orderManagementApp/drawerDark.png,
+    [
+      '/src/assets/projects/orderManagementApp/addClient.png',
+      'Adicionar Cliente',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/addProduct.png',
+      'Adicionar Produto',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/addOrder.png',
+      'Adicionar Encomenda',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/showClientOrder.png',
+      'Mostrar Encomenda Cliente',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/showOrderDetails.png',
+      'Mostrar Detalhes de Encomenda',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/showProductOrder.png',
+      'Mostrar Encomenda Produto',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/showProductQuantity.png',
+      'Mostrar Quantidade Produto',
+    ],
+    ['/src/assets/projects/orderManagementApp/mainMenu.png', 'Menu Principal'],
+    ['/src/assets/projects/orderManagementApp/addMenu.png', 'Menu Adicionar'],
+    ['/src/assets/projects/orderManagementApp/showMenu.png', 'Menu Mostrar'],
+    [
+      '/src/assets/projects/orderManagementApp/importExport.png',
+      'Importar/Exportar',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/drawerLight.png',
+      'Gaveta Modo Claro',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/drawerDark.png',
+      'Gaveta Modo Escuro',
+    ],
   ]
 description: |
   Projeto desenvolvido para auxiliar a gestão encomendas.

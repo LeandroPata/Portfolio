@@ -70,7 +70,10 @@ const { Content } = await render(page);
 								<div class='click-zoom'>
 									<label>
 										<input type='checkbox' />
-										<img src={img} />
+										<img
+											src={img[0]}
+											alt={img[1]}
+										/>
 									</label>
 								</div>
 							))

@@ -8,10 +8,10 @@ img: /assets/stock-4.jpg
 img_alt: Portfolio Main Page
 imgs:
   [
-    /src/assets/projects/portfolio/homePageDark.png,
-    /src/assets/projects/portfolio/homePageLight.png,
-    /src/assets/projects/portfolio/projectsPage.png,
-    /src/assets/projects/portfolio/aboutPage.png,
+    ['/src/assets/projects/portfolio/homePageDark.png', 'Homepage Dark'],
+    ['/src/assets/projects/portfolio/homePageLight.png', 'Homepage Light'],
+    ['/src/assets/projects/portfolio/projectsPage.png', 'Projects Page'],
+    ['/src/assets/projects/portfolio/aboutPage.png', 'About Page'],
   ]
 description: |
   Personal portfolio designed to showcase my projects and skills.

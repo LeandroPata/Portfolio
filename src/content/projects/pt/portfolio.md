@@ -8,10 +8,16 @@ img: /assets/stock-4.jpg
 img_alt: Portfolio Main Page
 imgs:
   [
-    /src/assets/projects/portfolio/homePageDark.png,
-    /src/assets/projects/portfolio/homePageLight.png,
-    /src/assets/projects/portfolio/projectsPage.png,
-    /src/assets/projects/portfolio/aboutPage.png,
+    [
+      '/src/assets/projects/portfolio/homePageDark.png',
+      'Página Inicial Escura',
+    ],
+    [
+      '/src/assets/projects/portfolio/homePageLight.png',
+      'Página Inicial Clara',
+    ],
+    ['/src/assets/projects/portfolio/projectsPage.png', 'Página de Projetos'],
+    ['/src/assets/projects/portfolio/aboutPage.png', 'Página Sobre'],
   ]
 description: |
   Portfolio pessoal concebido para demonstrar os meus projetos e competências

@@ -8,19 +8,40 @@ img: /assets/stock-3.jpg
 img_alt: Order Management App Main Menu
 imgs:
   [
-    /src/assets/projects/orderManagementApp/addClient.png,
-    /src/assets/projects/orderManagementApp/addProduct.png,
-    /src/assets/projects/orderManagementApp/addOrder.png,
-    /src/assets/projects/orderManagementApp/showClientOrder.png,
-    /src/assets/projects/orderManagementApp/showOrderDetails.png,
-    /src/assets/projects/orderManagementApp/showProductOrder.png,
-    /src/assets/projects/orderManagementApp/showProductQuantity.png,
-    /src/assets/projects/orderManagementApp/mainMenu.png,
-    /src/assets/projects/orderManagementApp/addMenu.png,
-    /src/assets/projects/orderManagementApp/showMenu.png,
-    /src/assets/projects/orderManagementApp/importExport.png,
-    /src/assets/projects/orderManagementApp/drawerLight.png,
-    /src/assets/projects/orderManagementApp/drawerDark.png,
+    ['/src/assets/projects/orderManagementApp/addClient.png', 'Add Client'],
+    ['/src/assets/projects/orderManagementApp/addProduct.png', 'Add Product'],
+    ['/src/assets/projects/orderManagementApp/addOrder.png', 'Add Order'],
+    [
+      '/src/assets/projects/orderManagementApp/showClientOrder.png',
+      'Show Client Order',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/showOrderDetails.png',
+      'Show Order Details',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/showProductOrder.png',
+      'Show Product Order',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/showProductQuantity.png',
+      'Show Product Quantity',
+    ],
+    ['/src/assets/projects/orderManagementApp/mainMenu.png', 'Main Menu'],
+    ['/src/assets/projects/orderManagementApp/addMenu.png', 'Add Menu'],
+    ['/src/assets/projects/orderManagementApp/showMenu.png', 'Show Menu'],
+    [
+      '/src/assets/projects/orderManagementApp/importExport.png',
+      'Import/Export',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/drawerLight.png',
+      'Drawer Light Mode',
+    ],
+    [
+      '/src/assets/projects/orderManagementApp/drawerDark.png',
+      'Drawer Dark Mode',
+    ],
   ]
 description: |
   Project developed to help manage orders.
