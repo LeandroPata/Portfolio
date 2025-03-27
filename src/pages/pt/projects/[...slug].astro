@@ -6,10 +6,6 @@ import Pill from '@/src/components/Pill.astro';
 import ContactCTA from '@/src/components/ContactCTA.astro';
 import { loadCollection } from '@/src/utils/loadData';
 import { render } from 'astro:content';
-import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
-
-const locale = getLangFromUrl(Astro.url);
-const translatePath = useTranslatedPath(locale);
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 export async function getStaticPaths() {
@@ -67,7 +63,10 @@ const { Content } = await render(page);
 								<div class='click-zoom'>
 									<label>
 										<input type='checkbox' />
-										<img src={img} />
+										<img
+											src={img[0]}
+											alt={img[1]}
+										/>
 									</label>
 								</div>
 							))
