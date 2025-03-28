@@ -4,22 +4,19 @@ slug: memberManagementApp
 locale: pt
 github_url: https://github.com/LeandroPata/MemberManagementApp
 publishDate: 2024-10-22 00:00:00
-img: /assets/stock-1.jpg
-img_alt: Member Management App Main Menu
+img: /assets/projects/memberManagementApp/stock-1.jpg
+img_alt: Aplicação de Gestão de Membros Menu Principal
 imgs:
   [
-    ['/src/assets/projects/memberManagementApp/mainMenu.png', 'Menu Principal'],
+    ['/assets/projects/memberManagementApp/mainMenu.png', 'Menu Principal'],
+    ['/assets/projects/memberManagementApp/addMember.png', 'Adicionar Membro'],
     [
-      '/src/assets/projects/memberManagementApp/addMember.png',
-      'Adicionar Membro',
-    ],
-    [
-      '/src/assets/projects/memberManagementApp/searchMember.png',
+      '/assets/projects/memberManagementApp/searchMember.png',
       'Procurar Membro',
     ],
-    ['/src/assets/projects/memberManagementApp/profile.png', 'Perfil'],
+    ['/assets/projects/memberManagementApp/profile.png', 'Perfil'],
     [
-      '/src/assets/projects/memberManagementApp/importExport.png',
+      '/assets/projects/memberManagementApp/importExport.png',
       'Importar/Exportar',
     ],
   ]
