@@ -5,7 +5,7 @@ locale: pt
 github_url: https://github.com/LeandroPata/OrderManagementApp
 publishDate: 2024-12-19 00:00:00
 img: /assets/projects/orderManagementApp/stock-3.jpg
-img_alt: Order Management App Main Menu
+img_alt: Aplicação de Gestão de Encomendas Menu Principal
 imgs:
   [
     ['/assets/projects/orderManagementApp/addClient.png', 'Adicionar Cliente'],

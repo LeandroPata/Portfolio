@@ -5,7 +5,7 @@ locale: pt
 github_url: https://github.com/LeandroPata/Portfolio
 publishDate: 2025-02-11 00:00:00
 img: /assets/projects/portfolio/stock-4.jpg
-img_alt: Portfolio Main Page
+img_alt: Portfolio Página Inicial
 imgs:
   [
     ['/assets/projects/portfolio/homePageDark.png', 'Página Inicial Escura'],
