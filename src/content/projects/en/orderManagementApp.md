@@ -4,44 +4,38 @@ slug: orderManagementApp
 locale: en
 github_url: https://github.com/LeandroPata/OrderManagementApp
 publishDate: 2024-12-19 00:00:00
-img: /assets/stock-3.jpg
+img: /assets/projects/orderManagementApp/stock-3.jpg
 img_alt: Order Management App Main Menu
 imgs:
   [
-    ['/src/assets/projects/orderManagementApp/addClient.png', 'Add Client'],
-    ['/src/assets/projects/orderManagementApp/addProduct.png', 'Add Product'],
-    ['/src/assets/projects/orderManagementApp/addOrder.png', 'Add Order'],
+    ['/assets/projects/orderManagementApp/addClient.png', 'Add Client'],
+    ['/assets/projects/orderManagementApp/addProduct.png', 'Add Product'],
+    ['/assets/projects/orderManagementApp/addOrder.png', 'Add Order'],
     [
-      '/src/assets/projects/orderManagementApp/showClientOrder.png',
+      '/assets/projects/orderManagementApp/showClientOrder.png',
       'Show Client Order',
     ],
     [
-      '/src/assets/projects/orderManagementApp/showOrderDetails.png',
+      '/assets/projects/orderManagementApp/showOrderDetails.png',
       'Show Order Details',
     ],
     [
-      '/src/assets/projects/orderManagementApp/showProductOrder.png',
+      '/assets/projects/orderManagementApp/showProductOrder.png',
       'Show Product Order',
     ],
     [
-      '/src/assets/projects/orderManagementApp/showProductQuantity.png',
+      '/assets/projects/orderManagementApp/showProductQuantity.png',
       'Show Product Quantity',
     ],
-    ['/src/assets/projects/orderManagementApp/mainMenu.png', 'Main Menu'],
-    ['/src/assets/projects/orderManagementApp/addMenu.png', 'Add Menu'],
-    ['/src/assets/projects/orderManagementApp/showMenu.png', 'Show Menu'],
+    ['/assets/projects/orderManagementApp/mainMenu.png', 'Main Menu'],
+    ['/assets/projects/orderManagementApp/addMenu.png', 'Add Menu'],
+    ['/assets/projects/orderManagementApp/showMenu.png', 'Show Menu'],
+    ['/assets/projects/orderManagementApp/importExport.png', 'Import/Export'],
     [
-      '/src/assets/projects/orderManagementApp/importExport.png',
-      'Import/Export',
-    ],
-    [
-      '/src/assets/projects/orderManagementApp/drawerLight.png',
+      '/assets/projects/orderManagementApp/drawerLight.png',
       'Drawer Light Mode',
     ],
-    [
-      '/src/assets/projects/orderManagementApp/drawerDark.png',
-      'Drawer Dark Mode',
-    ],
+    ['/assets/projects/orderManagementApp/drawerDark.png', 'Drawer Dark Mode'],
   ]
 description: |
   Project developed to help manage orders.

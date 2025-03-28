@@ -52,6 +52,8 @@ const { Content } = await render(page);
 							<img
 								src={page.data.img}
 								alt={page.data.img_alt || ''}
+								loading='lazy'
+								decoding='async'
 							/>
 						)
 					}
@@ -66,6 +68,8 @@ const { Content } = await render(page);
 										<img
 											src={img[0]}
 											alt={img[1]}
+											loading='lazy'
+											decoding='async'
 										/>
 									</label>
 								</div>

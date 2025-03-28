@@ -4,21 +4,15 @@ slug: memberManagementApp
 locale: en
 github_url: https://github.com/LeandroPata/MemberManagementApp
 publishDate: 2024-10-22 00:00:00
-img: /assets/stock-1.jpg
+img: /assets/projects/memberManagementApp/stock-1.jpg
 img_alt: Member Management App Main Menu
 imgs:
   [
-    ['/src/assets/projects/memberManagementApp/mainMenu.png', 'Main Menu'],
-    ['/src/assets/projects/memberManagementApp/addMember.png', 'Add Member'],
-    [
-      '/src/assets/projects/memberManagementApp/searchMember.png',
-      'Search Member',
-    ],
-    ['/src/assets/projects/memberManagementApp/profile.png', 'Profile'],
-    [
-      '/src/assets/projects/memberManagementApp/importExport.png',
-      'Import/Export',
-    ],
+    ['/assets/projects/memberManagementApp/mainMenu.png', 'Main Menu'],
+    ['/assets/projects/memberManagementApp/addMember.png', 'Add Member'],
+    ['/assets/projects/memberManagementApp/searchMember.png', 'Search Member'],
+    ['/assets/projects/memberManagementApp/profile.png', 'Profile'],
+    ['/assets/projects/memberManagementApp/importExport.png', 'Import/Export'],
   ]
 description: |
   Project developed to help manage members of an organization or club.
