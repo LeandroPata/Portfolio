@@ -65,6 +65,12 @@ const {
 			:	'light';
 	};
 
+	const getLanguagePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('locale'))
+			return localStorage.getItem('locale');
+		return '/en/';
+	};
+
 	function applyTheme() {
 		const isDark = getThemePreference() === 'dark';
 		document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
@@ -82,6 +88,13 @@ const {
 		}
 	}
 
+	function applyLanguage() {
+		const locale = getLanguagePreference();
+		console.log('applyLanguage: ' + locale);
+		localStorage.setItem('locale', locale);
+	}
+
 	document.addEventListener('astro:after-swap', applyTheme);
 	applyTheme();
+	applyLanguage();
 </script>
