@@ -37,29 +37,24 @@ export const ui = {
 		'about.workTitle': 'Work Experience',
 		'about.skillsTitle': 'Skills',
 		'about.backgroundContent':
-			'Lorem ipsum dolor sit amet, Astro makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.',
+			"I'm currently creating and developing various personal projects, to further develop my skills and my problem solving ability. I am eager to learn and deepen my skills, and would like to gain some professional experience.",
 		'about.educationContent': [
 			[
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis laudantium.',
-				'Corporis voluptates.',
+				'Degree in Electrical and Computer Engineering',
+				'09/2017 - Present',
+				'Universidade de Coimbra, Coimbra',
 			],
 			[
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis voluptates tenetur laudantium.',
+				"Master's Degree in Electrical and Computer Engineering - Computer Branch",
+				'09/2021 - Present',
+				'Universidade de Coimbra, Coimbra',
 			],
 		],
 		'about.workContent': [
 			[
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis laudantium.',
-				'Corporis voluptates.',
-			],
-			[
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis voluptates tenetur laudantium.',
+				'IT Support Technician - European Parliament Elections 2024',
+				'SGMAI - Administração Eleitoral',
+				'06/2024 - Figueira da Foz',
 			],
 		],
 		'about.skillsContent': [
@@ -114,29 +109,24 @@ export const ui = {
 		'about.workTitle': 'Experiência Profissional',
 		'about.skillsTitle': 'Competências',
 		'about.backgroundContent':
-			'Lorem ipsum dolor sit amet, Astro makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.',
+			'Encontro-me neste momento a criar e desenvolver alguns projetos pessoais, com o objetivo de aprofundar conhecimentos e a capacidade de resolução de problemas. Possuo uma grande vontade de aprender e de aprofundar as minhas competências, e gostaria de ganhar alguma experiência profissional.',
 		'about.educationContent': [
 			[
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis laudantium.',
-				'Corporis voluptates.',
+				'Licenciatura em Engenharia Eletrotécnica e de Computadores',
+				'09/2017 - Atual',
+				'Universidade de Coimbra, Coimbra',
 			],
 			[
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis voluptates tenetur laudantium.',
+				'Mestrado em Engenharia Eletrotécnica e de Computadores - Ramo Computadores',
+				'09/2021 - Atual',
+				'Universidade de Coimbra, Coimbra',
 			],
 		],
 		'about.workContent': [
 			[
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis laudantium.',
-				'Corporis voluptates.',
-			],
-			[
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis voluptates tenetur laudantium.',
-				'Corporis voluptates tenetur laudantium.',
+				'Técnico de Apoio Informático - Eleições do Parlamento Europeu 2024',
+				'SGMAI - Administração Eleitoral',
+				'06/2024 - Figueira da Foz',
 			],
 		],
 		'about.skillsContent': [
