@@ -38,11 +38,11 @@ const t = useTranslations(locale);
 				<div class='content'>
 					{
 						t('about.educationContent').map((education) => (
-							<>
+							<div class='education'>
 								<h5 class='content-title'>{education[0]}</h5>
 								<h5 class='content-date'>{education[1]}</h5>
 								<p>{education[2]}</p>
-							</>
+							</div>
 						))
 					}
 				</div>
@@ -53,11 +53,11 @@ const t = useTranslations(locale);
 				<div class='content'>
 					{
 						t('about.workContent').map((work) => (
-							<>
+							<div class='work'>
 								<h5 class='content-title'>{work[0]}</h5>
 								<h5 class='content-date'>{work[1]}</h5>
 								<p>{work[2]}</p>
-							</>
+							</div>
 						))
 					}
 				</div>
@@ -110,6 +110,11 @@ const t = useTranslations(locale);
 		color: var(--gray-0);
 		margin-top: 0.5rem;
 		margin-bottom: 0.5rem;
+	}
+
+	.education,
+	.work {
+		margin-bottom: 2rem;
 	}
 
 	.skills {
