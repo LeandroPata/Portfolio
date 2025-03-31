@@ -7,7 +7,6 @@ export default defineConfig({
 	integrations: [
 		umami({
 			id: '70d6c3a8-dd33-4c44-aeb3-da69ddfcd2b9',
-			trackerScriptName: 'info.js',
 		}),
 	],
 	vite: {
