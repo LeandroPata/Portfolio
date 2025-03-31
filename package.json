@@ -9,7 +9,6 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@yeskunall/astro-umami": "^0.0.4",
 		"astro": "^5.5.2"
 	}
 }
