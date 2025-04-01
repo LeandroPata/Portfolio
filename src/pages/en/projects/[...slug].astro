@@ -139,8 +139,10 @@ const { Content } = await render(page);
 
 	.cover :global(img) {
 		align-self: center;
-		max-width: 65ch;
+		max-width: 75ch;
 		max-height: 100ch;
+		resize: both;
+		width: 100%;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
@@ -177,6 +179,10 @@ const { Content } = await render(page);
 		border-radius: 1.5rem;
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
+	}
+
+	.text {
+		word-wrap: break-word;
 	}
 
 	.images :global(img) {
