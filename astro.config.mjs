@@ -1,13 +1,23 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import umami from '@yeskunall/astro-umami';
+import yeskunallumami from '@yeskunall/astro-umami';
+
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://leandropata.pt',
 	integrations: [
-		umami({
-			id: '70d6c3a8-dd33-4c44-aeb3-da69ddfcd2b9',
+		sitemap({
+			i18n: {
+				defaultLocale: 'en',
+				locales: {
+					en: 'en',
+					pt: 'pt',
+				},
+			},
 		}),
+		yeskunallumami({ id: '70d6c3a8-dd33-4c44-aeb3-da69ddfcd2b9' }),
 	],
 	vite: {
 		resolve: {
