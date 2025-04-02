@@ -1,0 +1,32 @@
+---
+import MainLayout from '@/src/layouts/MainLayout.astro';
+
+import ContactCTA from '@/src/components/ContactCTA.astro';
+import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<MainLayout
+	title={t('404.title')}
+	description={t('404.description')}
+>
+	<div>
+		<main class='container'>
+			<h1>404</h1>
+			<h1>{t('404.text')}</h1>
+		</main>
+		<ContactCTA />
+	</div>
+</MainLayout>
+
+<style>
+	.container {
+		display: flex;
+		min-height: 50vh;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
