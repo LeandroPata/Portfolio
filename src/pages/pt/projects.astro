@@ -1,5 +1,5 @@
 ---
-import Layout from '@/src/layouts/Layout.astro';
+import MainLayout from '@/src/layouts/MainLayout.astro';
 
 import Hero from '@/src/components/Hero.astro';
 import Grid from '@/src/components/Grid.astro';
@@ -16,7 +16,7 @@ const t = useTranslations(locale);
 const projects = await loadCollection(locale);
 ---
 
-<Layout
+<MainLayout
 	title={t('projects.title') + ' | Leandro Pata'}
 	description={t('projects.description')}
 >
@@ -42,4 +42,4 @@ const projects = await loadCollection(locale);
 		</main>
 		<ContactCTA />
 	</div>
-</Layout>
+</MainLayout>

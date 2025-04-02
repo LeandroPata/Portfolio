@@ -1,6 +1,6 @@
 ---
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
-import Layout from '@/src/layouts/Layout.astro';
+// MainLayout import — provides basic page elements: <head>, <nav>, <footer> etc.
+import MainLayout from '@/src/layouts/MainLayout.astro';
 
 // Component Imports
 import CallToAction from '@/src/components/CallToAction.astro';
@@ -29,7 +29,7 @@ const t = useTranslations(locale);
 const projects = await loadCollection(locale);
 ---
 
-<Layout>
+<MainLayout>
 	<div class='stack gap-20 lg:gap-48'>
 		<div class='wrapper stack gap-8 lg:gap-20'>
 			<header class='hero'>
@@ -111,7 +111,7 @@ const projects = await loadCollection(locale);
 		</main>
 		<ContactCTA />
 	</div>
-</Layout>
+</MainLayout>
 
 <style>
 	.hero {

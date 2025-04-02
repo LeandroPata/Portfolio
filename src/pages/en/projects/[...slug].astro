@@ -1,5 +1,5 @@
 ---
-import Layout from '@/src/layouts/Layout.astro';
+import MainLayout from '@/src/layouts/MainLayout.astro';
 
 import Hero from '@/src/components/Hero.astro';
 import Pill from '@/src/components/Pill.astro';
@@ -28,7 +28,7 @@ const page = Astro.props;
 const { Content } = await render(page);
 ---
 
-<Layout
+<MainLayout
 	title={page.data.title}
 	description={page.data.description}
 >
@@ -93,7 +93,7 @@ const { Content } = await render(page);
 		</div>
 		<ContactCTA />
 	</div>
-</Layout>
+</MainLayout>
 
 <style>
 	header {
