@@ -4,6 +4,9 @@ import MainLayout from '@/src/layouts/MainLayout.astro';
 import ContactCTA from '@/src/components/ContactCTA.astro';
 import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 
+import travoltaGif from '@/src/assets/404/travolta.gif';
+import { Image } from 'astro:assets';
+
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
 ---
@@ -13,20 +16,36 @@ const t = useTranslations(locale);
 	description={t('404.description')}
 >
 	<div>
-		<main class='container'>
-			<h1>404</h1>
-			<h1>{t('404.text')}</h1>
+		<main style='min-height: 50vh'>
+			<div class='container'>
+				<h1>404</h1>
+				<h1>{t('404.text')}</h1>
+				<Image
+					class='gif'
+					src={travoltaGif}
+					alt='Travolta'
+				/>
+			</div>
 		</main>
-		<ContactCTA />
+		<ContactCTA class='contact' />
 	</div>
 </MainLayout>
 
 <style>
 	.container {
 		display: flex;
-		min-height: 50vh;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	.contact {
+		justify-self: end;
+		justify-content: end;
+		justify-items: end;
 	}
 </style>
