@@ -81,12 +81,13 @@ const { Content } = await render(page);
 					</div>
 					<div class='column text content'>
 						<Content />
-						<a
-							class='git-repo'
-							href={page.data.github_url}
-							target='_blank'
-							>GitHub Repository</a
-						>
+						<div class='git-repo'>
+							<a
+								href={page.data.github_url}
+								target='_blank'
+								>GitHub Repository</a
+							>
+						</div>
 					</div>
 				</div>
 			</main>
@@ -141,7 +142,6 @@ const { Content } = await render(page);
 		align-self: center;
 		max-width: 75ch;
 		max-height: 100ch;
-		resize: both;
 		width: 100%;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
@@ -173,8 +173,14 @@ const { Content } = await render(page);
 	}
 
 	.git-repo {
-		display: inline-block;
+		display: flex;
 		margin-top: 3rem;
+		justify-content: center;
+	}
+
+	.git-repo a {
+		display: inline-block;
+		align-self: center;
 		padding: 1.5rem;
 		border-radius: 1.5rem;
 		background: var(--gradient-subtle);
