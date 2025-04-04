@@ -4,8 +4,8 @@ slug: portfolio
 locale: en
 github_url: https://github.com/LeandroPata/Portfolio
 publishDate: 2025-02-11 00:00:00
-img: /assets/projects/portfolio/stock-4.jpg
-img_alt: Portfolio Main Page
+img: /assets/projects/portfolio/cover.png
+img_alt: Portfolio Cover
 imgs:
   [
     ['/assets/projects/portfolio/homePageDark.png', 'Homepage Dark'],

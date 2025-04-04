@@ -4,8 +4,8 @@ slug: memberManagementApp
 locale: pt
 github_url: https://github.com/LeandroPata/MemberManagementApp
 publishDate: 2024-10-22 00:00:00
-img: /assets/projects/memberManagementApp/stock-1.jpg
-img_alt: Aplicação de Gestão de Membros Menu Principal
+img: /assets/projects/memberManagementApp/cover.png
+img_alt: Aplicação de Gestão de Membros Cover
 imgs:
   [
     ['/assets/projects/memberManagementApp/mainMenu.png', 'Menu Principal'],
