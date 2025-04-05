@@ -6,6 +6,10 @@ import Pill from '@/src/components/Pill.astro';
 import ContactCTA from '@/src/components/ContactCTA.astro';
 import { loadCollection } from '@/src/utils/loadData';
 import { render } from 'astro:content';
+import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 export async function getStaticPaths() {
@@ -85,7 +89,7 @@ const { Content } = await render(page);
 							<a
 								href={page.data.github_url}
 								target='_blank'
-								>GitHub Repository</a
+								>{t('projects.gitRepo')}</a
 							>
 						</div>
 					</div>
@@ -172,21 +176,6 @@ const { Content } = await render(page);
 		cursor: zoom-out;
 	}
 
-	.git-repo {
-		display: flex;
-		margin-top: 3rem;
-		justify-content: center;
-	}
-
-	.git-repo a {
-		display: inline-block;
-		align-self: center;
-		padding: 1.5rem;
-		border-radius: 1.5rem;
-		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
-	}
-
 	.text {
 		word-wrap: break-word;
 	}
@@ -221,9 +210,27 @@ const { Content } = await render(page);
 		text-decoration-color: currentColor;
 	}
 
-	.git-repo :hover,
-	.git-repo :focus {
+	.git-repo {
+		display: flex;
+		margin-top: 3rem;
+		justify-content: center;
+	}
+
+	.git-repo :global(a) {
+		display: inline-block;
+		align-self: center;
+		padding: 1.5rem;
+		border-radius: 1.5rem;
+		background: var(--gradient-subtle);
+		border: 1px solid var(--gray-800);
 		box-shadow: var(--shadow-sm);
+		text-decoration: none;
+		transition: box-shadow var(--theme-transition);
+	}
+
+	.git-repo :global(a:hover),
+	.git-repo :global(a:focus) {
+		box-shadow: var(--shadow-md);
 	}
 
 	@media (min-width: 50em) {

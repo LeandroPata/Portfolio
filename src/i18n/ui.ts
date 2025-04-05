@@ -32,6 +32,7 @@ export const ui = {
 		'projects.title': 'My Projects',
 		'projects.description': "Learn about Leandro Pata's projects",
 		'projects.tagline': '',
+		'projects.gitRepo': 'Github Repository',
 		'about.title': 'About',
 		'about.description': 'About Leandro Pata',
 		'about.tagline': '',
@@ -80,6 +81,7 @@ export const ui = {
 			'PostgreSQL',
 			'NoSQL',
 		],
+		'about.cv': 'Preview CV',
 	},
 	pt: {
 		'nav.home': 'Principal',
@@ -107,6 +109,7 @@ export const ui = {
 		'projects.title': 'Projetos',
 		'projects.description': 'Sobre os projetos de Leandro Pata',
 		'projects.tagline': '',
+		'projects.gitRepo': 'Repositório Github',
 		'about.title': 'Sobre',
 		'about.description': 'Sobre Leandro Pata',
 		'about.tagline': '',
@@ -155,5 +158,6 @@ export const ui = {
 			'PostgreSQL',
 			'NoSQL',
 		],
+		'about.cv': 'Mostrar CV',
 	},
 } as const;
