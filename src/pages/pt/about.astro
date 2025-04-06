@@ -32,6 +32,8 @@ const t = useTranslations(locale);
 				</div>
 			</section>
 
+			<hr class='divider' />
+
 			<section>
 				<h2 class='section-title'>{t('about.educationTitle')}</h2>
 				<div class='content'>
@@ -46,6 +48,8 @@ const t = useTranslations(locale);
 					}
 				</div>
 			</section>
+
+			<hr class='divider' />
 
 			<section>
 				<h2 class='section-title'>{t('about.workTitle')}</h2>
@@ -62,12 +66,16 @@ const t = useTranslations(locale);
 				</div>
 			</section>
 
+			<hr class='divider' />
+
 			<section>
 				<h2 class='section-title'>{t('about.skillsTitle')}</h2>
 				<div class='content skills'>
 					{t('about.skillsContent').map((skill) => <Pill>{skill}</Pill>)}
 				</div>
 			</section>
+
+			<hr class='divider' />
 
 			<section>
 				<h2 class='section-title'>{t('about.certificateTitle')}</h2>
@@ -114,6 +122,13 @@ const t = useTranslations(locale);
 		grid-column-start: 1;
 		font-size: var(--text-xl);
 		color: var(--gray-0);
+	}
+
+	hr.divider {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		border-top: 3px solid var(--gray-50);
+		border-radius: 5px;
 	}
 
 	.cv-download {

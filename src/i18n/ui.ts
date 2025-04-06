@@ -84,8 +84,6 @@ export const ui = {
 		],
 		'about.certificateContent': [
 			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais (Training for Election Board IT Support Technicians)',
-			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais (Training for Election Board IT Support Technicians)',
-			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais (Training for Election Board IT Support Technicians)',
 		],
 		'about.cv': 'Preview CV',
 	},
@@ -166,8 +164,6 @@ export const ui = {
 			'NoSQL',
 		],
 		'about.certificateContent': [
-			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais',
-			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais',
 			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais',
 		],
 		'about.cv': 'Mostrar CV',
