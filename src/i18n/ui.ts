@@ -40,6 +40,7 @@ export const ui = {
 		'about.educationTitle': 'Education',
 		'about.workTitle': 'Work Experience',
 		'about.skillsTitle': 'Skills',
+		'about.certificateTitle': 'Certificates',
 		'about.backgroundContent':
 			"I'm currently creating and developing various personal projects, to further develop my skills and my problem solving ability. I am eager to learn and deepen my skills, and would like to gain some professional experience.",
 		'about.educationContent': [
@@ -81,6 +82,11 @@ export const ui = {
 			'PostgreSQL',
 			'NoSQL',
 		],
+		'about.certificateContent': [
+			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais (Training for Election Board IT Support Technicians)',
+			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais (Training for Election Board IT Support Technicians)',
+			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais (Training for Election Board IT Support Technicians)',
+		],
 		'about.cv': 'Preview CV',
 	},
 	pt: {
@@ -117,6 +123,7 @@ export const ui = {
 		'about.educationTitle': 'Educação',
 		'about.workTitle': 'Experiência Profissional',
 		'about.skillsTitle': 'Competências',
+		'about.certificateTitle': 'Certificados',
 		'about.backgroundContent':
 			'Encontro-me neste momento a criar e desenvolver alguns projetos pessoais, com o objetivo de aprofundar conhecimentos e a capacidade de resolução de problemas. Possuo uma grande vontade de aprender e de aprofundar as minhas competências, e gostaria de ganhar alguma experiência profissional.',
 		'about.educationContent': [
@@ -157,6 +164,11 @@ export const ui = {
 			'SQL',
 			'PostgreSQL',
 			'NoSQL',
+		],
+		'about.certificateContent': [
+			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais',
+			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais',
+			'Formação dos Técnicos de Apoio Informático às Mesas Eleitorais',
 		],
 		'about.cv': 'Mostrar CV',
 	},
