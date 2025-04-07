@@ -29,18 +29,9 @@ env:
   # BUILD_PATH: subfolder
 
 jobs:
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Begin testing
-        id: begin-testing
-        run: npx vitest
-
   build:
     name: Build
     runs-on: ubuntu-latest
-    needs: test
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -69,6 +60,10 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
+      - name: Test
+        id: test
+        working-directory: ${{ env.BUILD_PATH }}
+        run: npx vitest
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
@@ -84,7 +79,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: [test, build]
+    needs: build
     runs-on: ubuntu-latest
     name: Deploy
     steps:
