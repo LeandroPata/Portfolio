@@ -3,6 +3,6 @@ import { getViteConfig } from 'astro/config';
 
 export default getViteConfig({
 	test: {
-		// Vitest configuration options
+		exclude: ['./src/test/', '**/tests-examples/**'],
 	},
 });
