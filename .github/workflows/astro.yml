@@ -29,9 +29,18 @@ env:
   # BUILD_PATH: subfolder
 
 jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Begin testing
+        id: begin-testing
+        run: npx vitest
+
   build:
     name: Build
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -75,7 +84,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
+    needs: [test, build]
     runs-on: ubuntu-latest
     name: Deploy
     steps:
