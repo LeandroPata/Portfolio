@@ -5,7 +5,19 @@ on:
   pull_request:
     branches: ['testing']
 
-  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: 'testing'
+  cancel-in-progress: false
+
+env:
+  BUILD_PATH: '.' # default value when not using subfolders
+  # BUILD_PATH: subfolder
 
 jobs:
   build:
@@ -46,6 +58,10 @@ jobs:
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.BUILD_PATH }}/dist
 
   test:
     name: Test
@@ -62,7 +78,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test testing
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
