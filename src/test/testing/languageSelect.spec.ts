@@ -1,15 +1,22 @@
 import { test, expect } from '@playwright/test';
 import { ui } from '@/src/i18n/ui';
 
-const baseUrl = 'http://localhost:4321/';
+const baseUrl = 'http://localhost:4321';
 const routes = [
-	'',
-	'en/',
-	'en/projects',
-	'en/about',
-	'pt/',
-	'pt/projects',
-	'pt/about',
+	'/404',
+	'/en/about/',
+	'/en/',
+	'/en/projects/',
+	'/en/projects/memberManagementApp/',
+	'/en/projects/orderManagementApp/',
+	'/en/projects/portfolio/',
+	'/',
+	'/pt/about/',
+	'/pt/',
+	'/pt/projects/',
+	'/pt/projects/memberManagementApp/',
+	'/pt/projects/orderManagementApp/',
+	'/pt/projects/portfolio/',
 ];
 
 for (const locale in ui) {

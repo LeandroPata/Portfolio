@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const baseUrl = 'http://leandropata.pt/';
+const baseUrl = 'http://leandropata.pt';
 
 test('Umami script is present and reachable', async ({ page }) => {
 	await page.goto(baseUrl);

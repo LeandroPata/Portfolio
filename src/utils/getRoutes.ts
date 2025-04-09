@@ -1,5 +1,4 @@
 // tests/all-pages.spec.ts
-import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -21,7 +20,7 @@ function getRoutes(dir: string, base: string = dir): string[] {
 			routes.push(url === '/' ? '/' : url);
 		}
 	}
-
+	console.log(routes);
 	return routes;
 }
 
