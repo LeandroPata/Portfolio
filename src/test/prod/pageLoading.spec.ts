@@ -20,7 +20,7 @@ const routes = [
 ];
 
 for (const route of routes) {
-	test(`loads ${baseUrl}${route}`, async ({ page }) => {
+	test(`Loads ${baseUrl}${route}`, async ({ page }) => {
 		await page.goto(baseUrl + route);
 		await expect(page).toBeDefined();
 	});
