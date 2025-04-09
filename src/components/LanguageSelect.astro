@@ -56,8 +56,10 @@ const translatePath = useTranslatedPath(locale);
 	const getLanguagePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('locale'))
 			return localStorage.getItem('locale');
-		saveLanguage('/en/');
-		return '/en/';
+		const lang = document.documentElement.getAttribute('lang');
+		//console.log(lang);
+		saveLanguage(`/${lang}/`);
+		return `/${lang}/`;
 	};
 
 	class LanguageSelect extends HTMLElement {

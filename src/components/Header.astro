@@ -76,7 +76,9 @@ const {
 	const getLanguagePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('locale'))
 			return localStorage.getItem('locale');
-		return '/en/';
+		const lang = document.documentElement.getAttribute('lang');
+		//console.log(lang);
+		return `/${lang}/`;
 	};
 
 	function applyTheme() {
