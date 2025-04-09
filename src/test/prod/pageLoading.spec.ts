@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const baseUrl = 'http://leandropata.pt';
+const baseUrl = 'https://leandropata.pt';
 
 const routes = [
 	'/404',

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const baseUrl = 'http://leandropata.pt';
+const baseUrl = 'https://leandropata.pt';
 
 test('Theme toggle switches between light and dark mode', async ({ page }) => {
 	await page.goto(baseUrl);

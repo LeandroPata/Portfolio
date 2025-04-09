@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { ui } from '@/src/i18n/ui';
 
-const baseUrl = 'http://leandropata.pt';
+const baseUrl = 'https://leandropata.pt';
 const routes = [
 	'/en/about/',
 	'/en/',
