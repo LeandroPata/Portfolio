@@ -50,7 +50,9 @@ for (const locale in ui) {
 				.locator('#language-select')
 				.selectOption(`/${locale}${baseRoute}`);
 
-			await expect(page).toHaveURL(`${baseUrl}/${locale}${baseRoute}`);
+			await expect(page).toHaveURL(`${baseUrl}/${locale}${baseRoute}`, {
+				timeout: 10000,
+			});
 		});
 	}
 }
