@@ -5,9 +5,12 @@ const baseUrl = 'http://localhost:4321';
 test('Theme toggle switches between light and dark mode', async ({ page }) => {
 	await page.goto(baseUrl);
 
-	const menuToggle = await page.locator('#menu-toggle');
+	await page.waitForSelector('#menu-toggle', {
+		state: 'attached',
+		timeout: 10000,
+	});
 
-	if ((await menuToggle.isEnabled()) && (await menuToggle.isVisible()))
+	if (await page.locator('#menu-toggle').isVisible())
 		await page.locator('#menu-toggle').click();
 
 	const html = page.locator('html');

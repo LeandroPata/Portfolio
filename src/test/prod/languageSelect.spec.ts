@@ -27,20 +27,25 @@ for (const locale in ui) {
 
 			const splicedRoute = route.split('/');
 			const curLocale = splicedRoute[1] === 'pt' ? 'pt' : 'en';
+			console.log(`Current Locale: ${curLocale}`);
 			splicedRoute.splice(1, 1);
 			let baseRoute = splicedRoute.join('/');
 			if (!baseRoute) baseRoute = '/';
 
-			const menuToggle = await page.locator('#menu-toggle');
+			await page.waitForSelector('#menu-toggle', {
+				state: 'attached',
+				timeout: 10000,
+			});
 
-			if ((await menuToggle.isEnabled()) && (await menuToggle.isVisible()))
+			if (await page.locator('#menu-toggle').isVisible())
 				await page.locator('#menu-toggle').click();
 
+			console.log(`Expected option: /${curLocale}${baseRoute}`);
 			await expect(page.locator('#language-select')).toHaveValue(
 				`/${curLocale}${baseRoute}`
 			);
 
-			console.log(`/${locale}${baseRoute}`);
+			console.log(`Expected: /${locale}${baseRoute}`);
 			await page
 				.locator('#language-select')
 				.selectOption(`/${locale}${baseRoute}`);
