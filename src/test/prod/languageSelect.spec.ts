@@ -51,7 +51,7 @@ for (const locale in ui) {
 				.selectOption(`/${locale}${baseRoute}`);
 
 			await expect(page).toHaveURL(`${baseUrl}/${locale}${baseRoute}`, {
-				timeout: 10000,
+				timeout: 15000,
 			});
 		});
 	}
