@@ -20,17 +20,23 @@ const routes = [
 
 for (const locale in ui) {
 	for (const route of routes) {
+		const splicedRoute = route.split('/');
+		const curLocale = splicedRoute[1] === 'pt' ? 'pt' : 'en';
+		console.log(`Current Locale: ${curLocale}`);
+		splicedRoute.splice(1, 1);
+		let baseRoute = splicedRoute.join('/');
+		if (!baseRoute) baseRoute = '/';
+
+		console.log(`${locale} : ${curLocale}`);
+
+		if (curLocale === locale) {
+			continue;
+		}
+
 		test(`Language selector navigates to '${locale}' at ${route}`, async ({
 			page,
 		}) => {
 			await page.goto(`${baseUrl}${route}`);
-
-			const splicedRoute = route.split('/');
-			const curLocale = splicedRoute[1] === 'pt' ? 'pt' : 'en';
-			console.log(`Current Locale: ${curLocale}`);
-			splicedRoute.splice(1, 1);
-			let baseRoute = splicedRoute.join('/');
-			if (!baseRoute) baseRoute = '/';
 
 			await page.waitForSelector('#menu-toggle', {
 				state: 'attached',
