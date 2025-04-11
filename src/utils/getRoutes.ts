@@ -20,7 +20,7 @@ function getRoutes(dir: string, base: string = dir): string[] {
 			routes.push(url === '/' ? '/' : url);
 		}
 	}
-	console.log(routes);
+	//console.log(routes);
 	return routes;
 }
 
