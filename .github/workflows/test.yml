@@ -98,12 +98,13 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Deploy site locally
+        timeout-minutes: 1
         run: |
-          npx astro preview &
+          npx serve ./dist --listen 4321 &
           npx wait-on http://localhost:4321
 
       - name: Run Playwright tests
-        run: npx playwright test prod
+        run: npx playwright test testing
 
       - name: Upload local report
         uses: actions/upload-artifact@v4
