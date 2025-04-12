@@ -26,4 +26,11 @@ test('Theme toggle switches between light and dark mode', async ({ page }) => {
 	);
 
 	expect(afterClickHasDark).not.toBe(initialHasDark);
+
+	await button.click();
+	const endHasDark = await html.evaluate((el) =>
+		el.classList.contains('theme-dark')
+	);
+
+	expect(endHasDark).toBe(initialHasDark);
 });
