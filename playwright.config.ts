@@ -29,6 +29,7 @@ export default defineConfig({
 	reporter: 'html',
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
+		headless: !!process.env.CI,
 		trace: 'on-first-retry',
 		...(isProd && !process.env.CI
 			? { connectOptions: { wsEndpoint: 'ws://127.0.0.1:3000/' } }
