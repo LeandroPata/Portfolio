@@ -1,17 +1,6 @@
 ---
 import { languages } from '@/src/i18n/ui';
-import {
-	getLangFromUrl,
-	useTranslatedPath,
-	getBaseUrl,
-} from '@/src/i18n/utils';
-
 import getFlagEmoji from '@/src/utils/getLanguageFlag';
-
-const locale = getLangFromUrl(Astro.url);
-const baseUrl = getBaseUrl(Astro.url);
-//console.log(baseUrl);
-const translatePath = useTranslatedPath(locale);
 ---
 
 <language-select>
@@ -20,18 +9,9 @@ const translatePath = useTranslatedPath(locale);
 		id='language-select'
 	>
 		{
-			Object.entries(languages).map(([lang, label]) =>
-				locale === lang ?
-					<option
-						value={translatePath(baseUrl, lang)}
-						selected
-					>
-						{getFlagEmoji(lang) + ' ' + label}
-					</option>
-				:	<option value={translatePath(baseUrl, lang)}>
-						{getFlagEmoji(lang) + ' ' + label}
-					</option>
-			)
+			Object.entries(languages).map(([lang, label]) => (
+				<option value={lang}>{getFlagEmoji(lang) + ' ' + label}</option>
+			))
 		}
 	</select>
 </language-select>
@@ -47,6 +27,7 @@ const translatePath = useTranslatedPath(locale);
 
 <script>
 	import { navigate } from 'astro:transitions/client';
+	import { useTranslatedPath, getBaseUrl } from '@/src/i18n/utils';
 
 	function saveLanguage(locale: string) {
 		//console.log('saveLanguage: ' + locale);
@@ -58,8 +39,8 @@ const translatePath = useTranslatedPath(locale);
 			return localStorage.getItem('locale');
 		const lang = document.documentElement.getAttribute('lang');
 		//console.log(lang);
-		saveLanguage(`/${lang}/`);
-		return `/${lang}/`;
+		saveLanguage(lang);
+		return lang;
 	};
 
 	class LanguageSelect extends HTMLElement {
@@ -67,19 +48,11 @@ const translatePath = useTranslatedPath(locale);
 			super();
 			const select = this.querySelector('select')!;
 
-			/* const setLocale = (newLocale) => {
-				console.log('SavedLocale: ' + savedLocale);
-
-				if (newLocale) {
-					saveLanguage(newLocale);
-					navigate(newLocale);
-				}
-			}; */
+			const selectValue = getLanguagePreference();
+			select.value = selectValue;
 
 			// Change language when a new value is selected
 			select.addEventListener('change', this.setLanguage);
-
-			//setLocale(savedLocale);
 		}
 
 		// Set the language to current value
@@ -88,9 +61,13 @@ const translatePath = useTranslatedPath(locale);
 			//console.log('SelectedLanguage: ' + selectedLanguage);
 			if (selectedLanguage) {
 				const currentLanguage = getLanguagePreference();
+				console.log(currentLanguage);
 				if (currentLanguage && selectedLanguage != currentLanguage) {
+					const basePath = getBaseUrl(window.location.pathname);
+					const translatePath = useTranslatedPath(selectedLanguage);
 					saveLanguage(selectedLanguage);
-					navigate(selectedLanguage);
+					navigate(translatePath(basePath));
+					console.log(`/dist${selectedLanguage} : ${basePath}`);
 				}
 			}
 		}

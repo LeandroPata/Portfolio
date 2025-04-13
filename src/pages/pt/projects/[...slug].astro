@@ -8,7 +8,7 @@ import { loadCollection } from '@/src/utils/loadData';
 import { render } from 'astro:content';
 import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 
-const locale = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/

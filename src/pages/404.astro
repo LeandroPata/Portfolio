@@ -7,7 +7,7 @@ import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 import travoltaGif from '@/src/assets/404/travolta.gif';
 import { Image } from 'astro:assets';
 
-const locale = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
 ---
 

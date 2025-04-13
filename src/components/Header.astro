@@ -4,7 +4,7 @@ import '@/src/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
-const locale = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
 
 interface Props {
@@ -78,7 +78,7 @@ const {
 			return localStorage.getItem('locale');
 		const lang = document.documentElement.getAttribute('lang');
 		//console.log(lang);
-		return `/${lang}/`;
+		return lang;
 	};
 
 	function applyTheme() {

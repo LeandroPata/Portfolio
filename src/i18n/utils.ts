@@ -1,16 +1,16 @@
 import { ui, defaultLang } from '@/src/i18n/ui';
 
-export function getLangFromUrl(url: URL) {
-	const [, lang] = url.pathname.split('/');
+export function getLangFromUrl(path: string) {
+	const [, lang] = path.split('/');
 	if (lang in ui) return lang as keyof typeof ui;
 	return defaultLang;
 }
 
-export function getBaseUrl(url: URL) {
-	const baseUrl = url.pathname.split('/');
+export function getBaseUrl(path: string) {
+	const baseUrl = path.split('/');
 	baseUrl.splice(1, 1);
-	//console.log(`${url.pathname}:${baseUrl}:${baseUrl.join('/')}`);
-	return baseUrl.join('/');
+	//console.log(`${path}:${baseUrl}:${baseUrl.join('/')}`);
+	return baseUrl.join('/') || '/';
 }
 
 export function useTranslations(lang: keyof typeof ui) {

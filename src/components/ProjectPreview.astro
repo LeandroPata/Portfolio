@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
 
-const locale = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url.pathname);
 const translatePath = useTranslatedPath(locale);
 
 let projectCollection = 'projectsEn';

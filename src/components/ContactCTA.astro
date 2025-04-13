@@ -4,7 +4,7 @@ import { LINKS } from '../utils/constants';
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
 
-const locale = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
 ---
 

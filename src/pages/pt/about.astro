@@ -6,7 +6,7 @@ import Pill from '@/src/components/Pill.astro';
 import ContactCTA from '@/src/components/ContactCTA.astro';
 import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 
-const locale = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
 ---
 

@@ -12,7 +12,7 @@ import {
 } from '@/src/i18n/utils';
 import LanguageSelect from '@/src/components/LanguageSelect.astro';
 
-const locale = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
 const translatePath = useTranslatedPath(locale);
 

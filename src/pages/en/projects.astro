@@ -10,7 +10,7 @@ import { loadCollection } from '@/src/utils/loadData';
 // Locale
 import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
 
-const locale = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
 
 const projects = await loadCollection(locale);

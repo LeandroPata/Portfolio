@@ -3,7 +3,7 @@ import { LINKS } from '@/src/utils/constants';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const currentYear = new Date().getFullYear();
-const locale = getLangFromUrl(Astro.url);
+const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
 ---
 
