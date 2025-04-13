@@ -46,15 +46,11 @@ for (const locale in ui) {
 			if (await page.locator('#menu-toggle').isVisible())
 				await page.locator('#menu-toggle').click();
 
-			//console.log(`Expected option: /${curLocale}${baseRoute}`);
-			await expect(page.locator('#language-select')).toHaveValue(
-				`/${curLocale}${baseRoute}`
-			);
+			//console.log(`Expected option: /${curLocale}`);
+			await expect(page.locator('#language-select')).toHaveValue(curLocale);
 
 			//console.log(`Expected: ${baseUrl}/${locale}${baseRoute}`);
-			await page
-				.locator('#language-select')
-				.selectOption(`/${locale}${baseRoute}`);
+			await page.locator('#language-select').selectOption(locale);
 
 			await expect(page).toHaveURL(`${baseUrl}/${locale}${baseRoute}`, {
 				timeout: 10000,
