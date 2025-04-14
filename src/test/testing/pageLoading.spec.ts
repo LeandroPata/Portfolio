@@ -9,6 +9,8 @@ const routes = getRoutes(path.resolve('dist'));
 for (const route of routes) {
 	test(`Loads ${baseUrl}${route}`, async ({ page }) => {
 		await page.goto(baseUrl + route);
-		await expect(page).toBeDefined();
+
+		if (route === '/') await expect(page).toHaveURL(new RegExp(`^${baseUrl}`));
+		else await expect(page).toHaveURL(baseUrl + route);
 	});
 }

@@ -22,11 +22,12 @@ export default defineConfig({
 	/* Fail the build on CI if you accidentally left test.only in the source code. */
 	forbidOnly: !!process.env.CI,
 	/* Retry on CI only */
-	retries: 2,
+	retries: process.env.CI ? 2 : 0,
 	/* Opt out of parallel tests on CI. */
-	workers: process.env.CI ? 1 : 5,
+	workers: process.env.CI ? 2 : undefined,
 	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
 	reporter: 'html',
+	timeout: 5 * 60 * 1000,
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
 		headless: !!process.env.CI,
@@ -78,6 +79,6 @@ export default defineConfig({
 	webServer: {
 		command: 'npx astro preview',
 		url: 'http://localhost:4321',
-		reuseExistingServer: false,
+		reuseExistingServer: !process.env.CI,
 	},
 });

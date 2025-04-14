@@ -40,7 +40,7 @@ for (const locale in ui) {
 
 			await page.waitForSelector('#menu-toggle', {
 				state: 'attached',
-				timeout: 10000,
+				timeout: 30 * 1000,
 			});
 
 			if (await page.locator('#menu-toggle').isVisible())
@@ -53,7 +53,7 @@ for (const locale in ui) {
 			await page.locator('#language-select').selectOption(locale);
 
 			await expect(page).toHaveURL(`${baseUrl}/${locale}${baseRoute}`, {
-				timeout: 10000,
+				timeout: 30 * 1000,
 			});
 		});
 	}

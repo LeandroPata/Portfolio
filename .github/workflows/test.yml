@@ -91,6 +91,13 @@ jobs:
           name: astro-dist
           path: dist
 
+      - name: Extract contents to dist folder
+        run: |
+          cd dist
+          tar -xf artifact.tar
+          rm artifact.tar
+          cd ..
+
       - name: Run Vitest
         run: npx vitest
 
@@ -106,4 +113,4 @@ jobs:
         with:
           name: playwright-local-report
           path: playwright-report/
-          retention-days: 30
+          retention-days: 7
