@@ -77,7 +77,7 @@ export default defineConfig({
 
 	/* Run your local dev server before starting the tests */
 
-	...(!isProd && !process.env.CI
+	...(!isProd
 		? {
 				webServer: {
 					command: 'npx astro preview',

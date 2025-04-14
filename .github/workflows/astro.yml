@@ -174,7 +174,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test E2ETesting/prod
+        run: ENV=prod npx playwright test E2ETesting/prod
 
       - name: Upload report
         uses: actions/upload-artifact@v4
