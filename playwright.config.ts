@@ -30,8 +30,8 @@ export default defineConfig({
 	timeout: 5 * 60 * 1000,
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
-		headless: !!process.env.CI,
 		trace: 'on-first-retry',
+		headless: isProd ? true : !!process.env.CI,
 		...(isProd && !process.env.CI
 			? { connectOptions: { wsEndpoint: 'ws://127.0.0.1:3000/' } }
 			: {}),
@@ -76,9 +76,14 @@ export default defineConfig({
 	],
 
 	/* Run your local dev server before starting the tests */
-	webServer: {
-		command: 'npx astro preview',
-		url: 'http://localhost:4321',
-		reuseExistingServer: !process.env.CI,
-	},
+
+	...(!isProd && !process.env.CI
+		? {
+				webServer: {
+					command: 'npx astro preview',
+					url: 'http://localhost:4321',
+					reuseExistingServer: !process.env.CI,
+				},
+		  }
+		: {}),
 });
