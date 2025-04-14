@@ -104,7 +104,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test testing
+        run: npx playwright test E2ETesting/testing
 
       - name: Upload local report
         uses: actions/upload-artifact@v4
