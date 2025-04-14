@@ -16,7 +16,7 @@ dotenv.config();
 const isProd = process.env.ENV === 'prod';
 
 export default defineConfig({
-	testDir: './src/test',
+	testDir: './test/E2ETesting',
 	/* Run tests in files in parallel */
 	fullyParallel: true,
 	/* Fail the build on CI if you accidentally left test.only in the source code. */
