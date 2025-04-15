@@ -32,8 +32,20 @@ export function saveLanguage(locale: string) {
 }
 
 export function getLanguagePreference(saveToStorage = true) {
-	if (typeof localStorage !== 'undefined' && localStorage.getItem('locale'))
-		return localStorage.getItem('locale');
+	if (typeof localStorage !== 'undefined' && localStorage.getItem('locale')) {
+		let storedLang = localStorage.getItem('locale');
+
+		if (!(storedLang in ui)) {
+			for (const locale in ui) {
+				if (storedLang.includes(locale)) {
+					storedLang = locale;
+					break;
+				}
+			}
+		}
+
+		if (storedLang in ui) return storedLang;
+	}
 	const lang = document.documentElement.getAttribute('lang');
 	//console.log(lang);
 	if (saveToStorage) saveLanguage(lang);
