@@ -24,7 +24,7 @@ for (const locale in ui) {
 
 		const navbar = page.locator('#navbar');
 		const navbarContents = await navbar.allInnerTexts();
-		const navbarLinks = navbarContents[0].split('\n');
+		const navbarLinks = navbarContents[0].split('\n').reverse();
 		for (const link of navbarLinks) {
 			const linkLocator = page.getByRole('link', { name: link });
 			const linkHref = await linkLocator.getAttribute('href');
@@ -43,14 +43,5 @@ for (const locale in ui) {
 			if (await page.locator('#menu-toggle').isVisible())
 				await page.locator('#menu-toggle').click();
 		}
-
-		const linkLocator = page.getByRole('link', { name: navbarLinks[0] });
-		const linkHref = await linkLocator.getAttribute('href');
-
-		await linkLocator.click();
-
-		await expect(page).toHaveURL(`${baseUrl}${linkHref}`, {
-			timeout: 30 * 1000,
-		});
 	});
 }
