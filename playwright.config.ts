@@ -81,7 +81,7 @@ export default defineConfig({
 				webServer: {
 					command: 'npx astro preview',
 					url: 'http://localhost:4321',
-					reuseExistingServer: !process.env.CI,
+					reuseExistingServer: false,
 				},
 		  }
 		: {}),
