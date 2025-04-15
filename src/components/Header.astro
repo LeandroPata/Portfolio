@@ -64,6 +64,8 @@ const {
 <ClientRouter />
 
 <script is:inline>
+	import { getLanguagePreference } from '@/src/i18n/utils';
+
 	// This code is inlined in the head to make dark mode instant & blocking
 	const getThemePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme'))
@@ -71,14 +73,6 @@ const {
 		return window.matchMedia('(prefers-color-scheme: dark)').matches ?
 				'dark'
 			:	'light';
-	};
-
-	const getLanguagePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('locale'))
-			return localStorage.getItem('locale');
-		const lang = document.documentElement.getAttribute('lang');
-		//console.log(lang);
-		return lang;
 	};
 
 	function applyTheme() {
@@ -99,7 +93,7 @@ const {
 	}
 
 	function applyLanguage() {
-		const locale = getLanguagePreference();
+		const locale = getLanguagePreference(false);
 		//console.log('applyLanguage: ' + locale);
 		localStorage.setItem('locale', locale);
 	}

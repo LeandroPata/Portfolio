@@ -25,3 +25,17 @@ export function useTranslatedPath(lang: keyof typeof ui) {
 		return `/${l}${path}`;
 	};
 }
+
+export function saveLanguage(locale: string) {
+	//console.log('saveLanguage: ' + locale);
+	localStorage.setItem('locale', locale);
+}
+
+export function getLanguagePreference(saveToStorage = true) {
+	if (typeof localStorage !== 'undefined' && localStorage.getItem('locale'))
+		return localStorage.getItem('locale');
+	const lang = document.documentElement.getAttribute('lang');
+	//console.log(lang);
+	if (saveToStorage) saveLanguage(lang);
+	return lang;
+}

@@ -27,21 +27,12 @@ import getFlagEmoji from '@/src/utils/getLanguageFlag';
 
 <script>
 	import { navigate } from 'astro:transitions/client';
-	import { useTranslatedPath, getBaseUrl } from '@/src/i18n/utils';
-
-	function saveLanguage(locale: string) {
-		//console.log('saveLanguage: ' + locale);
-		localStorage.setItem('locale', locale);
-	}
-
-	const getLanguagePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('locale'))
-			return localStorage.getItem('locale');
-		const lang = document.documentElement.getAttribute('lang');
-		//console.log(lang);
-		saveLanguage(lang);
-		return lang;
-	};
+	import {
+		useTranslatedPath,
+		getBaseUrl,
+		saveLanguage,
+		getLanguagePreference,
+	} from '@/src/i18n/utils';
 
 	class LanguageSelect extends HTMLElement {
 		constructor() {
