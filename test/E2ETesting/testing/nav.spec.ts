@@ -25,11 +25,12 @@ for (const locale in ui) {
 		const navbar = page.locator('#navbar');
 		const navbarContents = await navbar.allInnerTexts();
 		const navbarLinks = navbarContents[0].split('\n').reverse();
+
 		for (const link of navbarLinks) {
-			console.log(`Name : ${link}`);
+			if (!link) continue;
+
 			const linkLocator = page.getByRole('link', { name: link });
 			const linkHref = await linkLocator.getAttribute('href');
-			console.log(`${link} : ${linkHref}`);
 
 			await linkLocator.click();
 
