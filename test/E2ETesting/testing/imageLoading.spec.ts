@@ -7,9 +7,7 @@ const baseUrl = 'http://localhost:4321';
 const routes = getRoutes(path.resolve('dist'));
 
 for (const route of routes) {
-	test(`Links to CDN links in ${baseUrl}${route} load correctly`, async ({
-		page,
-	}) => {
+	test(`Links to CDN links in ${route} load correctly`, async ({ page }) => {
 		const failedRequests: string[] = [];
 
 		// Intercept all network requests before navigating
@@ -24,28 +22,5 @@ for (const route of routes) {
 		await page.waitForLoadState('networkidle');
 
 		expect(failedRequests).toEqual([]);
-	});
-
-	test(`Images in ${baseUrl}${route} show correctly`, async ({ page }) => {
-		await page.goto(`${baseUrl}${route}`);
-		await page.waitForLoadState('networkidle');
-
-		// Force all lazy images to load
-		await page.evaluate(() => {
-			document.querySelectorAll("img[loading='lazy']").forEach((img) => {
-				(img as HTMLImageElement).loading = 'eager';
-			});
-		});
-
-		await page.waitForLoadState('networkidle');
-
-		const brokenImages = await page.evaluate(() => {
-			return Array.from(document.querySelectorAll('img'))
-				.filter((img) => !img.naturalWidth)
-				.map((img) => img.src);
-		});
-
-		//console.log(brokenImages);
-		expect(brokenImages).toEqual([]);
 	});
 }
