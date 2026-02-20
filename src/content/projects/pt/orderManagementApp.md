@@ -4,42 +4,42 @@ slug: orderManagementApp
 locale: pt
 github_url: https://github.com/LeandroPata/OrderManagementApp
 publishDate: 2024-12-19 00:00:00
-img: /assets/projects/orderManagementApp/cover.png
+img: assets/projects/orderManagementApp/cover.png
 img_alt: Aplicação de Gestão de Encomendas Cover
 imgs:
   [
-    ['/assets/projects/orderManagementApp/addClient.png', 'Adicionar Cliente'],
-    ['/assets/projects/orderManagementApp/addProduct.png', 'Adicionar Produto'],
-    ['/assets/projects/orderManagementApp/addOrder.png', 'Adicionar Encomenda'],
+    ['assets/projects/orderManagementApp/addClient.png', 'Adicionar Cliente'],
+    ['assets/projects/orderManagementApp/addProduct.png', 'Adicionar Produto'],
+    ['assets/projects/orderManagementApp/addOrder.png', 'Adicionar Encomenda'],
     [
-      '/assets/projects/orderManagementApp/showClientOrder.png',
+      'assets/projects/orderManagementApp/showClientOrder.png',
       'Mostrar Encomenda Cliente',
     ],
     [
-      '/assets/projects/orderManagementApp/showOrderDetails.png',
+      'assets/projects/orderManagementApp/showOrderDetails.png',
       'Mostrar Detalhes de Encomenda',
     ],
     [
-      '/assets/projects/orderManagementApp/showProductOrder.png',
+      'assets/projects/orderManagementApp/showProductOrder.png',
       'Mostrar Encomenda Produto',
     ],
     [
-      '/assets/projects/orderManagementApp/showProductQuantity.png',
+      'assets/projects/orderManagementApp/showProductQuantity.png',
       'Mostrar Quantidade Produto',
     ],
-    ['/assets/projects/orderManagementApp/mainMenu.png', 'Menu Principal'],
-    ['/assets/projects/orderManagementApp/addMenu.png', 'Menu Adicionar'],
-    ['/assets/projects/orderManagementApp/showMenu.png', 'Menu Mostrar'],
+    ['assets/projects/orderManagementApp/mainMenu.png', 'Menu Principal'],
+    ['assets/projects/orderManagementApp/addMenu.png', 'Menu Adicionar'],
+    ['assets/projects/orderManagementApp/showMenu.png', 'Menu Mostrar'],
     [
-      '/assets/projects/orderManagementApp/importExport.png',
+      'assets/projects/orderManagementApp/importExport.png',
       'Importar/Exportar',
     ],
     [
-      '/assets/projects/orderManagementApp/drawerLight.png',
+      'assets/projects/orderManagementApp/drawerLight.png',
       'Gaveta Modo Claro',
     ],
     [
-      '/assets/projects/orderManagementApp/drawerDark.png',
+      'assets/projects/orderManagementApp/drawerDark.png',
       'Gaveta Modo Escuro',
     ],
   ]

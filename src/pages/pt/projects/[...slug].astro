@@ -1,12 +1,12 @@
 ---
-import MainLayout from '@/src/layouts/MainLayout.astro';
-
+import { render } from 'astro:content';
+import ContactCTA from '@/src/components/ContactCTA.astro';
 import Hero from '@/src/components/Hero.astro';
 import Pill from '@/src/components/Pill.astro';
-import ContactCTA from '@/src/components/ContactCTA.astro';
-import { loadCollection } from '@/src/utils/loadData';
-import { render } from 'astro:content';
 import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
+import MainLayout from '@/src/layouts/MainLayout.astro';
+import { CDN } from '@/src/utils/constants';
+import { loadCollection } from '@/src/utils/loadData';
 
 const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
@@ -54,7 +54,7 @@ const { Content } = await render(page);
 					{
 						page.data.img && (
 							<img
-								src={page.data.img}
+								src={`${CDN}/${page.data.img}`}
 								alt={page.data.img_alt || ''}
 								loading='lazy'
 								decoding='async'
@@ -70,7 +70,7 @@ const { Content } = await render(page);
 									<label>
 										<input type='checkbox' />
 										<img
-											src={img[0]}
+											src={`${CDN}/${img[0]}`}
 											alt={img[1]}
 											loading='lazy'
 											decoding='async'

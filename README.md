@@ -12,12 +12,12 @@ It was developed with the intent to showcase my work and skills and concentrate 
 - Translation to different languages
 
 <p align='middle'>
-  <img align='top' src='/assets/homePageDark.png' alt = 'HomePageDark' width=190>
-  <img align='top' src='/assets/homePageLight.png' alt = 'HomePageLight' width=190>
-  <img align='top' src='/assets/projectsPage.png' alt = 'ProjectsPage' width=190>
-  <img align='top' src='/assets/projectPage.png' alt = 'ProjectPage' width=190>
-  <img align='top' src='/assets/aboutPage.png' alt = 'AboutPage' width=190>
-  <img align='top' src='/assets/aboutPagePt.png' alt = 'AboutPagePt' width=190>
+  <img align='top' src='/assets/projects/portfolio/homePageDark.png' alt = 'HomePageDark' width=190>
+  <img align='top' src='/assets/projects/portfolio/homePageLight.png' alt = 'HomePageLight' width=190>
+  <img align='top' src='/assets/projects/portfolio/projectsPage.png' alt = 'ProjectsPage' width=190>
+  <img align='top' src='/assets/projects/portfolio/projectPage.png' alt = 'ProjectPage' width=190>
+  <img align='top' src='/assets/projects/portfolio/aboutPage.png' alt = 'AboutPage' width=190>
+  <img align='top' src='/assets/projects/portfolio/aboutPagePt.png' alt = 'AboutPagePt' width=190>
 </p>
 
 ## Tech used

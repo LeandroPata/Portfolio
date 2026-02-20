@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getLangFromUrl, useTranslatedPath } from '@/src/i18n/utils';
+import { CDN } from '../utils/constants';
 
 const locale = getLangFromUrl(Astro.url.pathname);
 const translatePath = useTranslatedPath(locale);
@@ -33,7 +34,7 @@ if (projectUrl?.endsWith('.md')) projectUrl = projectUrl.replaceAll('.md', '');
 >
 	<span class='title'>{data.title.split('|')[0].trim()}</span>
 	<img
-		src={data.img}
+		src={`${CDN}/${data.img}`}
 		alt={data.img_alt || ''}
 		loading='lazy'
 		decoding='async'
