@@ -4,16 +4,16 @@ slug: portfolio
 locale: pt
 github_url: https://github.com/LeandroPata/Portfolio
 publishDate: 2025-02-11 00:00:00
-img: /assets/projects/portfolio/cover.png
-img_alt: Portfolio Cover
+img: assets/projects/portfolio/cover.png
+img_alt: Cover Portfolio
 imgs:
   [
-    ['/assets/projects/portfolio/homePageDark.png', 'Página Inicial Escura'],
-    ['/assets/projects/portfolio/homePageLight.png', 'Página Inicial Clara'],
-    ['/assets/projects/portfolio/projectsPage.png', 'Página de Projetos'],
-    ['/assets/projects/portfolio/projectPage.png', 'Página com Projeto'],
-    ['/assets/projects/portfolio/aboutPage.png', 'Página Sobre En'],
-    ['/assets/projects/portfolio/aboutPagePt.png', 'Página Sobre Pt'],
+    ['assets/projects/portfolio/homePageDark.png', 'Página Inicial Escura'],
+    ['assets/projects/portfolio/homePageLight.png', 'Página Inicial Clara'],
+    ['assets/projects/portfolio/projectsPage.png', 'Página de Projetos'],
+    ['assets/projects/portfolio/projectPage.png', 'Página com Projeto'],
+    ['assets/projects/portfolio/aboutPage.png', 'Página Sobre En'],
+    ['assets/projects/portfolio/aboutPagePt.png', 'Página Sobre Pt'],
   ]
 description: |
   Portfolio pessoal concebido para demonstrar os meus projetos e competências

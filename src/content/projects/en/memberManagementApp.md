@@ -4,15 +4,15 @@ slug: memberManagementApp
 locale: en
 github_url: https://github.com/LeandroPata/MemberManagementApp
 publishDate: 2024-10-22 00:00:00
-img: /assets/projects/memberManagementApp/cover.png
+img: assets/projects/memberManagementApp/cover.png
 img_alt: Member Management App Cover
 imgs:
   [
-    ['/assets/projects/memberManagementApp/mainMenu.png', 'Main Menu'],
-    ['/assets/projects/memberManagementApp/addMember.png', 'Add Member'],
-    ['/assets/projects/memberManagementApp/searchMember.png', 'Search Member'],
-    ['/assets/projects/memberManagementApp/profile.png', 'Profile'],
-    ['/assets/projects/memberManagementApp/importExport.png', 'Import/Export'],
+    ['assets/projects/memberManagementApp/mainMenu.png', 'Main Menu'],
+    ['assets/projects/memberManagementApp/addMember.png', 'Add Member'],
+    ['assets/projects/memberManagementApp/searchMember.png', 'Search Member'],
+    ['assets/projects/memberManagementApp/profile.png', 'Profile'],
+    ['assets/projects/memberManagementApp/importExport.png', 'Import/Export'],
   ]
 description: |
   Project developed to help manage members of an organization or club.
@@ -38,14 +38,6 @@ It was developed with the intent to quickly and easily create a member profile, 
 - Delete members;
 - Import/Export of members information to/from .csv files in order to facilitate sharing and/or editing;
 
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/memberManagementApp/mainMenu.png' alt = 'MainMenu' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/addMember.png' alt = 'AddMemberMenu' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/searchMember.png' alt = 'SearchMemberMenu' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/profile.png' alt = 'Profile' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/importExport.png' alt = 'ImportExportMenu' width=190>
-</p> -->
-
 ### General Features
 
 - Authentication to allow only trusted accounts to access the information (ability to freely create an account would be removed in a real world implementation or require email/account verification before allowing login);
@@ -53,11 +45,6 @@ It was developed with the intent to quickly and easily create a member profile, 
 - Translation to different languages;
 - Light/Dark Theme;
 - Checking for updates (as it is a personal project, publishing in App Stores isn't feasible, so a different update checking system was implemented, not possible for iOS);
-
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/memberManagementApp/drawerLight.png' alt = 'DrawerLightMode' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/drawerDark.png' alt = 'DrawerDarkMode' width=190>
-</p> -->
 
 ## Technical Notes
 
