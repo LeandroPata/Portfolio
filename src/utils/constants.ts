@@ -9,7 +9,7 @@ export const LINKS = {
 export const REPO = {
 	NAME: 'Portfolio',
 	USER: 'LeandroPata',
-	VERSION: version,
+	VERSION: `v${version}`,
 };
 
 export const CDN = `https://cdn.jsdelivr.net/gh/${REPO.USER}/${REPO.NAME}@${REPO.VERSION}`;
