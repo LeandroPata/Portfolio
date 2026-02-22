@@ -2,8 +2,6 @@ import path from 'node:path';
 import { expect, test } from '@playwright/test';
 import getRoutes from '@/src/utils/getRoutes';
 
-const baseUrl = 'https://leandropata.pt';
-
 const routes = getRoutes(path.resolve('dist'));
 
 for (const route of routes) {
@@ -17,7 +15,7 @@ for (const route of routes) {
 			}
 		});
 
-		await page.goto(`${baseUrl}${route}`);
+		await page.goto(route);
 		// Wait for network to be idle so all images have had a chance to load
 		await page.waitForLoadState('networkidle');
 

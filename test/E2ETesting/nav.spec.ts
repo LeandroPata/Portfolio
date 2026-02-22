@@ -1,13 +1,11 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { ui } from '@/src/i18n/ui';
-
-const baseUrl = 'https://leandropata.pt';
 
 for (const locale in ui) {
 	test(`Load all pages in navbar for the ${locale} locale`, async ({
 		page,
 	}) => {
-		await page.goto(`${baseUrl}/${locale}`);
+		await page.goto(`${locale}`);
 
 		await page.waitForSelector('#menu-toggle', {
 			state: 'attached',
@@ -34,7 +32,7 @@ for (const locale in ui) {
 
 			await linkLocator.click();
 
-			await expect(page).toHaveURL(`${baseUrl}${linkHref}`, {
+			await expect(page).toHaveURL(`${linkHref}`, {
 				timeout: 30 * 1000,
 			});
 

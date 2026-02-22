@@ -1,7 +1,6 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { ui } from '@/src/i18n/ui';
 
-const baseUrl = 'http://localhost:4321';
 const routes = [
 	'/en/about/',
 	'/en/',
@@ -36,7 +35,7 @@ for (const locale in ui) {
 		test(`Language selector navigates to '${locale}' at ${route}`, async ({
 			page,
 		}) => {
-			await page.goto(`${baseUrl}${route}`);
+			await page.goto(`${route}`);
 
 			await page.waitForSelector('#menu-toggle', {
 				state: 'attached',
@@ -49,10 +48,10 @@ for (const locale in ui) {
 			//console.log(`Expected option: /${curLocale}`);
 			await expect(page.locator('#language-select')).toHaveValue(curLocale);
 
-			//console.log(`Expected: ${baseUrl}/${locale}${baseRoute}`);
+			//console.log(`Expected: ${locale}${baseRoute}`);
 			await page.locator('#language-select').selectOption(locale);
 
-			await expect(page).toHaveURL(`${baseUrl}/${locale}${baseRoute}`, {
+			await expect(page).toHaveURL(`${locale}${baseRoute}`, {
 				timeout: 30 * 1000,
 			});
 		});

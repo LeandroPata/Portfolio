@@ -1,9 +1,7 @@
-import { test, expect } from '@playwright/test';
-
-const baseUrl = 'http://localhost:4321';
+import { expect, test } from '@playwright/test';
 
 test('Umami script is present and reachable', async ({ page }) => {
-	await page.goto(baseUrl);
+	await page.goto('/');
 
 	const umamiScript = await page.locator('script[src*="umami"]').first();
 	const scriptSrc = await umamiScript.getAttribute('src');

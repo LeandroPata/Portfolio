@@ -113,7 +113,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test E2ETesting/testing
+        run: npx playwright test
 
       - name: Upload local report
         uses: actions/upload-artifact@v4
@@ -136,7 +136,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
   release:
-    name: release
+    name: Release
     runs-on: ubuntu-latest
     needs: [deploy]
     permissions:
@@ -185,7 +185,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: ENV=prod npx playwright test E2ETesting/prod
+        run: ENV=prod npx playwright test
 
       - name: Upload report
         uses: actions/upload-artifact@v4

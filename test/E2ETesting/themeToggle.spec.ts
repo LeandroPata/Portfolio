@@ -1,9 +1,7 @@
-import { test, expect } from '@playwright/test';
-
-const baseUrl = 'https://leandropata.pt';
+import { expect, test } from '@playwright/test';
 
 test('Theme toggle switches between light and dark mode', async ({ page }) => {
-	await page.goto(baseUrl);
+	await page.goto('/');
 
 	await page.waitForSelector('#menu-toggle', {
 		state: 'attached',
@@ -17,19 +15,19 @@ test('Theme toggle switches between light and dark mode', async ({ page }) => {
 	const button = page.locator('theme-toggle button');
 
 	const initialHasDark = await html.evaluate((el) =>
-		el.classList.contains('theme-dark')
+		el.classList.contains('theme-dark'),
 	);
 
 	await button.click();
 	const afterClickHasDark = await html.evaluate((el) =>
-		el.classList.contains('theme-dark')
+		el.classList.contains('theme-dark'),
 	);
 
 	expect(afterClickHasDark).not.toBe(initialHasDark);
 
 	await button.click();
 	const endHasDark = await html.evaluate((el) =>
-		el.classList.contains('theme-dark')
+		el.classList.contains('theme-dark'),
 	);
 
 	expect(endHasDark).toBe(initialHasDark);
