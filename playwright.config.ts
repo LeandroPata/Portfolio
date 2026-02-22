@@ -30,6 +30,7 @@ export default defineConfig({
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
 		trace: 'on-first-retry',
+		baseURL: isProd ? 'https://leandropata.pt' : 'http://localhost:4321',
 		headless: isProd ? true : !!process.env.CI,
 		...(isProd && !process.env.CI
 			? { connectOptions: { wsEndpoint: 'ws://127.0.0.1:3000/' } }
@@ -83,6 +84,6 @@ export default defineConfig({
 					url: 'http://localhost:4321',
 					reuseExistingServer: false,
 				},
-		  }
+			}
 		: {}),
 });
