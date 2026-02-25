@@ -1,4 +1,6 @@
 ---
+/** biome-ignore-all assist/source/organizeImports: <for clarification> */
+
 // MainLayout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import MainLayout from '@/src/layouts/MainLayout.astro';
 
@@ -16,13 +18,16 @@ import { loadCollection } from '@/src/utils/loadData';
 import Skills from '@/src/components/Skills.astro';
 
 // Locale
+import { ui, defaultLang } from '@/src/i18n/ui';
 import {
-	getLangFromUrl,
+	getI18nStaticPaths,
 	useTranslatedPath,
 	useTranslations,
 } from '@/src/i18n/utils';
 
-const locale = getLangFromUrl(Astro.url.pathname);
+export const getStaticPaths = getI18nStaticPaths;
+
+const locale = (Astro.currentLocale ?? defaultLang) as keyof typeof ui;
 const translatePath = useTranslatedPath(locale);
 const t = useTranslations(locale);
 

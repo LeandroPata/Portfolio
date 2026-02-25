@@ -1,4 +1,4 @@
-import { ui, defaultLang } from '@/src/i18n/ui';
+import { defaultLang, ui } from '@/src/i18n/ui';
 
 export function getLangFromUrl(path: string) {
 	const [, lang] = path.split('/');
@@ -48,6 +48,11 @@ export function getLanguagePreference(saveToStorage = true) {
 	}
 	const lang = document.documentElement.getAttribute('lang');
 	//console.log(lang);
+
 	if (saveToStorage) saveLanguage(lang);
 	return lang;
+}
+
+export function getI18nStaticPaths() {
+	return Object.keys(ui).map((lang) => ({ params: { lang } }));
 }

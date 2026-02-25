@@ -1,16 +1,16 @@
 ---
-import MainLayout from '@/src/layouts/MainLayout.astro';
-
-import Hero from '@/src/components/Hero.astro';
-import Grid from '@/src/components/Grid.astro';
 import ContactCTA from '@/src/components/ContactCTA.astro';
+import Grid from '@/src/components/Grid.astro';
+import Hero from '@/src/components/Hero.astro';
 import ProjectPreview from '@/src/components/ProjectPreview.astro';
+import { defaultLang, ui } from '@/src/i18n/ui';
+import { getI18nStaticPaths, useTranslations } from '@/src/i18n/utils';
+import MainLayout from '@/src/layouts/MainLayout.astro';
 import { loadCollection } from '@/src/utils/loadData';
 
-// Locale
-import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
+export const getStaticPaths = getI18nStaticPaths;
 
-const locale = getLangFromUrl(Astro.url.pathname);
+const locale = (Astro.currentLocale ?? defaultLang) as keyof typeof ui;
 const t = useTranslations(locale);
 
 const projects = await loadCollection(locale);
