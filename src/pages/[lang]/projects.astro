@@ -1,0 +1,45 @@
+---
+import ContactCTA from '@/src/components/ContactCTA.astro';
+import Grid from '@/src/components/Grid.astro';
+import Hero from '@/src/components/Hero.astro';
+import ProjectPreview from '@/src/components/ProjectPreview.astro';
+import { defaultLang, ui } from '@/src/i18n/ui';
+import { getI18nStaticPaths, useTranslations } from '@/src/i18n/utils';
+import MainLayout from '@/src/layouts/MainLayout.astro';
+import { loadCollection } from '@/src/utils/loadData';
+
+export const getStaticPaths = getI18nStaticPaths;
+
+const locale = (Astro.currentLocale ?? defaultLang) as keyof typeof ui;
+const t = useTranslations(locale);
+
+const projects = await loadCollection(locale);
+---
+
+<MainLayout
+	title={t('projects.title') + ' | Leandro Pata'}
+	description={t('projects.description')}
+>
+	<div class='stack gap-20'>
+		<main
+			class='wrapper stack gap-8'
+			transition:animate='fade'
+		>
+			<Hero
+				title={t('projects.title')}
+				tagline={t('projects.tagline')}
+				align='center'
+			/>
+			<Grid variant='offset'>
+				{
+					projects.map((project) => (
+						<li>
+							<ProjectPreview project={project} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+		<ContactCTA />
+	</div>
+</MainLayout>
