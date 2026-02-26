@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
-import { ui } from '@/src/i18n/ui';
+import { languages } from '@/src/i18n/ui';
 
-for (const locale in ui) {
+for (const locale in languages) {
 	test(`Load all pages in navbar for the ${locale} locale`, async ({
 		page,
 	}) => {

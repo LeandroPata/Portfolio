@@ -18,7 +18,7 @@ import { loadCollection } from '@/src/utils/loadData';
 import Skills from '@/src/components/Skills.astro';
 
 // Locale
-import { ui, defaultLang } from '@/src/i18n/ui';
+import { languages, defaultLang } from '@/src/i18n/ui';
 import {
 	getI18nStaticPaths,
 	useTranslatedPath,
@@ -27,7 +27,7 @@ import {
 
 export const getStaticPaths = getI18nStaticPaths;
 
-const locale = (Astro.currentLocale ?? defaultLang) as keyof typeof ui;
+const locale = (Astro.currentLocale ?? defaultLang) as keyof typeof languages;
 const translatePath = useTranslatedPath(locale);
 const t = useTranslations(locale);
 

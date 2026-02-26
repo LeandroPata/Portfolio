@@ -3,21 +3,21 @@ import { render } from 'astro:content';
 import ContactCTA from '@/src/components/ContactCTA.astro';
 import Hero from '@/src/components/Hero.astro';
 import Pill from '@/src/components/Pill.astro';
-import { defaultLang, languages, ui } from '@/src/i18n/ui';
+import { defaultLang, languages } from '@/src/i18n/ui';
 import { useTranslations } from '@/src/i18n/utils';
 import MainLayout from '@/src/layouts/MainLayout.astro';
 import { CDN } from '@/src/utils/constants';
 import { loadCollection } from '@/src/utils/loadData';
 
-const locale = (Astro.currentLocale ?? defaultLang) as keyof typeof ui;
+const locale = (Astro.currentLocale ?? defaultLang) as keyof typeof languages;
 const t = useTranslations(locale);
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 export async function getStaticPaths() {
-	const languages = Object.keys(ui) as (keyof typeof ui)[];
+	const langs = Object.keys(languages) as (keyof typeof languages)[];
 
 	const paths = await Promise.all(
-		languages.map(async (lang) => {
+		langs.map(async (lang) => {
 			const pages = await loadCollection(lang);
 			return pages.map((page) => ({
 				params: { slug: page.id || undefined, lang },

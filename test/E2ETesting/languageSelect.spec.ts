@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { ui } from '@/src/i18n/ui';
+import { languages } from '@/src/i18n/ui';
 
 const routes = [
 	'/en/about/',
@@ -17,7 +17,7 @@ const routes = [
 	'/pt/projects/portfolio/',
 ];
 
-for (const locale in ui) {
+for (const locale in languages) {
 	for (const route of routes) {
 		const splicedRoute = route.split('/');
 		const curLocale = splicedRoute[1] === 'pt' ? 'pt' : 'en';

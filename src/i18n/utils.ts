@@ -1,8 +1,8 @@
-import { defaultLang, ui } from '@/src/i18n/ui';
+import { defaultLang, languages, ui } from '@/src/i18n/ui';
 
 export function getLangFromUrl(path: string) {
 	const [, lang] = path.split('/');
-	if (lang in ui) return lang as keyof typeof ui;
+	if (lang in languages) return lang as keyof typeof languages;
 	return defaultLang;
 }
 
@@ -19,7 +19,7 @@ export function useTranslations(lang: keyof typeof ui) {
 	};
 }
 
-export function useTranslatedPath(lang: keyof typeof ui) {
+export function useTranslatedPath(lang: keyof typeof languages) {
 	return function translatePath(path: string, l: string = lang) {
 		//console.log(`/${l}${path}`);
 		return `/${l}${path}`;
@@ -35,8 +35,8 @@ export function getLanguagePreference(saveToStorage = true) {
 	if (typeof localStorage !== 'undefined' && localStorage.getItem('locale')) {
 		let storedLang = localStorage.getItem('locale');
 
-		if (!(storedLang in ui)) {
-			for (const locale in ui) {
+		if (!(storedLang in languages)) {
+			for (const locale in languages) {
 				if (storedLang.includes(locale)) {
 					storedLang = locale;
 					break;
@@ -44,7 +44,7 @@ export function getLanguagePreference(saveToStorage = true) {
 			}
 		}
 
-		if (storedLang in ui) return storedLang;
+		if (storedLang in languages) return storedLang;
 	}
 	const lang = document.documentElement.getAttribute('lang');
 	//console.log(lang);
@@ -54,5 +54,5 @@ export function getLanguagePreference(saveToStorage = true) {
 }
 
 export function getI18nStaticPaths() {
-	return Object.keys(ui).map((lang) => ({ params: { lang } }));
+	return Object.keys(languages).map((lang) => ({ params: { lang } }));
 }

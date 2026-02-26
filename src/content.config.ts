@@ -1,11 +1,11 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { ui } from './i18n/ui';
+import { languages } from './i18n/ui';
 
 const projectsSchema = z.object({
 	title: z.string(),
 	slug: z.string(),
-	locale: z.enum(Object.keys(ui) as [string, ...string[]]),
+	locale: z.enum(Object.keys(languages) as [string, ...string[]]),
 	github_url: z.string(),
 	description: z.string(),
 	publishDate: z.coerce.date(),
@@ -16,7 +16,7 @@ const projectsSchema = z.object({
 });
 
 const collections = Object.fromEntries(
-	Object.keys(ui).map((lang) => [
+	Object.keys(languages).map((lang) => [
 		`projects${lang.charAt(0).toUpperCase() + lang.slice(1)}`,
 		defineCollection({
 			loader: glob({
