@@ -96,7 +96,12 @@ const t = useTranslations(locale);
 		</main>
 
 		<div class='cv-download'>
-			<a href={`${CDN}/assets/cv/CV_LeandroPata_EN.pdf`}>{t('about.cv')}</a>
+			<a 
+				href={`${CDN}/assets/cv/CV_LeandroPata_EN.pdf`} 
+				target='_blank' 
+				data-umami-event='CV Click'>
+				{t('about.cv')}
+			</a>
 		</div>
 		<ContactCTA />
 	</div>
