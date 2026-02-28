@@ -47,18 +47,16 @@
         "noVar": "error",
         "noWith": "warn"
       }
-    },
-    "includes": [
-      "**",
-      "!android/app/build",
-      "!dist/*"
-    ]
+    }
   },
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
       "jsxQuoteStyle": "single"
     }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true
   },
   "assist": {
     "enabled": true,
@@ -67,26 +65,5 @@
         "organizeImports": "on"
       }
     }
-  },
-  "overrides": [
-    {
-      "includes": [
-        "**/*.svelte",
-        "**/*.astro",
-        "**/*.vue"
-      ],
-      "linter": {
-        "rules": {
-          "style": {
-            "useConst": "off",
-            "useImportType": "off"
-          },
-          "correctness": {
-            "noUnusedVariables": "off",
-            "noUnusedImports": "off"
-          }
-        }
-      }
-    }
-  ]
+  }
 }
