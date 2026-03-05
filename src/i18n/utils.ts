@@ -22,6 +22,12 @@ export function useTranslations(lang: keyof typeof ui) {
 export function useTranslatedPath(lang: keyof typeof languages) {
 	return function translatePath(path: string, l: string = lang) {
 		//console.log(`/${l}${path}`);
+		if (path === '/') {
+			return `/${l}`;
+		} else if (!path.startsWith('/')) {
+			path = `/${path}`;
+		}
+
 		return `/${l}${path}`;
 	};
 }
