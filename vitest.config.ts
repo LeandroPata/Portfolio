@@ -1,8 +1,9 @@
-/// <reference types="vitest" />
 import { getViteConfig } from 'astro/config';
 
 export default getViteConfig({
 	test: {
-		exclude: ['./test/E2ETesting/'],
+		environment: 'happy-dom',
+		globals: true,
+		exclude: ['./test/E2ETesting/', 'node_modules/'],
 	},
 });
