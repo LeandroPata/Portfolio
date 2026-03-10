@@ -1,16 +1,15 @@
 ---
-import Icon from '@/src/components/Icon.astro';
-import ThemeToggle from '@/src/components/ThemeToggle.astro';
-import type { iconPaths } from '@/src/components/IconPaths';
-import { LINKS } from '@/src/utils/constants';
 
-// Locale
+import Icon from '@/src/components/Icon.astro';
+import type { iconPaths } from '@/src/components/IconPaths';
+import LanguageSelect from '@/src/components/LanguageSelect.astro';
+import ThemeToggle from '@/src/components/ThemeToggle.astro';
 import {
 	getLangFromUrl,
-	useTranslations,
 	useTranslatedPath,
+	useTranslations,
 } from '@/src/i18n/utils';
-import LanguageSelect from '@/src/components/LanguageSelect.astro';
+import { LINKS } from '@/src/utils/constants';
 
 const locale = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(locale);
@@ -52,7 +51,7 @@ const isCurrentPage = (href: string) => {
 
 	return (
 		pathname === href ||
-		(href !== '/' && href !== `/${locale}/` && pathname.startsWith(href))
+		(href !== '/' && href !== `/${locale}` && pathname.startsWith(href))
 	);
 };
 ---

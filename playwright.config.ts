@@ -26,9 +26,14 @@ export default defineConfig({
 	workers: process.env.CI ? 2 : undefined,
 	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
 	reporter: 'html',
-	timeout: 5 * 60 * 1000,
+	timeout: 60 * 1000, // Timeout for each test in milliseconds (1 min)
+	expect: {
+		timeout: 10 * 1000, // Timeout for each expect statement in milliseconds (10 sec)
+	},
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
+		navigationTimeout: 30 * 1000, // Timeout for navigation operations in milliseconds (30 sec)
+		actionTimeout: 15 * 1000, // Timeout for action operations in milliseconds (15 sec)
 		trace: 'on-first-retry',
 		baseURL: isProd ? 'https://leandropata.pt' : 'http://localhost:4321',
 		headless: isProd ? true : !!process.env.CI,
