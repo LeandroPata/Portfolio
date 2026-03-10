@@ -5,7 +5,6 @@ test('Theme toggle switches between light and dark mode', async ({ page }) => {
 
 	await page.waitForSelector('#menu-toggle', {
 		state: 'attached',
-		timeout: 30 * 1000,
 	});
 
 	if (await page.locator('#menu-toggle').isVisible())

@@ -4,11 +4,13 @@ import getRoutes from '@/src/utils/getRoutes';
 
 const routes = getRoutes(path.resolve('dist'));
 
-for (const route of routes) {
-	test(`Loads ${route}`, async ({ page }) => {
-		await page.goto(route);
+test.describe('All pages exist and load correctly', () => {
+	for (const route of routes) {
+		test(`Loads ${route}`, async ({ page }) => {
+			await page.goto(route);
 
-		if (route === '/') await expect(page).toHaveURL('/en/');
-		else await expect(page).toHaveURL(route);
-	});
-}
+			if (route === '/') await expect(page).toHaveURL('/en');
+			else await expect(page).toHaveURL(route);
+		});
+	}
+});
