@@ -14,8 +14,9 @@ function getRoutes(dir: string, base: string = dir): string[] {
 		} else if (entry.name.endsWith('.html')) {
 			const relPath = path.relative(base, fullPath);
 			const url = `/${relPath
-				.replace(/index\.html$/, '')
-				.replace(/\.html$/, '')
+				.replace(/index\.html$/, '') // Remove index.html extension
+				.replace(/\.html$/, '') // Remove .html extension
+				.replace(/\/$/, '') // Remove trailing slashes
 				.replace(/\\/g, '/')}`; // Normalize for Windows
 			routes.push(url === '/' ? '/' : url);
 		}
