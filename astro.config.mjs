@@ -1,12 +1,13 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import yeskunallumami from '@yeskunall/astro-umami';
 
 import sitemap from '@astrojs/sitemap';
+import yeskunallumami from '@yeskunall/astro-umami';
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://leandropata.pt',
+	trailingSlash: 'always',
 	integrations: [
 		sitemap({
 			i18n: {
