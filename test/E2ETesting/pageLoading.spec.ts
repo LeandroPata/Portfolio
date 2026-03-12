@@ -9,7 +9,7 @@ test.describe('All pages exist and load correctly', () => {
 		test(`Loads ${route}`, async ({ page }) => {
 			await page.goto(route);
 
-			if (route === '/') await expect(page).toHaveURL('/en');
+			if (route === '/') await expect(page).toHaveURL('/en/');
 			else await expect(page).toHaveURL(route);
 		});
 	}

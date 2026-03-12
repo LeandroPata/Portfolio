@@ -13,7 +13,7 @@ test.describe('Language selection works correctly', () => {
 				const curLocale = splicedRoute[1] === 'pt' ? 'pt' : 'en';
 				//console.log(`Current Locale: ${curLocale}`);
 				splicedRoute.splice(1, 1);
-				let baseRoute = splicedRoute.join('/');
+				let baseRoute = splicedRoute.join('/') || '/';
 
 				//console.log(`${route} : ${baseRoute}`);
 				//console.log(`${locale} : ${curLocale}`);

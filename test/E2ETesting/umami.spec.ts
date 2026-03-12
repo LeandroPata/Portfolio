@@ -18,7 +18,10 @@ test('Umami script is present and reachable', async ({ page }) => {
 
 test.describe(`Umami events are reachable`, () => {
 	for (const route of routes) {
-		if (route.includes('/projects/') || route.includes('/about')) {
+		if (
+			(route.includes('/projects/') && !route.endsWith('/projects/')) ||
+			route.includes('/about/')
+		) {
 			test(`Events in ${route}`, async ({ page }) => {
 				await page.goto(route);
 

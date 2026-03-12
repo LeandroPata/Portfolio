@@ -20,12 +20,12 @@ import {
 describe('getLangFromUrl', () => {
 	it('Extracts a valid language from the URL', () => {
 		for (const lang of Object.keys(languages)) {
-			expect(getLangFromUrl(`/${lang}/about`)).toBe(lang);
+			expect(getLangFromUrl(`/${lang}/about/`)).toBe(lang);
 		}
 	});
 
 	it('Returns the default language when lang segment is missing', () => {
-		expect(getLangFromUrl('/about')).toBe(defaultLang);
+		expect(getLangFromUrl('/about/')).toBe(defaultLang);
 	});
 
 	it('Returns the default language for an unknown language segment', () => {
@@ -54,7 +54,7 @@ describe('getLangFromUrl', () => {
 // -------------------------------------------------------
 describe('getBaseUrl', () => {
 	it('Strips the language segment from a path', () => {
-		expect(getBaseUrl('/en/about')).toBe('/about');
+		expect(getBaseUrl('/en/about/')).toBe('/about/');
 	});
 
 	it('Handles the language root path', () => {
@@ -62,8 +62,8 @@ describe('getBaseUrl', () => {
 	});
 
 	it('Handles nested paths', () => {
-		expect(getBaseUrl('/en/projects/orderManagementApp')).toBe(
-			'/projects/orderManagementApp',
+		expect(getBaseUrl('/en/projects/orderManagementApp/')).toBe(
+			'/projects/orderManagementApp/',
 		);
 	});
 
@@ -73,7 +73,7 @@ describe('getBaseUrl', () => {
 
 	it('Works for all defined languages', () => {
 		for (const lang of Object.keys(languages)) {
-			expect(getBaseUrl(`/${lang}/about`)).toBe('/about');
+			expect(getBaseUrl(`/${lang}/about/`)).toBe('/about/');
 		}
 	});
 });
@@ -113,14 +113,14 @@ describe('useTranslatedPath', () => {
 	for (const lang in languages) {
 		const translatePath = useTranslatedPath(lang);
 		it(`Returns correct path for ${lang} locale`, () => {
-			expect(translatePath('/about', lang)).toBe(`/${lang}/about`);
+			expect(translatePath('/about/', lang)).toBe(`/${lang}/about/`);
 		});
 	}
 
 	const translatePath = useTranslatedPath(defaultLang);
 
 	it('Uses the default locale when none is provided', () => {
-		expect(translatePath('/about')).toBe(`/${defaultLang}/about`);
+		expect(translatePath('/about/')).toBe(`/${defaultLang}/about/`);
 	});
 
 	it('Overrides default locale when one is provided', () => {
@@ -128,21 +128,29 @@ describe('useTranslatedPath', () => {
 			(lang) => lang !== defaultLang,
 		)!;
 
-		expect(translatePath('/about', otherLang)).toBe(`/${otherLang}/about`);
+		expect(translatePath('/about/', otherLang)).toBe(`/${otherLang}/about/`);
 	});
 
 	it('Handles root path correctly', () => {
-		expect(translatePath('/')).toBe(`/${defaultLang}`);
+		expect(translatePath('/')).toBe(`/${defaultLang}/`);
 	});
 
 	it('Handles nested paths correctly', () => {
-		expect(translatePath('/projects/orderManagementApp')).toBe(
-			`/${defaultLang}/projects/orderManagementApp`,
+		expect(translatePath('/projects/orderManagementApp/')).toBe(
+			`/${defaultLang}/projects/orderManagementApp/`,
 		);
 	});
 
 	it('Handles without leading slash', () => {
-		expect(translatePath('about')).toBe(`/${defaultLang}/about`);
+		expect(translatePath('about/')).toBe(`/${defaultLang}/about/`);
+	});
+
+	it('Handles without trailing slash', () => {
+		expect(translatePath('/about')).toBe(`/${defaultLang}/about/`);
+	});
+
+	it('Handles without leading slash and trailing slash', () => {
+		expect(translatePath('about')).toBe(`/${defaultLang}/about/`);
 	});
 });
 
