@@ -16,7 +16,7 @@ function getRoutes(dir: string, base: string = dir): string[] {
 				.replace(/index\.html$/, '') // Remove index.html extension
 				.replace(/\.html$/, '') // Remove .html extension
 				.replace(/\\/g, '/')}`; // Normalize for Windows
-			routes.push(url === '/' ? '/' : url);
+			routes.push(url.endsWith('/') ? url : `${url}/`);
 		}
 	}
 	//console.log(routes);
