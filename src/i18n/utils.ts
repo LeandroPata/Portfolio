@@ -13,7 +13,7 @@ export function getBaseUrl(path: string) {
 	return baseUrl.join('/') || '/';
 }
 
-export function useTranslations(lang: keyof typeof ui) {
+export function useTranslations(lang: keyof typeof languages) {
 	return function t(key: keyof (typeof ui)[typeof defaultLang]) {
 		return ui[lang][key] || ui[defaultLang][key];
 	};
