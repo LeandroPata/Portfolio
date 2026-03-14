@@ -12,7 +12,14 @@ const projectsSchema = z.object({
 	tags: z.array(z.string()),
 	img: z.string(),
 	img_alt: z.string().optional(),
-	imgs: z.array(z.array(z.string())).optional(),
+	imgs: z
+		.array(
+			z.tuple([
+				z.string(), //Path
+				z.string(), //Alt Text
+			]),
+		)
+		.optional(),
 });
 
 const collections = Object.fromEntries(
