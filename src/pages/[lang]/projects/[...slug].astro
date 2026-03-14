@@ -61,27 +61,28 @@ const { Content } = await render(page);
 							<img
 								src={`${CDN}/${page.data.img}`}
 								alt={page.data.img_alt || ''}
-								loading='lazy'
+								loading='eager'
 								decoding='async'
 							/>
 						)
 					}
 				</div>
 				<div class='row gap-10 content'>
-					<div class='column images'>
+					<div class='column images' id='project-gallery'>
 						{
-							page.data.imgs.map((img) => (
-								<div class='click-zoom'>
-									<label>
-										<input type='checkbox' />
-										<img
-											src={`${CDN}/${img[0]}`}
-											alt={img[1]}
-											loading='lazy'
-											decoding='async'
-										/>
-									</label>
-								</div>
+							(page.data.imgs ?? []).map((img) => (
+								<a
+									href={`${CDN}/${img[0]}`}
+									target='_blank'
+									rel='noreferrer'
+								>
+									<img
+										src={`${CDN}/${img[0]}`}
+										alt={img[1]}
+										loading='lazy'
+										decoding='async'
+									/>
+								</a>
 							))
 						}
 					</div>
@@ -102,6 +103,75 @@ const { Content } = await render(page);
 		<ContactCTA />
 	</div>
 </MainLayout>
+
+<script>
+	import PhotoSwipeLightbox from "photoswipe/lightbox";
+	import 'photoswipe/photoswipe.css';
+
+	let lightbox: PhotoSwipeLightbox | null = null;
+
+	// Cache for image dimensions
+		const dimensionCache = new Map<string, {w: number, h: number}>();
+
+	async function initGallery(){
+		if (lightbox) {
+			lightbox.destroy();
+			lightbox = null;
+		}
+
+		const gallery = document.getElementById('project-gallery');
+		if (!gallery) return;
+
+		lightbox = new PhotoSwipeLightbox({
+			gallery: '#project-gallery',
+			children: 'a',
+			pswpModule: () => import('photoswipe'),
+		});
+
+		async function preloadDimensions() {
+			const links = document.querySelectorAll('#project-gallery a');
+			await Promise.all(
+				Array.from(links).map((link) => new Promise<void>((resolve) => {
+					const src = (link as HTMLAnchorElement).href;
+					const img = new Image();
+					img.src = src;
+					img.onload = () => {
+						dimensionCache.set(src, {w: img.naturalWidth, h: img.naturalHeight});
+						resolve();
+					};
+
+					img.onerror = () => {
+						dimensionCache.set(src, {w: 800, h: 600});
+						resolve();
+					};
+				}))
+			);
+		}
+
+		lightbox.addFilter('domItemData', (itemData) => {
+			const dims = dimensionCache.get(itemData.src as string);
+			if (dims) {
+				itemData.w = dims.w;
+				itemData.h = dims.h;
+			}
+			return itemData;
+		});
+
+		await preloadDimensions();
+		lightbox.init();
+	}
+
+	initGallery();
+
+	document.addEventListener('astro:page-load', initGallery);
+
+	document.addEventListener('astro:before-swap', () => {
+		if (lightbox) {
+			lightbox.destroy();
+			lightbox = null;
+		}
+	});
+</script>
 
 <style>
 	header {
@@ -163,22 +233,6 @@ const { Content } = await render(page);
 		align-items: center;
 		justify-content: center;
 	}
-
-	.click-zoom input[type='checkbox'] {
-		display: none;
-	}
-
-	.click-zoom img {
-		margin: 1ch;
-		transition: transform 0.25s ease;
-		cursor: zoom-in;
-	}
-
-	.click-zoom input[type='checkbox']:checked ~ img {
-		transform: scale(2);
-		cursor: zoom-out;
-	}
-
 	.text {
 		word-wrap: break-word;
 	}
