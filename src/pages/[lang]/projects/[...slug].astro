@@ -207,11 +207,11 @@ const { Content } = await render(page);
 		margin-top: 2rem;
 	}
 
-	.content: global(h1);
-	.content: global(h2);
-	.content: global(h3);
-	.content: global(h4);
-	.content: global(h5) {
+	.content :global(h1),
+	.content :global(h2),
+	.content :global(h3),
+	.content :global(h4),
+	.content :global(h5) {
 		margin: 1.5rem 0;
 	}
 
@@ -323,7 +323,7 @@ const { Content } = await render(page);
 		.images {
 			display: grid;
 			grid-template-columns: auto auto;
-			column-gap: 0ch;
+			column-gap: 1ch;
 			align-items: center;
 			justify-items: center;
 		}
