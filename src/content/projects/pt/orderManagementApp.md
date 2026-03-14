@@ -8,39 +8,57 @@ img: assets/projects/orderManagementApp/cover.png
 img_alt: Aplicação de Gestão de Encomendas Cover
 imgs:
   [
-    ['assets/projects/orderManagementApp/addClient.png', 'Adicionar Cliente'],
-    ['assets/projects/orderManagementApp/addProduct.png', 'Adicionar Produto'],
-    ['assets/projects/orderManagementApp/addOrder.png', 'Adicionar Encomenda'],
+    [
+      'assets/projects/orderManagementApp/addClient.png',
+      'Adicionar Cliente'
+    ],
+    [
+      'assets/projects/orderManagementApp/addProduct.png',
+      'Adicionar Produto'
+    ],
+    [
+      'assets/projects/orderManagementApp/addOrder.png',
+      'Adicionar Encomenda'
+    ],
     [
       'assets/projects/orderManagementApp/showClientOrder.png',
-      'Mostrar Encomenda Cliente',
+      'Mostrar Encomenda Cliente'
     ],
     [
       'assets/projects/orderManagementApp/showOrderDetails.png',
-      'Mostrar Detalhes de Encomenda',
+      'Mostrar Detalhes de Encomenda'
     ],
     [
       'assets/projects/orderManagementApp/showProductOrder.png',
-      'Mostrar Encomenda Produto',
+      'Mostrar Encomenda Produto'
     ],
     [
       'assets/projects/orderManagementApp/showProductQuantity.png',
-      'Mostrar Quantidade Produto',
+      'Mostrar Quantidade Produto'
     ],
-    ['assets/projects/orderManagementApp/mainMenu.png', 'Menu Principal'],
-    ['assets/projects/orderManagementApp/addMenu.png', 'Menu Adicionar'],
-    ['assets/projects/orderManagementApp/showMenu.png', 'Menu Mostrar'],
+    [
+      'assets/projects/orderManagementApp/mainMenu.png',
+      'Menu Principal'
+    ],
+    [
+      'assets/projects/orderManagementApp/addMenu.png',
+      'Menu Adicionar'
+    ],
+    [
+      'assets/projects/orderManagementApp/showMenu.png',
+      'Menu Mostrar'
+    ],
     [
       'assets/projects/orderManagementApp/importExport.png',
-      'Importar/Exportar',
+      'Importar/Exportar'
     ],
     [
       'assets/projects/orderManagementApp/drawerLight.png',
-      'Gaveta Modo Claro',
+      'Gaveta Modo Claro'
     ],
     [
       'assets/projects/orderManagementApp/drawerDark.png',
-      'Gaveta Modo Escuro',
+      'Gaveta Modo Escuro'
     ],
   ]
 description: |

@@ -8,16 +8,25 @@ img: assets/projects/memberManagementApp/cover.png
 img_alt: Aplicação de Gestão de Membros Cover
 imgs:
   [
-    ['assets/projects/memberManagementApp/mainMenu.png', 'Menu Principal'],
-    ['assets/projects/memberManagementApp/addMember.png', 'Adicionar Membro'],
+    [
+      'assets/projects/memberManagementApp/mainMenu.png',
+      'Menu Principal'
+    ],
+    [
+      'assets/projects/memberManagementApp/addMember.png',
+      'Adicionar Membro'
+    ],
     [
       'assets/projects/memberManagementApp/searchMember.png',
-      'Procurar Membro',
+      'Procurar Membro'
     ],
-    ['assets/projects/memberManagementApp/profile.png', 'Perfil'],
+    [
+      'assets/projects/memberManagementApp/profile.png',
+      'Perfil'
+    ],
     [
       'assets/projects/memberManagementApp/importExport.png',
-      'Importar/Exportar',
+      'Importar/Exportar'
     ],
   ]
 description: |

@@ -8,12 +8,30 @@ img: assets/projects/portfolio/cover.png
 img_alt: Portfolio Cover
 imgs:
   [
-    ['assets/projects/portfolio/homePageDark.png', 'Homepage Dark'],
-    ['assets/projects/portfolio/homePageLight.png', 'Homepage Light'],
-    ['assets/projects/portfolio/projectsPage.png', 'Projects Page'],
-    ['assets/projects/portfolio/projectPage.png', 'Project Page'],
-    ['assets/projects/portfolio/aboutPage.png', 'About Page En'],
-    ['assets/projects/portfolio/aboutPagePt.png', 'About Page Pt'],
+    [
+      'assets/projects/portfolio/homePageDark.png',
+      'Homepage Dark'
+    ],
+    [
+      'assets/projects/portfolio/homePageLight.png',
+      'Homepage Light'
+    ],
+    [
+      'assets/projects/portfolio/projectsPage.png',
+      'Projects Page'
+    ],
+    [
+      'assets/projects/portfolio/projectPage.png',
+      'Project Page'
+    ],
+    [
+      'assets/projects/portfolio/aboutPage.png',
+      'About Page En'
+    ],
+    [
+      'assets/projects/portfolio/aboutPagePt.png',
+      'About Page Pt'
+    ],
   ]
 description: |
   Personal portfolio designed to showcase my projects and skills.
