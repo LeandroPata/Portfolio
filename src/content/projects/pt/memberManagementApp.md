@@ -110,4 +110,4 @@ Alguns do 'pacotes' usados principalmente são:
 
 ## Desenvolvido por
 
-- [Leandro Pata](/about/)
+- [Leandro Pata](/pt/about/)

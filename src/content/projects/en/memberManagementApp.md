@@ -96,4 +96,4 @@ Some of the main packages used are:
 
 ## Developed by
 
-- [Leandro Pata](/about/)
+- [Leandro Pata](/en/about/)

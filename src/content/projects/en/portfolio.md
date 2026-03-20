@@ -73,4 +73,4 @@ After considering a few options to build and develop this project, <a href="http
 
 ## Developed by
 
-- [Leandro Pata](/about/)
+- [Leandro Pata](/en/about/)

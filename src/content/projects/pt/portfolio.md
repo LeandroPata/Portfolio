@@ -74,4 +74,4 @@ Após considerar várias opções para construir e desenvolver este projeto, <a 
 
 ## Desenvolvido por
 
-- [Leandro Pata](/about/)
+- [Leandro Pata](/pt/about/)
