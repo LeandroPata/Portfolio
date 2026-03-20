@@ -1,0 +1,138 @@
+---
+interface Props {
+  id: string;
+  images: [string, string][];
+  cdnBase: string;
+}
+
+const { id, images, cdnBase } = Astro.props;
+---
+
+<div class='images' id={id}>
+  {
+    images.map((img) => (
+      <a
+        href={`${cdnBase}/${img[0]}`}
+        target='_blank'
+        rel='noreferrer'
+      >
+        <img
+          src={`${cdnBase}/${img[0]}`}
+          alt={img[1]}
+          loading='lazy'
+          decoding='async'
+        />
+      </a>
+    ))
+  }
+</div>
+
+<script>
+	import PhotoSwipeLightbox from "photoswipe/lightbox";
+	import 'photoswipe/photoswipe.css';
+
+	let lightbox: PhotoSwipeLightbox | null = null;
+
+	// Cache for image dimensions
+		const dimensionCache = new Map<string, {w: number, h: number}>();
+
+	async function initGallery(){
+		if (lightbox) {
+			lightbox.destroy();
+			lightbox = null;
+		}
+
+		const gallery = document.getElementById('project-gallery');
+		if (!gallery) return;
+
+		lightbox = new PhotoSwipeLightbox({
+			gallery: `#${gallery.id}`,
+			children: 'a',
+			pswpModule: () => import('photoswipe'),
+		});
+
+		async function preloadDimensions() {
+			const links = document.querySelectorAll('a');
+			await Promise.all(
+				Array.from(links).map(
+          (link) => 
+            new Promise<void>((resolve) => {
+              const src = (link as HTMLAnchorElement).href;
+
+              if (dimensionCache.has(src)) return resolve();
+
+              const img = new Image();
+              img.src = src;
+              img.onload = () => {
+                dimensionCache.set(src, {w: img.naturalWidth, h: img.naturalHeight});
+                resolve();
+              };
+
+              img.onerror = () => {
+                dimensionCache.set(src, {w: 800, h: 600});
+                resolve();
+              };
+				}))
+			);
+		}
+
+		lightbox.addFilter('domItemData', (itemData) => {
+			const dims = dimensionCache.get(itemData.src as string);
+			if (dims) {
+				itemData.w = dims.w;
+				itemData.h = dims.h;
+			}
+			return itemData;
+		});
+
+		await preloadDimensions();
+		lightbox.init();
+	}
+
+	initGallery();
+
+	document.addEventListener('astro:page-load', initGallery);
+
+	document.addEventListener('astro:before-swap', () => {
+		if (lightbox) {
+			lightbox.destroy();
+			lightbox = null;
+		}
+	});
+</script>
+
+<style>
+  .images {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+  .images :global(img) {
+		align-self: center;
+		max-height: 30ch;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-sm);
+		background: var(--gradient-subtle);
+		border: 1px solid var(--gray-800);
+	}
+
+  @media (min-width: 50em) {
+    .images :global(img) {
+			max-height: 50ch;
+			max-width: 35ch;
+		}
+  }
+
+  @media (min-width: 100em) {
+		.images {
+			display: grid;
+			grid-template-columns: auto auto;
+			column-gap: 1ch;
+			align-items: center;
+			justify-items: center;
+		}
+	}
+</style>
