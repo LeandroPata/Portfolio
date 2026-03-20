@@ -1,0 +1,116 @@
+// test/E2ETesting/specs/gallery.spec.ts
+
+import path from 'node:path';
+import { expect, test } from '@playwright/test';
+import getRoutes from '@/src/utils/getRoutes';
+
+const routes = getRoutes(path.resolve('dist'));
+//const projectRoutes = routes.filter((route) => /\/projects\/.+/.test(route));
+
+test.describe('PhotoSwipe Gallery', () => {
+	for (const route of routes) {
+		test.describe(route, () => {
+			test.beforeEach(async ({ page }) => {
+				await page.goto(route);
+				await page.waitForLoadState('networkidle');
+				const galleryLinks = page.locator('#project-gallery a');
+				test.skip(
+					!(await galleryLinks.count()),
+					'No gallery images on this page',
+				);
+			});
+
+			test('Gallery images load correctly', async ({ page }) => {
+				const failedRequests: string[] = [];
+
+				page.on('response', (response) => {
+					if (
+						response.request().resourceType() === 'image' &&
+						response.status() >= 400 &&
+						response.url().includes('cdn.jsdelivr.net')
+					) {
+						failedRequests.push(`${response.url()} — ${response.status()}`);
+					}
+				});
+
+				await page.goto(route);
+				await page.waitForLoadState('networkidle');
+
+				expect(failedRequests).toEqual([]);
+			});
+
+			test('Lightbox opens on image click', async ({ page }) => {
+				await page.locator('#project-gallery a').first().click();
+				await expect(page.locator('.pswp')).toBeVisible();
+			});
+
+			test('Lightbox closes with X button', async ({ page }) => {
+				await page.locator('#project-gallery a').first().click();
+				await expect(page.locator('.pswp')).toBeVisible();
+
+				// Wait for the transition to end
+				await page.waitForFunction(() => {
+					const bg = document.querySelector('.pswp__bg') as HTMLElement;
+					return bg?.style.transition === 'none';
+				});
+
+				await page.locator('.pswp__button--close').click();
+				await expect(page.locator('.pswp')).not.toBeVisible();
+			});
+
+			test('Lightbox navigates to next image', async ({ page, isMobile }) => {
+				await page.locator('#project-gallery a').first().click();
+				await expect(page.locator('.pswp')).toBeVisible();
+
+				const firstSrc = await page
+					.locator('.pswp__img[src]')
+					.first()
+					.getAttribute('src');
+
+				expect(firstSrc).not.toBe(null);
+
+				// Wait for the transition to end
+				await page.waitForFunction(() => {
+					const bg = document.querySelector('.pswp__bg') as HTMLElement;
+					return bg?.style.transition === 'none';
+				});
+
+				if (isMobile) {
+					await page.keyboard.press('ArrowRight');
+				} else {
+					await page.locator('.pswp__button--arrow--next').click();
+				}
+
+				// Wait for the image to change
+				await page.waitForFunction((src) => {
+					const img = document.querySelector(
+						'.pswp__img[src]',
+					) as HTMLImageElement;
+					return img?.src !== src;
+				}, firstSrc);
+
+				const secondSrc = await page
+					.locator('.pswp__img[src]')
+					.first()
+					.getAttribute('src');
+
+				expect(secondSrc).not.toBe(null);
+				expect(firstSrc).not.toBe(secondSrc);
+			});
+
+			test('Lightbox closes with Escape key', async ({ page }) => {
+				await page.locator('#project-gallery a').first().click();
+				await expect(page.locator('.pswp')).toBeVisible();
+
+				// Wait for the transition to end
+				await page.waitForFunction(() => {
+					const bg = document.querySelector('.pswp__bg') as HTMLElement;
+					return bg?.style.transition === 'none';
+				});
+
+				await page.keyboard.press('Escape');
+				await expect(page.locator('.pswp')).not.toBeVisible();
+			});
+		});
+	}
+});
