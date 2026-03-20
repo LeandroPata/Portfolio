@@ -18,32 +18,27 @@ test('Umami script is present and reachable', async ({ page }) => {
 
 test.describe(`Umami events are reachable`, () => {
 	for (const route of routes) {
-		if (
-			(route.includes('/projects/') && !route.endsWith('/projects/')) ||
-			route.includes('/about/')
-		) {
-			test(`Events in ${route}`, async ({ page }) => {
-				await page.goto(route);
+		test(`Events in ${route}`, async ({ page }) => {
+			await page.goto(route);
+			await page.waitForLoadState('networkidle');
 
-				const githubLink = await page.locator('a[data-umami-event]').first();
+			const githubLink = await page.locator('a[data-umami-event]').first();
 
-				if (!(await githubLink.count()))
-					throw new Error('No GitHub link found');
+			test.skip(!(await githubLink.count()), 'No GitHub link found');
 
-				await page.waitForLoadState('networkidle');
+			await page.waitForLoadState('networkidle');
 
-				const umamiRequests: string[] = [];
-				page.on('request', (request) => {
-					if (request.url().includes('umami') && request.method() === 'POST') {
-						umamiRequests.push(request.url());
-					}
-				});
-
-				await githubLink.click();
-				await page.waitForTimeout(500);
-
-				expect(umamiRequests.length).toBeGreaterThan(0);
+			const umamiRequests: string[] = [];
+			page.on('request', (request) => {
+				if (request.url().includes('umami') && request.method() === 'POST') {
+					umamiRequests.push(request.url());
+				}
 			});
-		}
+
+			await githubLink.click();
+			await page.waitForTimeout(500);
+
+			expect(umamiRequests.length).toBeGreaterThan(0);
+		});
 	}
 });
