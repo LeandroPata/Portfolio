@@ -20,13 +20,12 @@ test.describe(`Umami events are reachable`, () => {
 	for (const route of routes) {
 		test(`Events in ${route}`, async ({ page }) => {
 			await page.goto(route);
-			await page.waitForLoadState('networkidle');
 
-			const githubLink = await page.locator('a[data-umami-event]').first();
+			if (route === '/') await page.waitForURL((url) => url.pathname !== route);
+
+			const githubLink = page.locator('a[data-umami-event]').first();
 
 			test.skip(!(await githubLink.count()), 'No GitHub link found');
-
-			await page.waitForLoadState('networkidle');
 
 			const umamiRequests: string[] = [];
 			page.on('request', (request) => {

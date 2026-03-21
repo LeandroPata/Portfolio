@@ -1,18 +1,18 @@
-// test/E2ETesting/specs/gallery.spec.ts
-
 import path from 'node:path';
 import { expect, test } from '@playwright/test';
 import getRoutes from '@/src/utils/getRoutes';
 
 const routes = getRoutes(path.resolve('dist'));
-//const projectRoutes = routes.filter((route) => /\/projects\/.+/.test(route));
 
 test.describe('PhotoSwipe Gallery', () => {
 	for (const route of routes) {
 		test.describe(route, () => {
 			test.beforeEach(async ({ page }) => {
-				await page.goto(route);
-				await page.waitForLoadState('networkidle');
+				await page.goto(route, { waitUntil: 'load' });
+
+				if (route === '/')
+					await page.waitForURL((url) => url.pathname !== route);
+
 				const galleryLinks = page.locator('#project-gallery a');
 				test.skip(
 					!(await galleryLinks.count()),
