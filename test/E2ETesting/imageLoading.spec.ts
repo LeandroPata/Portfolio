@@ -11,7 +11,11 @@ test.describe('CDN links load correctly', () => {
 
 			// Intercept all network requests before navigating
 			page.on('response', (response) => {
-				if (response.request().resourceType() === 'image' && !response.ok()) {
+				if (
+					response.request().resourceType() === 'image' &&
+					response.url().includes('cdn.jsdelivr.net') &&
+					!response.ok()
+				) {
 					failedRequests.push(`${response.url()} — ${response.status()}`);
 				}
 			});

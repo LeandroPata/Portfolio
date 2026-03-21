@@ -8,12 +8,30 @@ img: assets/projects/portfolio/cover.png
 img_alt: Cover Portfolio
 imgs:
   [
-    ['assets/projects/portfolio/homePageDark.png', 'Página Inicial Escura'],
-    ['assets/projects/portfolio/homePageLight.png', 'Página Inicial Clara'],
-    ['assets/projects/portfolio/projectsPage.png', 'Página de Projetos'],
-    ['assets/projects/portfolio/projectPage.png', 'Página com Projeto'],
-    ['assets/projects/portfolio/aboutPage.png', 'Página Sobre En'],
-    ['assets/projects/portfolio/aboutPagePt.png', 'Página Sobre Pt'],
+    [
+      'assets/projects/portfolio/homePageDark.png',
+      'Página Inicial Escura'
+    ],
+    [
+      'assets/projects/portfolio/homePageLight.png',
+      'Página Inicial Clara'
+    ],
+    [
+      'assets/projects/portfolio/projectsPage.png',
+      'Página de Projetos'
+    ],
+    [
+      'assets/projects/portfolio/projectPage.png',
+      'Página com Projeto'
+    ],
+    [
+      'assets/projects/portfolio/aboutPage.png',
+      'Página Sobre En'
+    ],
+    [
+      'assets/projects/portfolio/aboutPagePt.png',
+      'Página Sobre Pt'
+    ],
   ]
 description: |
   Portfolio pessoal concebido para demonstrar os meus projetos e competências
@@ -56,4 +74,4 @@ Após considerar várias opções para construir e desenvolver este projeto, <a 
 
 ## Desenvolvido por
 
-- [Leandro Pata](/about/)
+- [Leandro Pata](/pt/about/)

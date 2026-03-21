@@ -8,11 +8,26 @@ img: assets/projects/memberManagementApp/cover.png
 img_alt: Member Management App Cover
 imgs:
   [
-    ['assets/projects/memberManagementApp/mainMenu.png', 'Main Menu'],
-    ['assets/projects/memberManagementApp/addMember.png', 'Add Member'],
-    ['assets/projects/memberManagementApp/searchMember.png', 'Search Member'],
-    ['assets/projects/memberManagementApp/profile.png', 'Profile'],
-    ['assets/projects/memberManagementApp/importExport.png', 'Import/Export'],
+    [
+      'assets/projects/memberManagementApp/mainMenu.png',
+      'Main Menu'
+    ],
+    [
+      'assets/projects/memberManagementApp/addMember.png',
+      'Add Member'
+    ],
+    [
+      'assets/projects/memberManagementApp/searchMember.png',
+      'Search Member'
+    ], 
+    [
+      'assets/projects/memberManagementApp/profile.png',
+      'Profile'
+    ],
+    [
+      'assets/projects/memberManagementApp/importExport.png',
+      'Import/Export'
+    ],
   ]
 description: |
   Project developed to help manage members of an organization or club.
@@ -81,4 +96,4 @@ Some of the main packages used are:
 
 ## Developed by
 
-- [Leandro Pata](/about/)
+- [Leandro Pata](/en/about/)

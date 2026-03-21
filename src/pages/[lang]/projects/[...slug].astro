@@ -2,6 +2,7 @@
 import { render } from 'astro:content';
 import ContactCTA from '@/src/components/ContactCTA.astro';
 import Hero from '@/src/components/Hero.astro';
+import PhotoswipeGallery from '@/src/components/PhotoswipeGallery.astro';
 import Pill from '@/src/components/Pill.astro';
 import { defaultLang, languages } from '@/src/i18n/ui';
 import { useTranslations } from '@/src/i18n/utils';
@@ -61,7 +62,7 @@ const { Content } = await render(page);
 							<img
 								src={`${CDN}/${page.data.img}`}
 								alt={page.data.img_alt || ''}
-								loading='lazy'
+								loading='eager'
 								decoding='async'
 							/>
 						)
@@ -69,21 +70,11 @@ const { Content } = await render(page);
 				</div>
 				<div class='row gap-10 content'>
 					<div class='column images'>
-						{
-							page.data.imgs.map((img) => (
-								<div class='click-zoom'>
-									<label>
-										<input type='checkbox' />
-										<img
-											src={`${CDN}/${img[0]}`}
-											alt={img[1]}
-											loading='lazy'
-											decoding='async'
-										/>
-									</label>
-								</div>
-							))
-						}
+						<PhotoswipeGallery
+							id='project-gallery'
+							images={page.data.imgs ?? []}
+							cdnBase={CDN}
+						/>
 					</div>
 					<div class='column text content'>
 						<Content />
@@ -137,11 +128,11 @@ const { Content } = await render(page);
 		margin-top: 2rem;
 	}
 
-	.content: global(h1);
-	.content: global(h2);
-	.content: global(h3);
-	.content: global(h4);
-	.content: global(h5) {
+	.content :global(h1),
+	.content :global(h2),
+	.content :global(h3),
+	.content :global(h4),
+	.content :global(h5) {
 		margin: 1.5rem 0;
 	}
 
@@ -155,41 +146,8 @@ const { Content } = await render(page);
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
 	}
-
-	.images {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.click-zoom input[type='checkbox'] {
-		display: none;
-	}
-
-	.click-zoom img {
-		margin: 1ch;
-		transition: transform 0.25s ease;
-		cursor: zoom-in;
-	}
-
-	.click-zoom input[type='checkbox']:checked ~ img {
-		transform: scale(2);
-		cursor: zoom-out;
-	}
-
 	.text {
 		word-wrap: break-word;
-	}
-
-	.images :global(img) {
-		align-self: center;
-		max-height: 30ch;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-sm);
-		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
 	}
 
 	.content :global(blockquote) {
@@ -246,32 +204,17 @@ const { Content } = await render(page);
 			width: 65%;
 		}
 
-		.images :global(img) {
-			max-height: 50ch;
-			max-width: 35ch;
-		}
-
-		.images {
-			width: 35%;
-			display: flex;
-			flex-direction: column;
-		}
-
 		/* Clear floats after the columns */
 		.row:after {
 			content: '';
 			display: table;
 			clear: both;
 		}
-	}
 
-	@media (min-width: 100em) {
 		.images {
-			display: grid;
-			grid-template-columns: auto auto;
-			column-gap: 0ch;
-			align-items: center;
-			justify-items: center;
+			width: 35%;
+			display: flex;
+			flex-direction: column;
 		}
 	}
 </style>
