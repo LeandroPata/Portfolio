@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Detect package manager
         id: detect-package-manager
@@ -83,10 +83,10 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: lts/*
 
@@ -94,7 +94,7 @@ jobs:
         run: npm ci
 
       - name: Download Astro dist folder
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: github-pages
           path: dist
@@ -106,7 +106,7 @@ jobs:
           rm artifact.tar
           cd ..
 
-      - name: Run Vitest tests
+      - name: Run Vitest
         run: npx vitest
 
       - name: Install Playwright Browsers
@@ -116,7 +116,7 @@ jobs:
         run: npx playwright test
 
       - name: Upload local report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: ${{ !cancelled() }}
         with:
           name: playwright-local-report
@@ -155,10 +155,10 @@ jobs:
     needs: [build, deploy]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: lts/*
 
@@ -166,7 +166,7 @@ jobs:
         run: npm ci
 
       - name: Download Astro dist folder
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: github-pages
           path: dist
@@ -188,7 +188,7 @@ jobs:
         run: ENV=prod npx playwright test
 
       - name: Upload report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: ${{ !cancelled() }}
         with:
           name: playwright-report
