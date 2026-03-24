@@ -43,6 +43,12 @@ tags:
 
 <h1 style='text-align: center;'>Portfolio</h1>
 
+<p align="center">
+<img src="https://img.shields.io/github/package-json/v/LeandroPata/Portfolio">
+<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+<a href="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml"><img src="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml/badge.svg?event=push"></a>
+</p>
+
 Projeto de portfolio pessoal.
 
 Foi desenvolvido com o objetivo de demonstrar os meus projetos e competências e aglomerar todo o meu trabalho num único sítio, enquanto é também mais fácil de utilizar e visualizar que o meu <a href='https://github.com/LeandroPata' target=_blank>perfil de Github</a> e os seus repositórios.
