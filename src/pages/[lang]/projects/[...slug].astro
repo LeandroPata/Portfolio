@@ -171,6 +171,28 @@ const { Content } = await render(page);
 		text-decoration-color: currentColor;
 	}
 
+	.content :global(table) {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 1.5rem 0;
+	}
+
+	.content :global(th),
+	.content :global(td) {
+		border: 1px solid var(--gray-800);
+		padding: 0.5rem 1rem;
+		text-align: left;
+	}
+
+	.content :global(th) {
+		background: var(--gradient-subtle);
+		font-weight: 600;
+	}
+
+	.content :global(tr:nth-child(even)) {
+		background: var(--gradient-subtle)
+	}
+
 	.git-repo {
 		display: flex;
 		margin-top: 3rem;
