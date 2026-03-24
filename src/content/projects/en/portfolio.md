@@ -43,6 +43,12 @@ tags:
 
 <h1 style='text-align: center;'>Portfolio</h1>
 
+<p align="center">
+<img src="https://img.shields.io/github/package-json/v/LeandroPata/Portfolio">
+<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+<a href="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml"><img src="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml/badge.svg?event=push"></a>
+</p>
+
 Personal portfolio project.
 
 It was developed with the intent to showcase my projects and skills and concentrate all my work in one place, while being more user-friendly than just my <a href='https://github.com/LeandroPata' target=_blank>Github profile</a> and repositories. Also used decided to use <a href="https://astro.build/" target=_blank>Astro</a> for the first time in order to turn this project into a learning experience (as well as other reasons listed below)
