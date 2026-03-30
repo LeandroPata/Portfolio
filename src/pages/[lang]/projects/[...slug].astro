@@ -40,7 +40,6 @@ const { Content } = await render(page);
 	description={page.data.description}
 >
 	<div class='stack gap-20'>
-		<div class='stack gap-15'>
 			<header>
 				<div class='wrapper stack gap-2'>
 					<Hero
@@ -69,35 +68,52 @@ const { Content } = await render(page);
 					}
 				</div>
 				<div class='row gap-10 content'>
-					<div class='column images'>
-						<PhotoswipeGallery
-							id='project-gallery'
-							images={page.data.imgs ?? []}
-							cdnBase={CDN}
-						/>
-					</div>
-					<div class='column text content'>
-						<Content />
-						<div class='git-repo'>
-							<a
-								href={page.data.github_url}
-								target='_blank'
-								data-umami-event='GitHub Click'
-								>{t('projects.gitRepo')}</a
-							>
+					{!!page.data.imgs?.length && (
+						<div class='column images'>
+							<PhotoswipeGallery
+								id='project-gallery'
+								images={page.data.imgs ?? []}
+								cdnBase={CDN}
+							/>
 						</div>
-					</div>
+						<div class='column text content'>
+							<Content/>
+							<div class='git-repo'>
+								<a
+									href={page.data.github_url}
+									target='_blank'
+									data-umami-event='GitHub Click'
+									>{t('projects.gitRepo')}</a>
+							</div>
+						</div>
+					)}
+
+					{!page.data.imgs?.length && (
+						<div class='text content'>
+							<Content/>
+							<div class='git-repo'>
+								<a
+									href={page.data.github_url}
+									target='_blank'
+									data-umami-event='GitHub Click'
+									>{t('projects.gitRepo')}</a>
+							</div>
+						</div>
+					)}
 				</div>
 			</main>
 		</div>
 		<ContactCTA />
-	</div>
 </MainLayout>
 
 <style>
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);
+	}
+
+	:global(html) {
+		scroll-behavior: smooth;
 	}
 
 	.details {
@@ -191,6 +207,34 @@ const { Content } = await render(page);
 
 	.content :global(tr:nth-child(even)) {
 		background: var(--gradient-subtle)
+	}
+
+	.content :global(summary) {
+		cursor: pointer;
+		font-weight: 600;
+		font-size: var(--text-3xl);
+		padding: 0.5rem 0;
+		list-style: none;
+	}
+
+	.content :global(summary::before){
+		content: '▶';
+		margin-right: 0.5rem;
+		font-size: var(--text-lg);
+		transition: transform 0.2s ease;
+		display: inline-block;
+	}
+
+	.content :global(details[open] summary::before) {
+		transform: rotate(90deg);
+	}
+
+	.content :global(summary::-webkit-details-marker) {
+		display: none;
+	}
+
+	.content :global(details span) {
+		scroll-margin-top: 4rem;
 	}
 
 	.git-repo {
