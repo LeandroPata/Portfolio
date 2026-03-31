@@ -54,33 +54,20 @@ tornar toda esta informação disponível em qualquer lugar, armazenando-a numa 
 - Apagar membros;
 - Importar/Exportar informação de membros para/de ficheiros .csv de forma a facilitar a partilha e/ou edição;
 
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/memberManagementApp/mainMenu.png' alt = 'MainMenu' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/addMember.png' alt = 'AddMemberMenu' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/searchMember.png' alt = 'SearchMemberMenu' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/profile.png' alt = 'Profile' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/importExport.png' alt = 'ImportExportMenu' width=190>
-</p> -->
-
 ### Funcionalidades Gerais
 
 - Autenticação para permitir o acesso da informação apenas a contas aprovadas (a habilidade de criar uma conta seria removida numa implementação real, ou necessitar a verificação/aprovação da conta antes de permitir o acesso);
 - Mudar a password;
 - Tradução para várias línguas;
 - Modo claro/escuro;
-- Verificação de atualizações (como isto é um projeto pessoal, publicar nas App Stores não é viável, logo um sistema de atualizações diferente foi implementado, não possível para iOS);
-
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/memberManagementApp/drawerLight.png' alt = 'DrawerLightMode' width=190>
-  <img align='top' src='/src/assets/projects/memberManagementApp/drawerDark.png' alt = 'DrawerDarkMode' width=190>
-</p> -->
+- Verificação de atualizações (como isto é um projeto pessoal, publicar nas App Stores não é viável, logo um sistema de atualizações diferente foi implementado, não possível para `iOS`);
 
 ## Notas Técnicas
 
 - Procuras de membros têm uma implementação de "fuzzy searching" com uma lista para ajudar o utilizador a encontrar o membro desejado;
-- Verificações de atualizações foi implementado por guardando as APKs em Firebase Storage e depois verificando a versão atual da aplicação com as versões das APKs guardadas, fazendo o download e atualizando se uma versão mais recente estiver disponível (isto não é possível no iOS, sendo que este não permite sideloading);
-- Como todas as funcionalidades cloud requerem a Firebase, em qualquer reprodução deste projeto vai requerir a configuração de um projeto Firebase (mais especificamente dos módulos descritos na seção seguinte) e a adição de ambos os ficheiros com configurações (google-services.json and GoogleService-Info.plist) ao projeto;
-- 'Environment variables' são usadas, portanto, em qualquer reprodução deste projeto irá requerer que elas existam no ficheiro .env (para a execução local) e/ou Expo (ou outra framework), tal como o exemplo seguinte:
+- Verificações de atualizações foi implementado por guardando as `APKs` em `Firebase Storage` e depois verificando a versão atual da aplicação com as versões das `APKs` guardadas, fazendo o download e atualizando se uma versão mais recente estiver disponível (isto não é possível no `iOS`, sendo que este não permite sideloading);
+- Como todas as funcionalidades cloud requerem a `Firebase`, em qualquer reprodução deste projeto vai requerir a configuração de um projeto `Firebase` (mais especificamente dos módulos descritos na seção seguinte) e a adição de ambos os ficheiros com configurações (`google-services.json` and `GoogleService-Info.plist`) ao projeto;
+- 'Environment variables' são usadas, portanto, em qualquer reprodução deste projeto irá requerer que elas existam no ficheiro .env (para a execução local) e/ou `Expo` (ou outra framework), tal como o exemplo seguinte:
 
 ```
 # Firebase Config Files
@@ -93,20 +80,20 @@ EXPO_PUBLIC_PLACEHOLDER_PICTURE_URL=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Tech utilizada
 
-Este projeto foi desenvolvido com a <a href="https://reactnative.dev/" target=_blank>React Native</a> <a href="https://expo.dev/" target=_blank>Expo</a> framework, usando Typescript, CSS e Javascript.
+Este projeto foi desenvolvido com a <a href="https://reactnative.dev/" target=_blank>React Native</a> <a href="https://expo.dev/" target=_blank>Expo</a> framework, usando `Typescript`, `CSS` e `Javascript`.
 
 Todas as funcionalidades cloud usam <a href="https://firebase.google.com/" target=_blank>Firebase</a>. Os módulos principalmente usados são:
 
 - <a href="https://firebase.google.com/products/auth" target=_blank>Firebase Authentication</a> para a autenticação das contas de utilizadores;
-- <a href="https://firebase.google.com/products/firestore" target=_blank>Firestore</a> como uma base de dados NoSQL pa guardar os documentos com dados;
+- <a href="https://firebase.google.com/products/firestore" target=_blank>Firestore</a> como uma base de dados `NoSQL` pa guardar os documentos com dados;
 - <a href="https://firebase.google.com/products/storage" target=_blank>Firebase Cloud Storage</a> para armazenar ficheiros maiores (imagens de perfil, exportações de dados e atualizações);
 
-Alguns do 'pacotes' usados principalmente são:
+Alguns do "pacotes" usados principalmente são:
 
 - <a href="https://www.fusejs.io/" target=_blank>Fuse.js</a> para 'fuzzy searching';
 - <a href="https://www.i18next.com/" target=_blank>i18next</a> para a implementação de traduções;
 - <a href="https://reactnativepaper.com/" target=_blank>React Native Paper</a> para a customização de temas e aparência;
-- Todos os 'pacotes' estão presentes em package.json;
+- Todos os "pacotes" estão presentes em package.json;
 
 ## Desenvolvido por
 
