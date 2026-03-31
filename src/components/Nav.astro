@@ -51,7 +51,7 @@ const isCurrentPage = (href: string) => {
 
 	return (
 		pathname === href ||
-		(href !== '/' && href !== `/${locale}` && pathname.startsWith(href))
+		(href !== '/' && href !== `/${locale}/` && pathname.startsWith(href))
 	);
 };
 ---
