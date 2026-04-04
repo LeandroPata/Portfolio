@@ -8,6 +8,10 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://leandropata.pt',
 	trailingSlash: 'always',
+	prefetch: {
+		prefetchAll: true,
+		defaultStrategy: 'viewport',
+	},
 	integrations: [
 		sitemap({
 			i18n: {
