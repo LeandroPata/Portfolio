@@ -1,16 +1,26 @@
 import { defaultLang, languages, ui } from '@/src/i18n/ui';
 
-export function getLangFromUrl(path: string) {
-	const [, lang] = path.split('/');
+export function getLangFromUrl(path: string): keyof typeof languages {
+	console.log(`Path: ${path}`);
+	const parts = path.split('/');
+	if (parts.length < 2 || !parts[1]) {
+		console.warn(`Invalid URL path: ${path}`);
+		return defaultLang;
+	}
+	const lang = parts[1];
 	if (lang in languages) return lang as keyof typeof languages;
+	console.warn(`Unknown language code: ${lang}`);
 	return defaultLang;
 }
 
-export function getBaseUrl(path: string) {
-	const baseUrl = path.split('/');
-	baseUrl.splice(1, 1);
-	//console.log(`${path}:${baseUrl}:${baseUrl.join('/')}`);
-	return baseUrl.join('/') || '/';
+export function getBaseUrl(path: string): string {
+	const parts = path.split('/');
+	if (parts.length < 2) {
+		console.warn(`Invalid URL path: ${path}`);
+		return '/';
+	}
+	parts.splice(1, 1);
+	return parts.join('/') || '/';
 }
 
 export function useTranslations(lang: keyof typeof languages) {
@@ -32,33 +42,6 @@ export function useTranslatedPath(lang: keyof typeof languages) {
 
 		return `/${l}${path}`;
 	};
-}
-
-export function saveLanguage(locale: string) {
-	//console.log('saveLanguage: ' + locale);
-	localStorage.setItem('locale', locale);
-}
-
-export function getLanguagePreference(saveToStorage = true) {
-	if (typeof localStorage !== 'undefined' && localStorage.getItem('locale')) {
-		let storedLang = localStorage.getItem('locale');
-
-		if (!(storedLang in languages)) {
-			for (const locale in languages) {
-				if (storedLang.includes(locale)) {
-					storedLang = locale;
-					break;
-				}
-			}
-		}
-
-		if (storedLang in languages) return storedLang;
-	}
-	const lang = document.documentElement.getAttribute('lang');
-	//console.log(lang);
-
-	if (saveToStorage) saveLanguage(lang);
-	return lang;
 }
 
 export function getI18nStaticPaths() {
