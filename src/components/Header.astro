@@ -64,8 +64,6 @@ const {
 <ClientRouter />
 
 <script>
-	import { getLanguagePreference } from '@/src/i18n/utils';
-
 	// This code is inlined in the head to make dark mode instant & blocking
 	const getThemePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme'))
@@ -92,13 +90,6 @@ const {
 		}
 	}
 
-	function applyLanguage() {
-		const locale = getLanguagePreference(false);
-		//console.log('applyLanguage: ' + locale);
-		localStorage.setItem('locale', locale);
-	}
-
 	document.addEventListener('astro:after-swap', applyTheme);
 	applyTheme();
-	applyLanguage();
 </script>
