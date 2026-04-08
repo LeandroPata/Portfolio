@@ -12,6 +12,9 @@ export default defineConfig({
 		prefetchAll: true,
 		defaultStrategy: 'viewport',
 	},
+	routing: {
+		prefixDefaultLocale: true,
+	},
 	integrations: [
 		sitemap({
 			i18n: {
