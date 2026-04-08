@@ -5,13 +5,12 @@ import type { iconPaths } from '@/src/components/IconPaths';
 import LanguageSelect from '@/src/components/LanguageSelect.astro';
 import ThemeToggle from '@/src/components/ThemeToggle.astro';
 import {
-	getLangFromUrl,
 	useTranslatedPath,
 	useTranslations,
 } from '@/src/i18n/utils';
 import { LINKS } from '@/src/utils/constants';
 
-const locale = getLangFromUrl(Astro.url.pathname);
+const locale = Astro.currentLocale;
 const t = useTranslations(locale);
 const translatePath = useTranslatedPath(locale);
 

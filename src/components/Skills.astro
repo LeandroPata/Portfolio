@@ -1,8 +1,8 @@
 ---
 import Icon from '@/src/components/Icon.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
 
-const locale = getLangFromUrl(Astro.url.pathname);
+const locale = Astro.currentLocale;
 const t = useTranslations(locale);
 ---
 
