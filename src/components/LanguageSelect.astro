@@ -28,10 +28,9 @@ import getFlagEmoji from '@/src/utils/getLanguageFlag';
 <script>
 	import { navigate } from 'astro:transitions/client';
 	import {
-		useTranslatedPath,
 		getBaseUrl,
-		saveLanguage,
-		getLanguagePreference,
+		getLangFromUrl,
+		useTranslatedPath,
 	} from '@/src/i18n/utils';
 
 	class LanguageSelect extends HTMLElement {
@@ -39,24 +38,29 @@ import getFlagEmoji from '@/src/utils/getLanguageFlag';
 			super();
 			const select = this.querySelector('select')!;
 
-			const selectValue = getLanguagePreference();
-			select.value = selectValue;
-
 			// Change language when a new value is selected
 			select.addEventListener('change', this.setLanguage);
+		}
+
+		connectedCallback() {
+			this.updateSelect();
+			document.addEventListener('astro:page-load', this.updateSelect);
+		}
+
+		updateSelect() {
+			const select = this.querySelector('select')!;
+			select.value = getLangFromUrl(window.location.pathname);
 		}
 
 		// Set the language to current value
 		setLanguage(event) {
 			const selectedLanguage = event.target.value;
-			//console.log('SelectedLanguage: ' + selectedLanguage);
 			if (selectedLanguage) {
-				const currentLanguage = getLanguagePreference();
-				console.log(currentLanguage);
-				if (currentLanguage && selectedLanguage != currentLanguage) {
+				const currentLanguage = getLangFromUrl(window.location.pathname);
+
+				if (currentLanguage && selectedLanguage !== currentLanguage) {
 					const basePath = getBaseUrl(window.location.pathname);
 					const translatePath = useTranslatedPath(selectedLanguage);
-					saveLanguage(selectedLanguage);
 					navigate(translatePath(basePath));
 				}
 			}
