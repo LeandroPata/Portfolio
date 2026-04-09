@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { useTranslatedPath } from '@/src/i18n/utils';
-import { CDN } from '../utils/constants';
+import { CDN } from '@/src/utils/constants';
 
 const locale = Astro.currentLocale;
 const translatePath = useTranslatedPath(locale);
