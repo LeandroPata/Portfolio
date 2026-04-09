@@ -35,7 +35,7 @@ export default defineConfig({
 		navigationTimeout: 30 * 1000, // Timeout for navigation operations in milliseconds (30 sec)
 		actionTimeout: 15 * 1000, // Timeout for action operations in milliseconds (15 sec)
 		trace: 'retain-on-failure',
-		baseURL: isProd ? 'https://leandropata.pt' : 'http://localhost:4321',
+		baseURL: isProd ? 'https://leandropata.pt/' : 'http://localhost:4321/',
 		headless: isProd ? true : !!process.env.CI,
 		...(isProd && !process.env.CI
 			? { connectOptions: { wsEndpoint: 'ws://127.0.0.1:3000/' } }
@@ -86,7 +86,7 @@ export default defineConfig({
 		? {
 				webServer: {
 					command: 'npx astro preview',
-					url: 'http://localhost:4321',
+					url: 'http://localhost:4321/',
 					reuseExistingServer: false,
 				},
 			}
