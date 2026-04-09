@@ -1,7 +1,6 @@
 import { defaultLang, languages, ui } from '@/src/i18n/ui';
 
 export function getLangFromUrl(path: string): keyof typeof languages {
-	console.log(`Path: ${path}`);
 	const parts = path.split('/');
 	if (parts.length < 2 || !parts[1]) {
 		console.warn(`Invalid URL path: ${path}`);
@@ -43,6 +42,11 @@ export function useTranslatedPath(lang: keyof typeof languages) {
 		return `/${l}${path}`;
 	};
 }
+
+/* export function saveLanguage(lang: keyof typeof languages) {
+	// set cookie with 1 year expiry
+	document.cookie = `locale=${lang};path=/;max-age=31536000;SameSite=Lax`;
+} */
 
 export function getI18nStaticPaths() {
 	return Object.keys(languages).map((lang) => ({ params: { lang } }));
