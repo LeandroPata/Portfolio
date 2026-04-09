@@ -1,8 +1,7 @@
 ---
-// Header
 import '@/src/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
-import { useTranslations } from '../i18n/utils';
+import { useTranslations } from '@/src/i18n/utils';
 
 const locale = Astro.currentLocale;
 const t = useTranslations(locale);
