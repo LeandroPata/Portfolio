@@ -69,7 +69,7 @@ tornar toda esta informação disponível em qualquer lugar, armazenando-a numa 
 - Como todas as funcionalidades cloud requerem a `Firebase`, em qualquer reprodução deste projeto vai requerir a configuração de um projeto `Firebase` (mais especificamente dos módulos descritos na seção seguinte) e a adição de ambos os ficheiros com configurações (`google-services.json` and `GoogleService-Info.plist`) ao projeto;
 - 'Environment variables' são usadas, portanto, em qualquer reprodução deste projeto irá requerer que elas existam no ficheiro .env (para a execução local) e/ou `Expo` (ou outra framework), tal como o exemplo seguinte:
 
-```
+```shell
 # Firebase Config Files
 GOOGLE_SERVICES_JSON='./google-services.json'
 GOOGLE_SERVICES_PLIST='./GoogleService-Info.plist'
@@ -80,19 +80,19 @@ EXPO_PUBLIC_PLACEHOLDER_PICTURE_URL=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Tech utilizada
 
-Este projeto foi desenvolvido com a <a href="https://reactnative.dev/" target=_blank>React Native</a> <a href="https://expo.dev/" target=_blank>Expo</a> framework, usando `Typescript`, `CSS` e `Javascript`.
+Este projeto foi desenvolvido com a <a href="https://reactnative.dev/" target=_blank data-astro-prefetch='false'>React Native</a> <a href="https://expo.dev/" target=_blank data-astro-prefetch='false'>Expo</a> framework, usando `Typescript`, `CSS` e `Javascript`.
 
-Todas as funcionalidades cloud usam <a href="https://firebase.google.com/" target=_blank>Firebase</a>. Os módulos principalmente usados são:
+Todas as funcionalidades cloud usam <a href="https://firebase.google.com/" target=_blank data-astro-prefetch='false'>Firebase</a>. Os módulos principalmente usados são:
 
-- <a href="https://firebase.google.com/products/auth" target=_blank>Firebase Authentication</a> para a autenticação das contas de utilizadores;
-- <a href="https://firebase.google.com/products/firestore" target=_blank>Firestore</a> como uma base de dados `NoSQL` pa guardar os documentos com dados;
-- <a href="https://firebase.google.com/products/storage" target=_blank>Firebase Cloud Storage</a> para armazenar ficheiros maiores (imagens de perfil, exportações de dados e atualizações);
+- <a href="https://firebase.google.com/products/auth" target=_blank data-astro-prefetch='false'>Firebase Authentication</a> para a autenticação das contas de utilizadores;
+- <a href="https://firebase.google.com/products/firestore" target=_blank data-astro-prefetch='false'>Firestore</a> como uma base de dados `NoSQL` pa guardar os documentos com dados;
+- <a href="https://firebase.google.com/products/storage" target=_blank data-astro-prefetch='false'>Firebase Cloud Storage</a> para armazenar ficheiros maiores (imagens de perfil, exportações de dados e atualizações);
 
 Alguns do "pacotes" usados principalmente são:
 
-- <a href="https://www.fusejs.io/" target=_blank>Fuse.js</a> para 'fuzzy searching';
-- <a href="https://www.i18next.com/" target=_blank>i18next</a> para a implementação de traduções;
-- <a href="https://reactnativepaper.com/" target=_blank>React Native Paper</a> para a customização de temas e aparência;
+- <a href="https://www.fusejs.io/" target=_blank data-astro-prefetch='false'>Fuse.js</a> para 'fuzzy searching';
+- <a href="https://www.i18next.com/" target=_blank data-astro-prefetch='false'>i18next</a> para a implementação de traduções;
+- <a href="https://reactnativepaper.com/" target=_blank data-astro-prefetch='false'>React Native Paper</a> para a customização de temas e aparência;
 - Todos os "pacotes" estão presentes em package.json;
 
 ## Desenvolvido por
