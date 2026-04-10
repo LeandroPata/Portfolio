@@ -80,42 +80,11 @@ Foi desenvolvido com o objetivo de permitir a consulta das encomendas atuais, qu
 ### Funcionalidades Principais
 
 - Adicionar Clientes, Produtos e Encomendas para uma base de dados;
-
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/orderManagementApp/addClient.png' alt = 'AddClient' width=190>
-  <img align='top' src='/src/assets/projects/orderManagementApp/addProduct.png' alt = 'AddProduct' width=190>
-  <img align='top' src='/src/assets/projects/orderManagementApp/addOrder.png' alt = 'AddOrder' width=190>
-</p> -->
-
 - Consultar encomendas de um cliente específico;
-
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/orderManagementApp/showClientOrder.png' alt = 'ShowClientOrder' width=190>
-  <img align='top' src='/src/assets/projects/orderManagementApp/showOrderDetails.png' alt = 'ShowOrderDetails' width=190>
-</p> -->
-
 - Consultar encomendas de um produto específico;
-
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/orderManagementApp/showProductOrder.png' alt = 'ShowProductOrder' width=190>
-  <img align='top' src='/src/assets/projects/orderManagementApp/showProductOrderLandscape.png' alt = 'ShowProductOrderLandscape' height=350>
-</p> -->
-
 - Consultar as quantidades de todos os produtos incluídos atualmente em encomendas;
-
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/orderManagementApp/showProductQuantity.png' alt = 'ShowProductQuantity' width=190>
-</p> -->
-
 - Atualizar o estado da encomenda(quando uma linha de uma DataTable é premida continuamente);
 - Importar/Exportar informação de membros para/de ficheiros .csv de forma a facilitar a partilha e/ou edição;
-
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/orderManagementApp/mainMenu.png' alt = 'MainMenu' width=190>
-  <img align='top' src='/src/assets/projects/orderManagementApp/addMenu.png' alt = 'AddMenu' width=190>
-  <img align='top' src='/src/assets/projects/orderManagementApp/showMenu.png' alt = 'ShowMenu' width=190>
-  <img align='top' src='/src/assets/projects/orderManagementApp/importExport.png' alt = 'ImportExportMenu' width=190>
-</p> -->
 
 ### Funcionalidades Gerais
 
@@ -124,11 +93,6 @@ Foi desenvolvido com o objetivo de permitir a consulta das encomendas atuais, qu
 - Tradução para várias línguas;
 - Modo claro/escuro;
 - Verificação de atualizações (como isto é um projeto pessoal, publicar nas App Stores não é viável, logo um sistema de atualizações diferente foi implementado, não possível para iOS);
-
-<!-- <p align='middle'>
-  <img align='top' src='/src/assets/projects/orderManagementApp/drawerLight.png' alt = 'DrawerLight' width=190>
-  <img align='top' src='/src/assets/projects/orderManagementApp/drawerDark.png' alt = 'DrawerDark' width=190>
-</p> -->
 
 ## Notas Técnicas
 
@@ -139,7 +103,7 @@ Foi desenvolvido com o objetivo de permitir a consulta das encomendas atuais, qu
 - Como todas as funcionalidades cloud requerem a Firebase, em qualquer reprodução deste projeto vai requerir a configuração de um projeto Firebase (mais especificamente dos módulos descritos na seção seguinte) e a adição de ambos os ficheiros com configurações (google-services.json and GoogleService-Info.plist) ao projeto;
 - 'Environment variables' são usadas, portanto, em qualquer reprodução deste projeto irá requerer que elas existam no ficheiro .env (para a execução local) e/ou Expo (ou outra framework), tal como o exemplo seguinte:
 
-```
+```shell
 # Firebase Config Files
 GOOGLE_SERVICES_JSON='./google-services.json'
 GOOGLE_SERVICES_PLIST='./GoogleService-Info.plist'
@@ -147,19 +111,19 @@ GOOGLE_SERVICES_PLIST='./GoogleService-Info.plist'
 
 ## Tech utilizada
 
-Este projeto foi desenvolvido com a <a href="https://reactnative.dev/" target=_blank>React Native</a> <a href="https://expo.dev/" target=_blank>Expo</a> framework, usando Typescript, CSS e Javascript.
+Este projeto foi desenvolvido com a <a href="https://reactnative.dev/" target=_blank data-astro-prefetch='false'>React Native</a> <a href="https://expo.dev/" target=_blank data-astro-prefetch='false'>Expo</a> framework, usando Typescript, CSS e Javascript.
 
-Todas as funcionalidades cloud usam <a href="https://firebase.google.com/" target=_blank>Firebase</a>. Os módulos principalmente usados são:
+Todas as funcionalidades cloud usam <a href="https://firebase.google.com/" target=_blank data-astro-prefetch='false'>Firebase</a>. Os módulos principalmente usados são:
 
-- <a href="https://firebase.google.com/products/auth" target=_blank>Firebase Authentication</a> para a autenticação das contas de utilizadores;
-- <a href="https://firebase.google.com/products/firestore" target=_blank>Firestore</a> como uma base de dados NoSQL pa guardar os documentos com dados;
-- <a href="https://firebase.google.com/products/storage" target=_blank>Firebase Cloud Storage</a> para armazenar ficheiros maiores (imagens de perfil, exportações de dados e atualizações);
+- <a href="https://firebase.google.com/products/auth" target=_blank data-astro-prefetch='false'>Firebase Authentication</a> para a autenticação das contas de utilizadores;
+- <a href="https://firebase.google.com/products/firestore" target=_blank data-astro-prefetch='false'>Firestore</a> como uma base de dados NoSQL pa guardar os documentos com dados;
+- <a href="https://firebase.google.com/products/storage" target=_blank data-astro-prefetch='false'>Firebase Cloud Storage</a> para armazenar ficheiros maiores (imagens de perfil, exportações de dados e atualizações);
 
 Alguns do 'pacotes' usados principalmente são:
 
-- <a href="https://www.fusejs.io/" target=_blank>Fuse.js</a> para 'fuzzy searching';
-- <a href="https://www.i18next.com/" target=_blank>i18next</a> para a implementação de traduções;
-- <a href="https://reactnativepaper.com/" target=_blank>React Native Paper</a> para a customização de temas e aparência;
+- <a href="https://www.fusejs.io/" target=_blank data-astro-prefetch='false'>Fuse.js</a> para 'fuzzy searching';
+- <a href="https://www.i18next.com/" target=_blank data-astro-prefetch='false'>i18next</a> para a implementação de traduções;
+- <a href="https://reactnativepaper.com/" target=_blank data-astro-prefetch='false'>React Native Paper</a> para a customização de temas e aparência;
 - Todos os 'pacotes' estão presentes em package.json;
 
 ## Desenvolvido por

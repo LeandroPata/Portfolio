@@ -82,6 +82,7 @@ const { Content } = await render(page);
 							<a
 								href={page.data.github_url}
 								target='_blank'
+								data-astro-prefetch='false'
 								data-umami-event='GitHub Click'
 								>{t('projects.gitRepo')}</a
 							>
