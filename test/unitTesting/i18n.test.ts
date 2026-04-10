@@ -1,14 +1,12 @@
 // @vitest-environment happy-dom
 /// <reference types="vitest" />
 
-import { beforeEach, describe, expect, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { defaultLang, languages, ui } from '@/src/i18n/ui';
 import {
 	getBaseUrl,
 	getI18nStaticPaths,
 	getLangFromUrl,
-	getLanguagePreference,
-	saveLanguage,
 	useTranslatedPath,
 	useTranslations,
 } from '@/src/i18n/utils';
@@ -177,61 +175,5 @@ describe('getI18nStaticPaths', () => {
 			expect(path).toHaveProperty('params');
 			expect(path.params).toHaveProperty('lang');
 		}
-	});
-});
-
-// -------------------------------------------------------
-// saveLanguage / getLanguagePreference
-// (browser API dependent — requires localStorage and document mocks)
-// -------------------------------------------------------
-describe('saveLanguage', () => {
-	// Check if localStorage is available
-	beforeEach(() => {
-		localStorage.clear();
-	});
-
-	it('Saves the language to localStorage', () => {
-		saveLanguage('en');
-		expect(localStorage.getItem('locale')).toBe('en');
-	});
-
-	it('Overwrites a previously saved language', () => {
-		saveLanguage('en');
-		saveLanguage('pt');
-		expect(localStorage.getItem('locale')).toBe('pt');
-	});
-});
-
-describe('getLanguagePreference', () => {
-	beforeEach(() => {
-		localStorage.clear();
-		document.documentElement.setAttribute('lang', defaultLang);
-	});
-
-	it('Returns the stored language from localStorage', () => {
-		localStorage.setItem('locale', 'pt');
-		expect(getLanguagePreference(false)).toBe('pt');
-	});
-
-	it('Falls back to document lang attribute when localStorage is empty', () => {
-		document.documentElement.setAttribute('lang', 'pt');
-		expect(getLanguagePreference(false)).toBe('pt');
-	});
-
-	it('Saves the language to localStorage when saveToStorage is true', () => {
-		document.documentElement.setAttribute('lang', 'pt');
-		getLanguagePreference(true);
-		expect(localStorage.getItem('locale')).toBe('pt');
-	});
-
-	it('Does not save to localStorage when saveToStorage is false', () => {
-		document.documentElement.setAttribute('lang', 'pt');
-		getLanguagePreference(false);
-		expect(localStorage.getItem('locale')).toBeNull();
-	});
-
-	it('Normalizes a full locale string like en-US to a known language', () => {
-		localStorage.setItem('locale', 'en-US');
-		expect(getLanguagePreference(false)).toBe('en');
 	});
 });

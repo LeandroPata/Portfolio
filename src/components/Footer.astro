@@ -1,9 +1,9 @@
 ---
+import { useTranslations } from '@/src/i18n/utils';
 import { LINKS } from '@/src/utils/constants';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const currentYear = new Date().getFullYear();
-const locale = getLangFromUrl(Astro.url.pathname);
+const locale = Astro.currentLocale;
 const t = useTranslations(locale);
 ---
 
@@ -13,6 +13,7 @@ const t = useTranslations(locale);
 		<a
 			href='https://astro.build/'
 			target='_blank'
+			data-astro-prefetch='false'
 			>Astro</a
 		>
 		{t('footer.by')}
@@ -22,12 +23,14 @@ const t = useTranslations(locale);
 		<a
 			href={LINKS.GITHUB}
 			target='_blank'
+			data-astro-prefetch='false'
 		>
 			GitHub</a
 		>
 		<a
 			href={LINKS.LINKEDIN}
 			target='_blank'
+			data-astro-prefetch='false'
 		>
 			LinkedIn</a
 		>

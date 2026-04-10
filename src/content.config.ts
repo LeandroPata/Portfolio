@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { languages } from './i18n/ui';
+import { languages } from '@/src/i18n/ui';
 
 const projectsSchema = z.object({
 	title: z.string(),

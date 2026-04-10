@@ -1,6 +1,4 @@
 ---
-
-
 // Footer
 import Footer from '@/src/components/Footer.astro';
 // Header
@@ -9,10 +7,9 @@ import Header from '@/src/components/Header.astro';
 import Nav from '@/src/components/Nav.astro';
 
 // Locale
-import { getLangFromUrl, useTranslations } from '@/src/i18n/utils';
+import { useTranslations } from '@/src/i18n/utils';
 
-const locale = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(locale);
+const locale = Astro.currentLocale;
 
 interface Props {
 	title?: string;

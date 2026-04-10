@@ -6,11 +6,14 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://leandropata.pt',
+	site: 'https://leandropata.pt/',
 	trailingSlash: 'always',
 	prefetch: {
 		prefetchAll: true,
 		defaultStrategy: 'viewport',
+	},
+	routing: {
+		prefixDefaultLocale: true,
 	},
 	integrations: [
 		sitemap({
