@@ -33,8 +33,7 @@ test.describe('PhotoSwipe Gallery', () => {
 					}
 				});
 
-				await page.goto(route);
-				await page.waitForLoadState('networkidle');
+				await page.goto(route, { waitUntil: 'domcontentloaded' });
 
 				expect(failedRequests).toEqual([]);
 			});

@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('Theme toggle switches between light and dark mode', async ({ page }) => {
-	await page.goto('/');
+	await page.goto('/', { waitUntil: 'domcontentloaded' });
 
 	await page.waitForSelector('#menu-toggle', {
 		state: 'attached',
