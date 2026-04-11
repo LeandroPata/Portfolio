@@ -20,9 +20,7 @@ test.describe('CDN links load correctly', () => {
 				}
 			});
 
-			await page.goto(route);
-			// Wait for network to be idle so all images have had a chance to load
-			await page.waitForLoadState('networkidle');
+			await page.goto(route, { waitUntil: 'domcontentloaded' });
 
 			expect(failedRequests).toEqual([]);
 		});

@@ -25,7 +25,7 @@ test.describe('Language selection works correctly', () => {
 				test(`Language selector navigates to '${locale}' at ${route}`, async ({
 					page,
 				}) => {
-					await page.goto(`${route}`);
+					await page.goto(`${route}`, { waitUntil: 'domcontentloaded' });
 
 					await page.waitForSelector('#menu-toggle', {
 						state: 'attached',

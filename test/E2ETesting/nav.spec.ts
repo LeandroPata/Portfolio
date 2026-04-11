@@ -6,7 +6,7 @@ test.describe('Navbar navigation', () => {
 		test(`Load all pages in navbar for the ${locale} locale`, async ({
 			page,
 		}) => {
-			await page.goto(`/${locale}/`);
+			await page.goto(`/${locale}/`, { waitUntil: 'domcontentloaded' });
 
 			await page.waitForSelector('#menu-toggle', {
 				state: 'attached',
