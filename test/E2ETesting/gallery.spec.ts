@@ -8,6 +8,7 @@ test.describe('PhotoSwipe Gallery', () => {
 	for (const route of routes) {
 		test.describe(route, () => {
 			test.beforeEach(async ({ page }) => {
+				await page.route('**cdn.jsdelivr.net/**', (route) => route.abort());
 				await page.goto(route, { waitUntil: 'load' });
 
 				if (route === '/')
@@ -32,7 +33,7 @@ test.describe('PhotoSwipe Gallery', () => {
 						failedRequests.push(`${response.url()} — ${response.status()}`);
 					}
 				});
-
+				await page.unroute('**cdn.jsdelivr.net/**');
 				await page.goto(route, { waitUntil: 'domcontentloaded' });
 
 				expect(failedRequests).toEqual([]);
