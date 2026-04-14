@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '@/test/E2ETesting/fixtures';
 
 test('Theme toggle switches between light and dark mode', async ({ page }) => {
 	await page.goto('/', { waitUntil: 'domcontentloaded' });

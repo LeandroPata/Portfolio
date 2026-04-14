@@ -1,6 +1,6 @@
 import path from 'node:path';
-import { expect, test } from '@playwright/test';
 import getRoutes from '@/src/utils/getRoutes';
+import { expect, test } from '@/test/E2ETesting/fixtures';
 
 const routes = getRoutes(path.resolve('dist'));
 
@@ -8,7 +8,29 @@ test.describe('PhotoSwipe Gallery', () => {
 	for (const route of routes) {
 		test.describe(route, () => {
 			test.beforeEach(async ({ page }) => {
-				await page.route('**cdn.jsdelivr.net/**', (route) => route.abort());
+				// Continue all CDN requests
+				await page.route('https://cdn.jsdelivr.net/**', (route) =>
+					route.continue(),
+				);
+
+				/* page.on('console', (msg) => console.log('BROWSER: ', msg.text()));
+
+				await page.evaluate(() => {
+					window.addEventListener('load', () => console.log('LOAD FIRED'));
+				});
+
+				page.on('request', (req) => {
+					if (
+						!req.url().includes('localhost') &&
+						!req.url().includes('jsdelivr')
+					)
+						console.log('EXTERNAL REQUEST: ', req.resourceType(), req.url());
+				});
+
+				page.on('requestfailed', (req) =>
+					console.log('REQUEST FAILED: ', req.url(), req.failure()?.errorText),
+				); */
+
 				await page.goto(route, { waitUntil: 'load' });
 
 				if (route === '/')
@@ -33,7 +55,6 @@ test.describe('PhotoSwipe Gallery', () => {
 						failedRequests.push(`${response.url()} — ${response.status()}`);
 					}
 				});
-				await page.unroute('**cdn.jsdelivr.net/**');
 				await page.goto(route, { waitUntil: 'domcontentloaded' });
 
 				expect(failedRequests).toEqual([]);

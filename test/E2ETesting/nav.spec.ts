@@ -1,5 +1,5 @@
-import { expect, test } from '@playwright/test';
 import { languages } from '@/src/i18n/ui';
+import { expect, test } from '@/test/E2ETesting/fixtures';
 
 test.describe('Navbar navigation', () => {
 	for (const locale in languages) {
