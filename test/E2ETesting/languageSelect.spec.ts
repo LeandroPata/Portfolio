@@ -22,7 +22,7 @@ test.describe('Language selection works correctly', () => {
 					continue;
 				}
 
-				test(`Language selector navigates to '${locale}' at ${route}`, async ({
+				test(`Language selector navigates to '${locale}' at '${route}'`, async ({
 					page,
 				}) => {
 					await page.goto(`${route}`, { waitUntil: 'domcontentloaded' });

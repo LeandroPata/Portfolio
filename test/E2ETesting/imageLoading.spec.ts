@@ -6,7 +6,7 @@ const routes = getRoutes(path.resolve('dist'));
 
 test.describe('CDN links load correctly', () => {
 	for (const route of routes) {
-		test(`CDN links in ${route}`, async ({ page }) => {
+		test(`CDN links in: ${route}`, async ({ page }) => {
 			const failedRequests: string[] = [];
 
 			// Continue all CDN requests
