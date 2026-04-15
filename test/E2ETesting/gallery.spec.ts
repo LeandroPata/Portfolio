@@ -9,9 +9,9 @@ test.describe('PhotoSwipe Gallery', () => {
 		test.describe(route, () => {
 			test.beforeEach(async ({ page }) => {
 				// Continue all CDN requests
-				await page.route('https://cdn.jsdelivr.net/**', (route) =>
+				/* await page.route('https://cdn.jsdelivr.net/**', (route) =>
 					route.continue(),
-				);
+				); */
 
 				/* page.on('console', (msg) => console.log('BROWSER: ', msg.text()));
 
@@ -45,6 +45,11 @@ test.describe('PhotoSwipe Gallery', () => {
 
 			test('Gallery images load correctly', async ({ page }) => {
 				const failedRequests: string[] = [];
+
+				// Continue all CDN requests
+				await page.route('https://cdn.jsdelivr.net/**', (route) =>
+					route.continue(),
+				);
 
 				page.on('response', (response) => {
 					if (
@@ -80,6 +85,11 @@ test.describe('PhotoSwipe Gallery', () => {
 			});
 
 			test('Lightbox navigates to next image', async ({ page, isMobile }) => {
+				// Continue all CDN requests
+				await page.route('https://cdn.jsdelivr.net/**', (route) =>
+					route.continue(),
+				);
+
 				await page.locator('#project-gallery a').first().click();
 				await expect(page.locator('.pswp')).toBeVisible();
 
