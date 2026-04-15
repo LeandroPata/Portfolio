@@ -6,7 +6,7 @@ const routes = getRoutes(path.resolve('dist'));
 
 test.describe('All pages exist and load correctly', () => {
 	for (const route of routes) {
-		test(`Loads ${route}`, async ({ page }) => {
+		test(`Loads '${route}'`, async ({ page }) => {
 			await page.goto(route, { waitUntil: 'domcontentloaded' });
 
 			if (route === '/') await expect(page).toHaveURL('/en/');
