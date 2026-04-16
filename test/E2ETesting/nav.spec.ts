@@ -1,12 +1,10 @@
-import { expect, test } from '@playwright/test';
 import { languages } from '@/src/i18n/ui';
+import { expect, test } from '@/test/E2ETesting/fixtures';
 
 test.describe('Navbar navigation', () => {
 	for (const locale in languages) {
-		test(`Load all pages in navbar for the ${locale} locale`, async ({
-			page,
-		}) => {
-			await page.goto(`/${locale}/`);
+		test(`Load all pages in navbar for locale: ${locale}`, async ({ page }) => {
+			await page.goto(`/${locale}/`, { waitUntil: 'domcontentloaded' });
 
 			await page.waitForSelector('#menu-toggle', {
 				state: 'attached',

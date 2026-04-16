@@ -1,11 +1,11 @@
 import path from 'node:path';
-import { expect, test } from '@playwright/test';
 import getRoutes from '@/src/utils/getRoutes';
+import { expect, test } from '@/test/E2ETesting/fixtures';
 
 const routes = getRoutes(path.resolve('dist'));
 
 test('Umami script is present and reachable', async ({ page }) => {
-	await page.goto('/');
+	await page.goto('/', { waitUntil: 'domcontentloaded' });
 
 	const umamiScript = await page.locator('script[src*="umami"]').first();
 	const scriptSrc = await umamiScript.getAttribute('src');
@@ -18,8 +18,8 @@ test('Umami script is present and reachable', async ({ page }) => {
 
 test.describe(`Umami events are reachable`, () => {
 	for (const route of routes) {
-		test(`Events in ${route}`, async ({ page }) => {
-			await page.goto(route);
+		test(`Events in: ${route}`, async ({ page }) => {
+			await page.goto(route, { waitUntil: 'load' });
 
 			if (route === '/') await page.waitForURL((url) => url.pathname !== route);
 

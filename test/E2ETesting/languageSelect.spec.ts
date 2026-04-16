@@ -1,7 +1,7 @@
 import path from 'node:path';
-import { expect, test } from '@playwright/test';
 import { languages } from '@/src/i18n/ui';
 import getRoutes from '@/src/utils/getRoutes';
+import { expect, test } from '@/test/E2ETesting/fixtures';
 
 const routes = getRoutes(path.resolve('dist'));
 
@@ -22,10 +22,10 @@ test.describe('Language selection works correctly', () => {
 					continue;
 				}
 
-				test(`Language selector navigates to '${locale}' at ${route}`, async ({
+				test(`Language selector navigates to '${locale}' at '${route}'`, async ({
 					page,
 				}) => {
-					await page.goto(`${route}`);
+					await page.goto(`${route}`, { waitUntil: 'domcontentloaded' });
 
 					await page.waitForSelector('#menu-toggle', {
 						state: 'attached',
