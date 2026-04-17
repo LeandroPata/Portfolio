@@ -41,12 +41,12 @@ import Icon from '@/src/components/Icon.astro';
 		border-radius: 999rem;
 	}
 
-	:global(.theme-dark) .icon.light::before {
+	:global(.dark) .icon.light::before {
 		transform: translateX(100%);
 	}
 
-	:global(.theme-dark) .icon.dark,
-	:global(html:not(.theme-dark)) .icon.light,
+	:global(.dark) .icon.dark,
+	:global(html:not(.dark)) .icon.light,
 	button[aria-pressed='false'] .icon.light {
 		color: var(--accent-text-over);
 	}
@@ -68,30 +68,24 @@ import Icon from '@/src/components/Icon.astro';
 </style>
 
 <script>
-	class ThemeToggle extends HTMLElement {
-		constructor() {
-			super();
+  class ThemeToggle extends HTMLElement {
+    constructor() {
+      super();
+      const button = this.querySelector('button')!;
 
-			const button = this.querySelector('button')!;
+      const setTheme = (dark: boolean) => {
+        document.documentElement.classList.toggle('dark', dark);
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+        button.setAttribute('aria-pressed', String(dark));
+      };
 
-			// Set the theme to dark/light mode
-			const setTheme = (dark: boolean) => {
-				document.documentElement.classList[dark ? 'add' : 'remove'](
-					'theme-dark'
-				);
-				button.setAttribute('aria-pressed', String(dark));
-			};
+      button.addEventListener('click', () => setTheme(!this.isDark()));
+    }
 
-			// Toggle the theme when a user clicks the button
-			button.addEventListener('click', () => setTheme(!this.isDark()));
+    isDark() {
+      return document.documentElement.classList.contains('dark');
+    }
+  }
 
-			// Initialize button state to reflect current theme
-			setTheme(this.isDark());
-		}
-
-		isDark() {
-			return document.documentElement.classList.contains('theme-dark');
-		}
-	}
-	customElements.define('theme-toggle', ThemeToggle);
+  customElements.define('theme-toggle', ThemeToggle);
 </script>
