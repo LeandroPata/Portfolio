@@ -80,7 +80,7 @@
 	--theme-transition: 0.2s ease-in-out;
 }
 
-:root.theme-dark {
+:root.dark {
 	--gray-0: #ffffff;
 	--gray-50: #f3f4f7;
 	--gray-100: #e3e6ee;
