@@ -15,19 +15,19 @@ test.describe('Theme toggle switches between light and dark mode', () => {
 		const button = page.locator('theme-toggle button');
 
 		const initialHasDark = await html.evaluate((el) =>
-			el.classList.contains('theme-dark'),
+			el.classList.contains('dark'),
 		);
 
 		await button.click();
 		const afterClickHasDark = await html.evaluate((el) =>
-			el.classList.contains('theme-dark'),
+			el.classList.contains('dark'),
 		);
 
 		expect(afterClickHasDark).not.toBe(initialHasDark);
 
 		await button.click();
 		const endHasDark = await html.evaluate((el) =>
-			el.classList.contains('theme-dark'),
+			el.classList.contains('dark'),
 		);
 
 		expect(endHasDark).toBe(initialHasDark);
@@ -46,16 +46,14 @@ test.describe('Theme toggle switches between light and dark mode', () => {
 		const button = page.locator('theme-toggle button');
 
 		const initialHasDark = await html.evaluate((el) =>
-			el.classList.contains('theme-dark'),
+			el.classList.contains('dark'),
 		);
-		console.log(initialHasDark);
 
 		await button.click();
 
 		const afterClickHasDark = await html.evaluate((el) =>
-			el.classList.contains('theme-dark'),
+			el.classList.contains('dark'),
 		);
-		console.log(afterClickHasDark);
 
 		expect(afterClickHasDark).not.toBe(initialHasDark);
 
@@ -70,9 +68,8 @@ test.describe('Theme toggle switches between light and dark mode', () => {
 		await page.waitForURL(linkHref, { waitUntil: 'domcontentloaded' });
 
 		const afterNavHasDark = await html.evaluate((el) =>
-			el.classList.contains('theme-dark'),
+			el.classList.contains('dark'),
 		);
-		console.log(afterNavHasDark);
 
 		expect(afterNavHasDark).toBe(afterClickHasDark);
 	});
