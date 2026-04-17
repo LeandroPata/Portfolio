@@ -12,9 +12,6 @@ export default defineConfig({
 		prefetchAll: true,
 		defaultStrategy: 'viewport',
 	},
-	routing: {
-		prefixDefaultLocale: true,
-	},
 	integrations: [
 		sitemap({
 			i18n: {
@@ -37,5 +34,8 @@ export default defineConfig({
 	i18n: {
 		locales: ['en', 'pt'],
 		defaultLocale: 'en',
+		routing: {
+			prefixDefaultLocale: true,
+		},
 	},
 });
