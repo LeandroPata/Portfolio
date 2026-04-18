@@ -4,7 +4,7 @@ slug: linuxTools
 locale: en
 github_url: https://github.com/LeandroPata/LinuxTools
 publishDate: 2024-10-22 00:00:00
-img: assets/projects/linuxTools/cover.png
+img: assets/projects/linuxTools/cover.jpg
 img_alt: Linux Tools Cover
 imgs: []
 description: |

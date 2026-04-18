@@ -4,7 +4,7 @@ slug: orderManagementApp
 locale: pt
 github_url: https://github.com/LeandroPata/OrderManagementApp
 publishDate: 2024-12-19 00:00:00
-img: assets/projects/orderManagementApp/cover.png
+img: assets/projects/orderManagementApp/cover.jpg
 img_alt: Aplicação de Gestão de Encomendas Cover
 imgs:
   [
