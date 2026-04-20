@@ -1,8 +1,9 @@
 import { defaultLang, languages, ui } from '@/src/i18n/ui';
 
 export function getLangFromUrl(path: string): keyof typeof languages {
+	// Default to DefaultLang for the root path or invalid paths
 	const parts = path.split('/');
-	if (parts.length < 2 || !parts[1]) {
+	if (path === '/' || parts.length < 2 || !parts[1]) {
 		console.warn(`Invalid URL path: ${path}`);
 		return defaultLang;
 	}
