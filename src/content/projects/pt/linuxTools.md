@@ -3,7 +3,7 @@ title: Linux Tools | Leandro Pata
 slug: linuxTools
 locale: pt
 github_url: https://github.com/LeandroPata/LinuxTools
-publishDate: 2024-10-22 00:00:00
+publishDate: 2025-05-01 00:00:00
 img: assets/projects/linuxTools/cover.jpg
 img_alt: Linux Tools Cover
 imgs: []

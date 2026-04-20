@@ -3,7 +3,7 @@ title: WallTheme | Leandro Pata
 slug: wallTheme
 locale: pt
 github_url: https://github.com/LeandroPata/WallTheme
-publishDate: 2024-10-22 00:00:00
+publishDate: 2025-09-26 00:00:00
 img: assets/projects/wallTheme/cover.jpg
 img_alt: WallTheme Cover
 imgs: []
