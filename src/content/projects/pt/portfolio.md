@@ -9,27 +9,27 @@ img_alt: Cover Portfolio
 imgs:
   [
     [
-      'assets/projects/portfolio/homePageDark.png',
+      'assets/projects/portfolio/homePageDark.jpg',
       'Página Inicial Escura'
     ],
     [
-      'assets/projects/portfolio/homePageLight.png',
+      'assets/projects/portfolio/homePageLight.jpg',
       'Página Inicial Clara'
     ],
     [
-      'assets/projects/portfolio/projectsPage.png',
+      'assets/projects/portfolio/projectsPage.jpg',
       'Página de Projetos'
     ],
     [
-      'assets/projects/portfolio/projectPage.png',
+      'assets/projects/portfolio/projectPage.jpg',
       'Página com Projeto'
     ],
     [
-      'assets/projects/portfolio/aboutPage.png',
+      'assets/projects/portfolio/aboutPage.jpg',
       'Página Sobre En'
     ],
     [
-      'assets/projects/portfolio/aboutPagePt.png',
+      'assets/projects/portfolio/aboutPagePt.jpg',
       'Página Sobre Pt'
     ],
   ]
