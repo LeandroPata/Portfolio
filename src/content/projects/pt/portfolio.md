@@ -4,32 +4,32 @@ slug: portfolio
 locale: pt
 github_url: https://github.com/LeandroPata/Portfolio
 publishDate: 2025-02-11 00:00:00
-img: assets/projects/portfolio/cover.png
+img: assets/projects/portfolio/cover.jpg
 img_alt: Cover Portfolio
 imgs:
   [
     [
-      'assets/projects/portfolio/homePageDark.png',
+      'assets/projects/portfolio/homePageDark.jpg',
       'Página Inicial Escura'
     ],
     [
-      'assets/projects/portfolio/homePageLight.png',
+      'assets/projects/portfolio/homePageLight.jpg',
       'Página Inicial Clara'
     ],
     [
-      'assets/projects/portfolio/projectsPage.png',
+      'assets/projects/portfolio/projectsPage.jpg',
       'Página de Projetos'
     ],
     [
-      'assets/projects/portfolio/projectPage.png',
+      'assets/projects/portfolio/projectPage.jpg',
       'Página com Projeto'
     ],
     [
-      'assets/projects/portfolio/aboutPage.png',
+      'assets/projects/portfolio/aboutPage.jpg',
       'Página Sobre En'
     ],
     [
-      'assets/projects/portfolio/aboutPagePt.png',
+      'assets/projects/portfolio/aboutPagePt.jpg',
       'Página Sobre Pt'
     ],
   ]
@@ -42,6 +42,12 @@ tags:
 ---
 
 <h1 style='text-align: center;'>Portfolio</h1>
+
+<p align="center">
+<img src="https://img.shields.io/github/package-json/v/LeandroPata/Portfolio">
+<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+<a href="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml"><img src="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml/badge.svg?event=push"></a>
+</p>
 
 Projeto de portfolio pessoal.
 
@@ -57,7 +63,7 @@ Decidi também usar <a href="https://astro.build/" target=_blank data-astro-pref
 
 ## Tech utilizada
 
-Este projeto foi desenvolvido com <a href="https://astro.build/" target=_blank data-astro-prefetch='false'>Astro</a>, usando HTML, Typescript, CSS e Javascript.
+Este projeto foi desenvolvido com <a href="https://astro.build/" target=_blank data-astro-prefetch='false'>Astro</a>, usando `HTML`, `Typescript`, `CSS` e `Javascript`.
 
 Após considerar várias opções para construir e desenvolver este projeto, <a href="https://astro.build/" target=_blank data-astro-prefetch='false'>Astro</a> foi ultimamente escolhido devido a algumas razões:
 

@@ -4,7 +4,7 @@ slug: orderManagementApp
 locale: en
 github_url: https://github.com/LeandroPata/OrderManagementApp
 publishDate: 2024-12-19 00:00:00
-img: assets/projects/orderManagementApp/cover.png
+img: assets/projects/orderManagementApp/cover.jpg
 img_alt: Order Management App Cover
 imgs:
   [
@@ -92,16 +92,16 @@ It was developed with the intent to accurately, quickly and easily check current
 - Changing Password;
 - Translation to different languages;
 - Light/Dark Theme;
-- Checking for updates (as it is a personal project, publishing in App Stores isn't feasible, so a different update checking system was implemented, not possible for iOS);
+- Checking for updates (as it is a personal project, publishing in App Stores isn't feasible, so a different update checking system was implemented, not possible for `iOS`);
 
 ## Technical Notes
 
 - Both portrait and landscape layouts are supported, as landscape layout significantly improves viewing information from the DataTables;
 - As a common smartphone's screen width isn't enough to fully display the information from a DataTable's row, an alternative was implemented where clicking a DataTable's row will display all that row's information;
 - All searches of clients/products have a "fuzzy searching" implementation with a "hint" list to help the user find the intended client/product;
-- Update checking was implemented by having the APKs stored in Firebase Storage and then cross-checking the app's current version and the stored APKs version, downloading and updating if a more recent version is available (this isn't possible in iOS, as it doesn't allow sideloading);
-- As all cloud functionalities (as is) require Firebase, any reproduction of this project will require setting up Firebase (more specifically the modules detailed in the next section) and adding both config files (google-services.json and GoogleService-Info.plist) to the project;
-- Environment variables are used, so in any reproduction of this project setting them in a .env file (to run locally) and/or Expo (or other building framework) will be necessary. This is an .env example:
+- Update checking was implemented by having the `APKs` stored in `Firebase Storage` and then cross-checking the app's current version and the stored `APKs` version, downloading and updating if a more recent version is available (this isn't possible in `iOS`, as it doesn't allow sideloading);
+- As all cloud functionalities (as is) require `Firebase`, any reproduction of this project will require setting up `Firebase` (more specifically the modules detailed in the next section) and adding both config files (`google-services.json` and `GoogleService-Info.plist`) to the project;
+- Environment variables are used, so in any reproduction of this project setting them in a .env file (to run locally) and/or `Expo` (or other building framework) will be necessary. This is an .env example:
 
 ```shell
 # Firebase Config Files
@@ -111,12 +111,12 @@ GOOGLE_SERVICES_PLIST='./GoogleService-Info.plist'
 
 ## Tech used
 
-This project was developed with the <a href="https://reactnative.dev/" target=_blank data-astro-prefetch='false'>React Native</a> <a href="https://expo.dev/" target=_blank data-astro-prefetch='false'>Expo</a> framework, using a mix of Typescript, CSS and some Javascript.
+This project was developed with the <a href="https://reactnative.dev/" target=_blank data-astro-prefetch='false'>React Native</a> <a href="https://expo.dev/" target=_blank data-astro-prefetch='false'>Expo</a> framework, using a mix of `Typescript`, `CSS` and some `Javascript`.
 
-All cloud features are build using <a href="https://firebase.google.com/" target=_blank data-astro-prefetch='false'>Firebase</a>. The main Firebase features used are:
+All cloud features are build using <a href="https://firebase.google.com/" target=_blank data-astro-prefetch='false'>Firebase</a>. The main `Firebase` features used are:
 
 - <a href="https://firebase.google.com/products/auth" target=_blank data-astro-prefetch='false'>Firebase Authentication</a> for user accounts authentication;
-- <a href="https://firebase.google.com/products/firestore" target=_blank data-astro-prefetch='false'>Firestore</a> as a NoSQL DataBase to store data documents;
+- <a href="https://firebase.google.com/products/firestore" target=_blank data-astro-prefetch='false'>Firestore</a> as a `NoSQL` DataBase to store data documents;
 - <a href="https://firebase.google.com/products/storage" target=_blank data-astro-prefetch='false'>Firebase Cloud Storage</a> to store larger files (profile pictures, data exports and updates);
 
 Some of the main packages used are:
