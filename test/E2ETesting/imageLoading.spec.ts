@@ -1,4 +1,5 @@
 import path from 'node:path';
+import { clearInterval } from 'node:timers';
 import type { Response } from '@playwright/test';
 import {
 	countCDNLinks,
@@ -51,6 +52,21 @@ test.describe('CDN links load correctly', () => {
 			//console.log(getCDNImages(route));
 
 			if (hasCDNImages(route)) {
+				// Scroll to trigger loading of lazy images
+				await page.evaluate(async () => {
+					await new Promise<void>((resolve) => {
+						let lastHeight = 0;
+						const interval = setInterval(() => {
+							window.scrollBy(0, 200);
+							if (document.body.scrollHeight === lastHeight) {
+								clearInterval(interval);
+								resolve();
+							}
+							lastHeight = document.body.scrollHeight;
+						}, 100);
+					});
+				});
+
 				await page
 					.locator('img[src*="cdn.jsdelivr.net"]')
 					.last()
@@ -63,14 +79,13 @@ test.describe('CDN links load correctly', () => {
 
 			if (cdnLinks.length > 0) {
 				for (const link of cdnLinks) {
-					const href = await link.getAttribute('href');
-					console.log(href);
+					//console.log(await link.getAttribute('href'));
 					await link.click();
 					await page.waitForTimeout(500);
 				}
 			}
-			console.log(cdnRequests);
-			console.log(`${cdnRequests.length} : ${countCDN}`);
+			//console.log(cdnRequests);
+			//console.log(`${cdnRequests.length} : ${countCDN}`);
 
 			expect(failedRequests).toEqual([]);
 			expect(cdnRequests.length).toBe(countCDN);
