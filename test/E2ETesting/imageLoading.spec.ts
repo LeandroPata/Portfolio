@@ -2,7 +2,7 @@ import path from 'node:path';
 import type { Response } from '@playwright/test';
 import {
 	countCDNLinks,
-	getCDNImages,
+	//getCDNImages,
 	hasCDNImages,
 } from '@/src/utils/cdnUtils';
 import getRoutes from '@/src/utils/getRoutes';
@@ -22,8 +22,14 @@ test.describe('CDN links load correctly', () => {
 			// Continue all CDN requests
 			await page.route('https://cdn.jsdelivr.net/**', async (route) => {
 				if (route.request().resourceType() === 'image') {
-					const response = await route.fetch();
-					await route.fulfill({ response });
+					const response = await route.fetch({ method: 'HEAD' });
+					await route.fulfill({
+						status: response.status(),
+						headers: Object.fromEntries(
+							response.headersArray().map((h) => [h.name, h.value]),
+						),
+						body: '',
+					});
 				} else {
 					await route.continue();
 				}
@@ -42,7 +48,7 @@ test.describe('CDN links load correctly', () => {
 			page.context().on('response', onResponse);
 
 			await page.goto(route, { waitUntil: 'load' });
-			console.log(getCDNImages(route));
+			//console.log(getCDNImages(route));
 
 			if (hasCDNImages(route)) {
 				await page
