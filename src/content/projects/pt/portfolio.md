@@ -44,9 +44,9 @@ tags:
 <h1 style='text-align: center;'>Portfolio</h1>
 
 <p align="center">
-<img src="https://img.shields.io/github/package-json/v/LeandroPata/Portfolio">
-<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-<a href="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml"><img src="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml/badge.svg?event=push"></a>
+<img src="https://img.shields.io/github/package-json/v/LeandroPata/Portfolio" alt="Current Version">
+<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+<a href="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml"><img src="https://github.com/LeandroPata/Portfolio/actions/workflows/deploy.yml/badge.svg?event=push" alt="Workflow Badge"></a>
 </p>
 
 Projeto de portfolio pessoal.

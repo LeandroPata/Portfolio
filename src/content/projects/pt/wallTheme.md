@@ -17,9 +17,9 @@ tags:
 <h1 style='text-align: center;'>WallTheme</h1>
 
 <p align="center">
-<a href="https://pypi.python.org/pypi/walltheme/"><img src="https://img.shields.io/pypi/v/walltheme.svg"></a>
-<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-<a href="https://github.com/LeandroPata/WallTheme/actions/workflows/release.yml"><img src="https://github.com/LeandroPata/WallTheme/actions/workflows/release.yml/badge.svg"></a>
+<a href="https://pypi.python.org/pypi/walltheme/"><img src="https://img.shields.io/pypi/v/walltheme.svg" alt="Current Version"></a>
+<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+<a href="https://github.com/LeandroPata/WallTheme/actions/workflows/release.yml"><img src="https://github.com/LeandroPata/WallTheme/actions/workflows/release.yml/badge.svg" alt="Workflow Badge"></a>
 </p>
 
 ## Uma ferramenta para gerar palettes de cores
