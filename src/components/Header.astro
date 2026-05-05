@@ -1,10 +1,24 @@
 ---
 import '@/src/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
-import { useTranslations } from '@/src/i18n/utils';
+import { defaultLang } from '@/src/i18n/ui';
+import { getAllLocales, useTranslations } from '@/src/i18n/utils';
+import { CDN } from '@/src/utils/constants';
 
 const locale = Astro.currentLocale;
 const t = useTranslations(locale);
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const LOCALES = getAllLocales();
+const alternates = LOCALES.map(loc => ({
+	hreflang: loc, 
+	url: new URL(Astro.url.pathname.replace(new RegExp(`^/${locale}`), `/${loc}`), 
+	Astro.site,
+	)
+}));
+
+const defaultURL = alternates.find(a => a.hreflang === defaultLang)?.url;
 
 interface Props {
 	title?: string | undefined;
@@ -19,11 +33,6 @@ const {
 
 <meta charset='UTF-8' />
 <meta
-	name='description'
-	property='og:description'
-	content={description}
-/>
-<meta
 	name='viewport'
 	content='width=device-width'
 />
@@ -32,6 +41,7 @@ const {
 	content={Astro.generator}
 />
 <title>{title}</title>
+<meta name="description" content={description}>
 
 <link
 	rel='icon'
@@ -58,6 +68,45 @@ const {
 <link
 	rel='sitemap'
 	href='/sitemap-index.xml'
+/>
+
+<link
+	rel='canonical'
+	href={canonicalURL}
+/>
+
+{alternates.map(({ hreflang, url }) => (
+	<link rel="alternate" hreflang={hreflang} href={url} />
+))}
+
+{defaultURL && (
+	<link rel="alternate" hreflang="x-default" href={defaultURL} />
+)}
+
+<!-- Open Graph tags -->
+<meta 
+	property="og:title" 
+	content={title} 
+/>
+<meta 
+	property="og:type" 
+	content="Portfolio"
+/>
+<meta 
+	property="og:url" 
+	content={canonicalURL}
+/>
+<meta 
+	property="og:description" 
+	content={description}
+/>
+<meta 
+	property="og:image" 
+	content={CDN+'/assets/projects/portfolio/cover.jpg'}
+/>
+<meta 
+	property="og:image:alt" 
+	content="Portfolio Cover"
 />
 
 <ClientRouter />
