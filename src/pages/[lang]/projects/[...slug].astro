@@ -5,7 +5,7 @@ import Hero from '@/src/components/Hero.astro';
 import PhotoswipeGallery from '@/src/components/PhotoswipeGallery.astro';
 import Pill from '@/src/components/Pill.astro';
 import { defaultLang, languages } from '@/src/i18n/ui';
-import { useTranslations } from '@/src/i18n/utils';
+import { getAllLocales, useTranslations } from '@/src/i18n/utils';
 import MainLayout from '@/src/layouts/MainLayout.astro';
 import { CDN } from '@/src/utils/constants';
 import { loadCollection } from '@/src/utils/loadData';
@@ -15,7 +15,7 @@ const t = useTranslations(locale);
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 export async function getStaticPaths() {
-	const langs = Object.keys(languages) as (keyof typeof languages)[];
+	const langs = getAllLocales();
 
 	const paths = await Promise.all(
 		langs.map(async (lang) => {
