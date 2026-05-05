@@ -44,8 +44,8 @@ const t = useTranslations(locale);
 					{
 						t('about.educationContent').map((education) => (
 							<div class='education'>
-								<h5 class='content-title'>{education[0]}</h5>
-								<h5 class='content-date'>{education[1]}</h5>
+								<h3 class='content-title'>{education[0]}</h3>
+								<h3 class='content-date'>{education[1]}</h3>
 								<p>{education[2]}</p>
 							</div>
 						))
@@ -61,8 +61,8 @@ const t = useTranslations(locale);
 					{
 						t('about.workContent').map((work) => (
 							<div class='work'>
-								<h5 class='content-title'>{work[0]}</h5>
-								<h5 class='content-date'>{work[1]}</h5>
+								<h3 class='content-title'>{work[0]}</h3>
+								<h3 class='content-date'>{work[1]}</h3>
 								<p>{work[2]}</p>
 							</div>
 						))
@@ -87,7 +87,7 @@ const t = useTranslations(locale);
 					{
 						t('about.certificateContent').map((certificate) => (
 							<div class='certificate'>
-								<h5>{certificate}</h5>
+								<h3>{certificate}</h3>
 							</div>
 						))
 					}
@@ -95,14 +95,14 @@ const t = useTranslations(locale);
 			</section>
 		</main>
 
-		<div class='cv-download'>
+		<aside class='cv-download' aria-label='CV Download'>
 			<a 
 				href={`${CDN}/assets/cv/CV_LeandroPata_EN.pdf`} 
 				target='_blank' 
 				data-umami-event='CV Click'>
 				{t('about.cv')}
 			</a>
-		</div>
+		</aside>
 		<ContactCTA />
 	</div>
 </MainLayout>

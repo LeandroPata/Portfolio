@@ -1,5 +1,9 @@
 import { defaultLang, languages, ui } from '@/src/i18n/ui';
 
+export function getAllLocales(): (keyof typeof languages)[] {
+	return Object.keys(languages) as (keyof typeof languages)[];
+}
+
 export function getLangFromUrl(path: string): keyof typeof languages {
 	// Default to DefaultLang for the root path or invalid paths
 	const parts = path.split('/');

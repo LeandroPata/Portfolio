@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "^3.7.2",
+		"@axe-core/playwright": "^4.11.3",
 		"@yeskunall/astro-umami": "^0.0.8",
 		"astro": "^6.1.7",
 		"photoswipe": "^5.4.4"

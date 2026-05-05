@@ -208,10 +208,7 @@ pre {
 }
 
 pre code {
-	background-color: transparent;
 	padding: 0;
-	font-size: var(--text-md);
-	line-height: 1.45;
 }
 
 /* Utilities */
@@ -263,6 +260,18 @@ pre code {
 }
 .gap-48 {
 	gap: 12rem;
+}
+
+.astro-code,
+.astro-code span {
+		color: var(--shiki-light);
+		background-color: var(--shiki-light-bg);
+}
+
+:root.dark .astro-code,
+:root.dark .astro-code span {
+		color: var(--shiki-dark);
+		background-color: var(--shiki-dark-bg);
 }
 
 @media (min-width: 50em) {

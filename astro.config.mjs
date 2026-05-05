@@ -1,5 +1,4 @@
 // @ts-check
-
 import sitemap from '@astrojs/sitemap';
 import yeskunallumami from '@yeskunall/astro-umami';
 import { defineConfig } from 'astro/config';
@@ -36,6 +35,16 @@ export default defineConfig({
 		defaultLocale: 'en',
 		routing: {
 			prefixDefaultLocale: true,
+		},
+	},
+	markdown: {
+		shikiConfig: {
+			themes: {
+				light: 'light-plus',
+				dark: 'dark-plus',
+			},
+			defaultColor: false,
+			wrap: true,
 		},
 	},
 });
